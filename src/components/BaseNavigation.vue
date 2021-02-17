@@ -33,7 +33,8 @@
 </template>
 <script lang="ts">
 import { Model } from "survey-vue";
-import { Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
+@Component
 export default class BaseNavigation extends Vue {
   @Prop() public survey!: Model;
 }
