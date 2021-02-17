@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>{{ $t("appTitle") }}</h1>
-    <BaseNavigation />
+    <BaseNavigation v-on:exportResults="exportResults" />
     <form>
       <ActionButtonBar
         v-on:fileLoaded="fileLoaded($event)"
@@ -26,6 +26,7 @@ import showdown from "showdown";
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
 import ActionButtonBar from "@/components/ActionButtonBar.vue";
 import HomeSectionsContainer from "@/components/HomeSectionsContainer.vue";
+import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
@@ -37,6 +38,7 @@ import { returnAllSectionsByPrefix } from "@/store";
   components: {
     AssessmentTool,
     ActionButtonBar,
+    BaseNavigation,
     HomeSectionsContainer
   }
 })

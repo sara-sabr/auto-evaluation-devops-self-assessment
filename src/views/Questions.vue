@@ -1,7 +1,7 @@
 <template>
   <div class="results">
     <h1>{{ $t("appTitle") }}</h1>
-    <BaseNavigation />
+    <BaseNavigation v-on:exportResults="exportResults" />
     <form>
       <ActionButtonBar
         v-on:fileLoaded="fileLoaded($event)"
@@ -51,7 +51,8 @@ import surveyJSON from "@/survey-enfr.json";
 @Component({
   components: {
     AssessmentTool,
-    ActionButtonBar
+    ActionButtonBar,
+    BaseNavigation
   }
 })
 export default class Questions extends Vue {
