@@ -1,22 +1,7 @@
 <template>
   <div class="results">
     <h1>{{ $t("appTitle") }}</h1>
-    <div class="alert alert-info">
-      <details>
-        <summary>{{ $t("notice.localSaveWarningSummary") }}</summary>
-        <p class="small">{{ $t("notice.localSaveWarningParagraph") }}</p>
-      </details>
-    </div>
-    <p class="page-actions">
-      <a
-        class="btn btn-default pull-right"
-        role="button"
-        :href="$t('linkProjectAnchor')"
-      >
-        <i class="fab fa-github"></i>
-        {{ $t("linkProjectText") }}
-      </a>
-    </p>
+    <BaseNavigation />
     <form>
       <ActionButtonBar
         v-on:fileLoaded="fileLoaded($event)"
