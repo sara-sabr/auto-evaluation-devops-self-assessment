@@ -1,7 +1,7 @@
 <template>
   <div class="results">
     <h1>{{ $t("appTitle") }}</h1>
-    <BaseNavigation v-on:exportResults="exportResults" />
+    <BaseNavigation />
     <form>
       <ActionButtonBar
         v-on:fileLoaded="fileLoaded($event)"
