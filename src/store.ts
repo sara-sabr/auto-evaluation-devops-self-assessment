@@ -100,6 +100,7 @@ export const getLocalizedSurveyString = (panel: any) => {
 const updateSurveyData = (state: RootState, surveyData: SurveyModel) => {
   state.surveyModel = surveyData;
   state.currentPageNo = surveyData.currentPageNo;
+  state.currentPageName = surveyData.currentPage.name;
   state.recommendations! = sectionsRecommendations;
   if (isEmpty(state.sectionsNames)) {
     determineAllSections(state, surveyData);
@@ -234,7 +235,9 @@ const store: StoreOptions<RootState> = {
     surveyModel: undefined,
     toolData: undefined,
     currentPageNo: 0,
-    recommendations: undefined
+    currentPageName: undefined,
+    recommendations: undefined,
+    toolVersion: sectionsRecommendations.settings.version
   },
   mutations: {
     // mutation to reset the state when a user resets the survey
@@ -246,6 +249,7 @@ const store: StoreOptions<RootState> = {
       state.sectionsEnabled = [];
       state.surveyModel = undefined;
       state.currentPageNo = 0;
+      state.currentPageName = undefined;
       state.toolData = {};
       state.recommendations = undefined;
     },

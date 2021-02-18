@@ -32,6 +32,7 @@ import ResultRecommendations from "@/components/ResultRecommendations.vue";
   },
   methods: {
     getSectionName(surveyData: SurveyModel, sectionName) {
+      //TODO: validate if surveyData is undefined
       let page = surveyData.getPageByName(sectionName.toString());
       return page.title;
     }
