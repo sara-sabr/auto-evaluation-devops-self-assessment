@@ -16,9 +16,8 @@
         v-if="section.enabled"
         :section="section"
         :section-name="section.sectionName"
-        :questions-names="section.questionsNames"
         :user-score="section.userScore"
-        :questions="section.questions"
+        :max-score="getMaxScore(section)"
         :my-recommendations="myRecommendations"
         :locale="locale"
       />
@@ -49,6 +48,7 @@ import ResultsCard from "@/components/ResultsCard.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
 import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
+import { Section } from "@/types";
 
 @Component({
   components: {
@@ -72,6 +72,12 @@ import surveyJSON from "@/survey-enfr.json";
     },
     locale() {
       return this.$i18n.locale;
+    }
+  },
+  methods: {
+    getMaxScore(section: Section) {
+      let maxScore: number = section.questions.length * 7;
+      return maxScore;
     }
   }
 })
