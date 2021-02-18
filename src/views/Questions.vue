@@ -63,6 +63,7 @@ export default class Questions extends Vue {
     this.Survey.clear(true, true);
     window.localStorage.clear();
     this.$store.commit("resetSurvey");
+    this.$router.push("/");
   }
 
   fileLoaded($event: SurveyFile) {
@@ -70,6 +71,7 @@ export default class Questions extends Vue {
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
     this.$store.commit("updateSurveyData", this.Survey);
+    this.$router.push("/");
   }
 
   goToHomePage() {
