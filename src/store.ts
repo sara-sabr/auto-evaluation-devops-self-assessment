@@ -100,7 +100,6 @@ export const getLocalizedSurveyString = (panel: any) => {
 const updateSurveyData = (state: RootState, surveyData: SurveyModel) => {
   state.surveyModel = surveyData;
   state.currentPageNo = surveyData.currentPageNo;
-  state.currentPageName = surveyData.currentPage.name;
   state.recommendations! = sectionsRecommendations;
   if (isEmpty(state.sectionsNames)) {
     determineAllSections(state, surveyData);
@@ -157,6 +156,11 @@ const hideOtherSections = (
   }
 };
 
+/**
+ * Helper function to return all Survey sections based on a defined prefix
+ * @param surveyData An object containing the survey data.
+ * @param prefix A string containing the prefix
+ */
 export function returnAllSectionsByPrefix(
   surveyData: SurveyModel,
   prefix: string
@@ -224,6 +228,12 @@ const updateCurrentPageNo = (state: RootState, currentPageNo: number) => {
   }
 };
 
+const updateCurrentPageName = (state: RootState, currentPageName: string) => {
+  if (currentPageName.length > 0) {
+    state.currentPageName = currentPageName;
+  }
+};
+
 const store: StoreOptions<RootState> = {
   plugins: [vuexLocal.plugin],
   state: {
@@ -274,6 +284,10 @@ const store: StoreOptions<RootState> = {
     updateCurrentPageNo(state: RootState, currentPageNo: number) {
       updateCurrentPageNo(state, currentPageNo);
     },
+    updateCurrentPageName(state: RootState, currentPageName: string) {
+      updateCurrentPageName(state, currentPageName);
+    },
+
     initializeSections(state: RootState, result: SurveyModel) {
       initializeSections(state, result);
     }
