@@ -10,6 +10,7 @@
       <ResultsCard
         :section="section"
         :section-name="sectionName"
+        :user-score="section.userScore"
         :my-recommendations="myRecommendations"
         :locale="locale"
       />
