@@ -81,7 +81,7 @@ export default class Questions extends Vue {
 
   goToSectionResults() {
     this.$store.commit("updateSurveyData", this.Survey);
-    this.$router.push("/results");
+    this.$router.push("/sections");
   }
   @Watch("$i18n.locale")
   changeLanguage(value: string, oldValue: string) {
