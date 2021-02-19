@@ -309,6 +309,16 @@ const store: StoreOptions<RootState> = {
         return undefined;
       } else return sectionsNames;
     },
+    returnSectionByName: state => (sectionName: string) => {
+      return state.sections.find(section => {
+        return section.sectionName === sectionName;
+      });
+    },
+    returnCurrentSection: state => {
+      return state.sections.find(section => {
+        return section.sectionName === state.currentPageName;
+      });
+    },
     resultsDataSections: state => {
       let allResults = [];
       if (state.toolData === undefined) return {};
