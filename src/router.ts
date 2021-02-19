@@ -24,7 +24,7 @@ export default new Router({
       name: "questions",
       component: Questions
     },
-    { path: "/sections", name: "sections", component: SectionResults },
+    { path: "/sections", name: "sections", component: Results },
     {
       path: "/results",
       name: "results",
