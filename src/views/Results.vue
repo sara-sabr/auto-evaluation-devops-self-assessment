@@ -11,16 +11,34 @@
       />
     </form>
 
-    <div v-for="section in $store.state.sections" :key="section.id">
+    <div v-if="this.$router.history.current['path'] == '/Results'">
+      <div v-for="section in $store.state.sections" :key="section.id">
+        <ResultsCard
+          v-if="section.enabled"
+          :section="section"
+          :section-name="section.sectionName"
+          :user-score="section.userScore"
+          :max-score="getMaxScore(section)"
+          :my-recommendations="myRecommendations"
+          :locale="locale"
+        />
+      </div>
+    </div>
+    <div v-else-if="this.$router.history.current['path'] == '/sections'">
       <ResultsCard
-        v-if="section.enabled"
-        :section="section"
-        :section-name="section.sectionName"
-        :user-score="section.userScore"
-        :max-score="getMaxScore(section)"
+        v-if="currentSection !== undefined"
+        :section="currentSection"
+        :section-name="currentSection.sectionName"
+        :user-score="currentSection.userScore"
+        :max-score="getMaxScore(currentSection)"
         :my-recommendations="myRecommendations"
         :locale="locale"
       />
+    </div>
+    <div v-else>
+      <p>
+        Nothing to display.
+      </p>
     </div>
     <div class="row" style="padding: 0 5px">
       <div class="col-3 col-sm-2 col-md-3">
@@ -42,7 +60,6 @@ import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Model } from "survey-vue";
 import showdown from "showdown";
 import ActionButtonBar from "@/components/ActionButtonBar.vue";
-import ResultsContainer from "@/components/ResultsContainer.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import ResultsCard from "@/components/ResultsCard.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
@@ -53,7 +70,6 @@ import { Section } from "@/types";
 @Component({
   components: {
     ActionButtonBar,
-    ResultsContainer,
     ResultsCard,
     BaseNavigation
   },
@@ -66,6 +82,9 @@ import { Section } from "@/types";
     },
     sections() {
       return this.$store.getters.returnAllSections;
+    },
+    currentSection() {
+      return this.$store.getters.returnCurrentSection;
     },
     myRecommendations() {
       return this.$store.state.recommendations;
@@ -83,6 +102,7 @@ import { Section } from "@/types";
 })
 export default class Results extends Vue {
   @Prop() data: any;
+  @Prop() public section!: Section;
   myResults = this.$store.getters.resultsDataSections;
 
   Survey: Model = new Model(surveyJSON);
