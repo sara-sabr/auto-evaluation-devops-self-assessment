@@ -22,11 +22,6 @@
           :my-recommendations="myRecommendations"
           :locale="locale"
         />
-        <div v-else>
-          <p>
-            {{ notice.noProgress }}
-          </p>
-        </div>
       </div>
     </div>
     <div v-else-if="this.$router.history.current['path'] == '/sections'">
@@ -47,7 +42,7 @@
     </div>
 
     <div class="row" style="padding: 0 5px">
-      <div class="col-3 col-sm-2 col-md-3">
+      <div class="col-2 col-sm-2 col-md-2">
         <button
           type="button"
           class="btn survey-button"
@@ -55,6 +50,25 @@
           v-on:click="goToHomePage()"
         >
           {{ $t("navigation.chooseAnotherSection") }}
+        </button>
+      </div>
+      <div
+        v-if="this.$router.history.current['path'] == '/sections'"
+        class="col-2 col-sm-2 col-md-2"
+      >
+        <router-link
+          to="/Results"
+          :key="$route.path"
+          style="visibility:hidden"
+          >{{ $t("navigation.viewAllResults") }}</router-link
+        >
+        <button
+          type="button"
+          class="btn survey-button"
+          style="width: inherit"
+          v-on:click="goToAllResults()"
+        >
+          {{ $t("navigation.viewAllResults") }}
         </button>
       </div>
     </div>
@@ -113,8 +127,10 @@ export default class Results extends Vue {
 
   Survey: Model = new Model(surveyJSON);
   goToHomePage() {
-    this.$store.commit("updateSurveyData", this.Survey);
     this.$router.push("/");
+  }
+  goToAllResults() {
+    this.$router.push("/Results");
   }
   exportResults() {
     const source = window.document.getElementById(
