@@ -1,6 +1,11 @@
 <template>
   <div class="results">
-    <h1>{{ $t("resultTitle") }}</h1>
+    <h1 v-if="this.$router.history.current['path'] == '/Results'">
+      {{ $t("resultTitle") }}
+    </h1>
+    <h1 v-if="this.$router.history.current['path'] == '/sections'">
+      {{ $t("sectionResultsTitle") }}
+    </h1>
 
     <BaseNavigation v-on:exportResults="exportResults" />
 
@@ -40,37 +45,38 @@
         </p>
       </div>
     </div>
-
-    <div class="row" style="padding: 0 5px">
-      <div class="col-2 col-sm-2 col-md-2">
-        <button
-          type="button"
-          class="btn survey-button"
-          style="width: inherit"
-          v-on:click="goToHomePage()"
+    <div class="page-actions">
+      <b-row class="row no-gutters" style="padding: 0 15px">
+        <b-col
+          class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
+          style="margin: 2px 2px;"
         >
-          {{ $t("navigation.chooseAnotherSection") }}
-        </button>
-      </div>
-      <div
-        v-if="this.$router.history.current['path'] == '/sections'"
-        class="col-2 col-sm-2 col-md-2"
-      >
-        <router-link
-          to="/Results"
-          :key="$route.path"
-          style="visibility:hidden"
-          >{{ $t("navigation.viewAllResults") }}</router-link
+          <button
+            type="button"
+            class="btn survey-button"
+            style="width: inherit"
+            v-on:click="goToHomePage()"
+          >
+            {{ $t("navigation.chooseAnotherSection") }}
+          </button>
+        </b-col>
+        <b-col
+          v-if="this.$router.history.current['path'] == '/sections'"
+          class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
+          style="margin: 2px 2px;"
         >
-        <button
-          type="button"
-          class="btn survey-button"
-          style="width: inherit"
-          v-on:click="goToAllResults()"
-        >
-          {{ $t("navigation.viewAllResults") }}
-        </button>
-      </div>
+          <button
+            type="button"
+            class="btn survey-button"
+            style="width: inherit"
+            v-on:click="goToAllResults()"
+            :key="$route.path"
+          >
+            {{ $t("navigation.viewAllResults") }}
+          </button>
+        </b-col>
+        <b-col></b-col>
+      </b-row>
     </div>
   </div>
 </template>
