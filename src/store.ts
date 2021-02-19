@@ -21,7 +21,8 @@ const vuexLocal = new VuexPersistence({
   storage: window.localStorage,
   reducer: (state: RootState) => ({
     toolData: state.toolData,
-    currentPageNo: state.currentPageNo
+    currentPageNo: state.currentPageNo,
+    currentPageName: state.currentPageName
   })
 });
 
