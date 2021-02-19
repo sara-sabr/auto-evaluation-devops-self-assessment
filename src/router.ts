@@ -29,6 +29,7 @@ export default new Router({
       path: "/results",
       name: "results",
       component: Results
-    }
+    },
+    { path: "*", name: "notFound", component: Home }
   ]
 });
