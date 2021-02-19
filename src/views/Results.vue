@@ -46,7 +46,7 @@
       </div>
     </div>
     <div class="page-actions">
-      <b-row class="row no-gutters" style="padding: 0 15px">
+      <b-row class="no-gutters" align-h="center" style="padding: 0 15px">
         <b-col
           class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
           style="margin: 2px 2px;"
