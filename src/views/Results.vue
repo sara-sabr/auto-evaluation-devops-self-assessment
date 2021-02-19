@@ -22,6 +22,11 @@
           :my-recommendations="myRecommendations"
           :locale="locale"
         />
+        <div v-else>
+          <p>
+            {{ notice.noProgress }}
+          </p>
+        </div>
       </div>
     </div>
     <div v-else-if="this.$router.history.current['path'] == '/sections'">
@@ -34,12 +39,13 @@
         :my-recommendations="myRecommendations"
         :locale="locale"
       />
+      <div v-else>
+        <p>
+          {{ $t("notice.noProgress") }}
+        </p>
+      </div>
     </div>
-    <div v-else>
-      <p>
-        Nothing to display.
-      </p>
-    </div>
+
     <div class="row" style="padding: 0 5px">
       <div class="col-3 col-sm-2 col-md-3">
         <button
