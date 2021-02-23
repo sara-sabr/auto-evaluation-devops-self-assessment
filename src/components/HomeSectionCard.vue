@@ -1,27 +1,26 @@
 <template>
-  <b-card
-    :title="section.title"
-    title-tag="h2"
-    footer="This section's status"
-    img-top
-    style="min-width: 30rem"
-  >
-    <b-card-text
-      ><i :class="setIconClass(icon)"></i>
-      <p style="font-size: 16px">
+  <div class="card" img-top style="min-width: 30rem">
+    <i
+      :class="setIconClass(icon)"
+      style="margin-top: 20px; margin-left: 25px;"
+    ></i>
+    <div class="card-body">
+      <h2 class="card-title">{{ section.title }}</h2>
+      <p style="font-size: 16px" class="card-text">
         {{ section.description }}
       </p>
-    </b-card-text>
-    <button
-      type="button"
-      class="btn survey-button"
-      style="width: inherit"
-      v-on:click="goToSection(section.name)"
-      :survey="survey"
-    >
-      {{ $t("navigation.launchThisSection") }}
-    </button>
-  </b-card>
+      <button
+        type="button"
+        class="btn survey-button"
+        style="width: inherit"
+        v-on:click="goToSection(section.name)"
+        :survey="survey"
+      >
+        {{ $t("navigation.launchThisSection") }}
+      </button>
+    </div>
+    <div class="card-footer">This section's status</div>
+  </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
