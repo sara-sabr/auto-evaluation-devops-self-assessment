@@ -1,5 +1,9 @@
 <template>
-  <div class="card" img-top style="min-width: 30rem">
+  <div
+    class="card"
+    img-top
+    style="min-width: 30rem; margin-top: 15px; margin-bottom: 5px;"
+  >
     <i
       :class="setIconClass(icon)"
       style="margin-top: 20px; margin-left: 25px;"
