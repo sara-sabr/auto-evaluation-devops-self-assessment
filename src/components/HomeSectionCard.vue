@@ -3,6 +3,8 @@
     class="card"
     img-top
     style="min-width: 30rem; margin-top: 15px; margin-bottom: 5px;"
+    v-on:click="goToSection(section.name)"
+    :survey="survey"
   >
     <i
       :class="setIconClass(icon)"
@@ -13,15 +15,6 @@
       <p style="font-size: 16px" class="card-text">
         {{ section.description }}
       </p>
-      <button
-        type="button"
-        class="btn survey-button"
-        style="width: inherit"
-        v-on:click="goToSection(section.name)"
-        :survey="survey"
-      >
-        {{ $t("navigation.launchThisSection") }}
-      </button>
     </div>
     <div class="card-footer">This section's status</div>
   </div>
@@ -31,7 +24,6 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import { PageModel, SurveyModel } from "survey-vue";
 
 @Component({
-  components: {},
   methods: {
     setIconClass(icon: string) {
       let classDef: string = "fas fa-" + icon + " fa-3x";
