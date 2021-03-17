@@ -5,6 +5,9 @@
     style="min-width: 30rem; margin-top: 15px; margin-bottom: 5px;"
     v-on:click="goToSection(section.name)"
     :survey="survey"
+    v-bind:style="cardStyles"
+    @mouseover="hover = true"
+    @mouseleave="hover = false"
   >
     <i
       :class="setIconClass(icon)"
@@ -24,6 +27,29 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import { PageModel, SurveyModel } from "survey-vue";
 
 @Component({
+  data: function() {
+    return {
+      cardStyleHover: {
+        border: "1px solid black",
+        "box-shadow":
+          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+      },
+      cardStyle: {
+        "box-shadow":
+          "0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19)"
+      },
+      hover: false
+    };
+  },
+  computed: {
+    cardStyles() {
+      if (this.$data.hover == true) {
+        return this.$data.cardStyleHover;
+      } else {
+        return this.$data.cardStyle;
+      }
+    }
+  },
   methods: {
     setIconClass(icon: string) {
       let classDef: string = "fas fa-" + icon + " fa-3x";
