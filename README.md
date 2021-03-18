@@ -2,9 +2,11 @@
 
 ([Français](#gabarit-pour-dépôts-de-code-source-ouvert-du-gouvernement-du-canada))
 
-# DevOps Self-Assessment tool
+# DevOps Self-Assessment Tool
 
-This project hosts a prototype of the IT Strategy Team's DevOps Self-Assessment tool developed in Typescript.
+This project hosts the IT Strategy Team's DevOps Self-Assessment Tool developed in Typescript.
+
+Questions and recommendations are based on the [DevOps Capabilities](https://cloud.google.com/solutions/devops/capabilities) from the [DevOps Research and Assessment (DORA)](https://www.devops-research.com/research.html).
 
 The self-assessment tool is a fork of the original [Algorithmic Impact Assessment](https://github.com/canada-ca/aia-eia-js).
 We aim to provide enhancements to the original project if the project maintainer wishes to integrate them.
@@ -72,13 +74,12 @@ ______________________
 
 # Auto-Évaluation DevOps
 
-Ce projet héberge un prototype de de l'outil d'auto-évaluation DevOps de l'équipe de Stratégie TI développé en TypeScript.
+Ce projet héberge l'outil d'auto-évaluation DevOps de l'équipe de Stratégie TI développé en TypeScript.
 
-L'outil d'auto-évaluation est une copie de l'évaluation d'impact algorithmique originale. Nous visons à apporter des améliorations au projet original si le responsable du projet souhaite les intégrer.
+Les questions et recommandations sont basées sur les [Capacités DevOps](https://cloud.google.com/solutions/devops/capabilities) de la [recherche et évaluation DevOps (DORA)](https://www.devops-research.com/research.html).
 
-Les utilisateurs de ce projet seront des employés du gouvernement du Canada qui évalueront l'incidence de l'utilisation d'un système automatisé de décision, y compris l'intelligence artificielle, dans le cadre de leurs programmes et services.
-
-Comme cet outil d'évaluation est publié sous une licence libre, d'autres pays et individus peuvent souhaiter l'utiliser également et même y contribuer.
+L'outil d'auto-évaluation est une copie de l'évaluation d'[impact algorithmique originale](https://github.com/canada-ca/aia-eia-js).
+Nous visons à apporter des améliorations au projet original si le responsable du projet souhaite les intégrer.
 
 ## Comment contribuer
 
