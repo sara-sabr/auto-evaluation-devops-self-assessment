@@ -8,8 +8,8 @@
   },
   "notice": {
     "localSaveWarningSummary": "Privacy Notice",
-    "localSaveWarningParagraph": "Information in the DORA Assessment is only stored locally on your computer, and the Government of Canada does not have access to the information you place into the tool. If you wish to keep your work, please save the data locally for future use.",
-    "noProgress": "The self-assessment has not yet started. Please choose a section to complete."
+    "localSaveWarningParagraph": "Information in the DevOps self-assessment is only stored locally on your computer, and the Government of Canada does not have access to the information you place into the tool. If you wish to keep your work, please save the data locally for future use.",
+    "noProgress": "The DevOps self-assessment has not yet started. Please choose a section to complete."
   },
   "startAgain": "Start Again",
   "toPDF": "Print to PDF",
@@ -21,7 +21,7 @@
   "onThisPage": "On this page",
   "htmlCode": "en-CA",
   "saveButton": "Save",
-  "appTitle": "DORA Devops Assessment",
+  "appTitle": "DevOps Self-Assessment",
   "linkProjectText": "GitHub Repository",
   "linkProjectAnchor": "https://github.com/sara-sabr/dora-js",
   "linkDirective": "http://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=32592#appC",

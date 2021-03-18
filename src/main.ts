@@ -35,8 +35,8 @@ function reloadTemplate() {
           href: "#",
           text:
             switchLanguage === "en"
-              ? "Évaluation de DORA DevOps"
-              : "DORA Devops Assessment"
+              ? "Auto-évaluation DevOps"
+              : "DevOps Self-Assessment"
         }
       ],
       search: false,

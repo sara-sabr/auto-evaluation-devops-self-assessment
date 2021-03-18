@@ -1,7 +1,7 @@
 {
   "title": {
-    "default": "DORA Self-Assessment 0.01",
-    "fr": "Auto-Évaluation de DORA 0.01"
+    "default": "DevOps Self-Assessment",
+    "fr": "Auto-Évaluation DevOps"
   },
   "pages": [
     {

@@ -8,8 +8,8 @@
   },
   "notice": {
     "localSaveWarningSummary": "Remarque vie privée",
-    "localSaveWarningParagraph": "Les informations contenues dans l'outil d'auto-évaluation DORA ne sont stockées que localement sur votre ordinateur et le gouvernement du Canada n'a pas accès aux informations que vous placez dans l'outil. Si vous souhaitez conserver votre travail, veuillez enregistrer les données localement pour une utilisation future.",
-    "noProgress":"L'autoévaluation n'a pas encore commencée. Veuillez choisir une section à compléter."
+    "localSaveWarningParagraph": "Les informations contenues dans l'outil d'auto-évaluation DevOps ne sont stockées que localement sur votre ordinateur et le gouvernement du Canada n'a pas accès aux informations que vous placez dans l'outil. Si vous souhaitez conserver votre travail, veuillez enregistrer les données localement pour une utilisation future.",
+    "noProgress":"L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
   "startAgain": "Recommencer",
   "toPDF": "Imprimer au format PDF",
@@ -21,7 +21,7 @@
   "onThisPage": "Sur cette page",
   "htmlCode": "fr-CA",
   "saveButton": "Sauvegarder",
-  "appTitle": "Auto-Évaluation DORA",
+  "appTitle": "Auto-Évaluation DevOps",
   "linkProjectText": "Répertoire GitHub",
   "linkProjectAnchor": "https://github.com/sara-sabr/dora-js",
   "linkDirective": "http://www.tbs-sct.gc.ca/pol/doc-fra.aspx?id=32592#appC",
