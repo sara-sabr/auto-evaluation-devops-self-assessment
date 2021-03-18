@@ -2,9 +2,9 @@
 
 ([Français](#gabarit-pour-dépôts-de-code-source-ouvert-du-gouvernement-du-canada))
 
-# DevOps Report Assessment (DORA) Self-Assessment tool
+# DevOps Self-Assessment tool
 
-This project hosts a prototype of the IT Strategy Team's DevOps Report Assessment (DORA) Self-Assessment tool developed in Typescript.
+This project hosts a prototype of the IT Strategy Team's DevOps Self-Assessment tool developed in Typescript.
 
 The self-assessment tool is a fork of the original [Algorithmic Impact Assessment](https://github.com/canada-ca/aia-eia-js).
 We aim to provide enhancements to the original project if the project maintainer wishes to integrate them.
@@ -70,9 +70,9 @@ The Canada wordmark and related graphics associated with this distribution are p
 
 ______________________
 
-# Auto-Évaluation DORA
+# Auto-Évaluation DevOps
 
-Ce projet héberge un prototype de de l'outil d'auto-évaluation par rapport au DevOps Report Assessment développé en TypeScript.
+Ce projet héberge un prototype de de l'outil d'auto-évaluation DevOps de l'équipe de Stratégie TI développé en TypeScript.
 
 L'outil d'auto-évaluation est une copie de l'évaluation d'impact algorithmique originale. Nous visons à apporter des améliorations au projet original si le responsable du projet souhaite les intégrer.
 

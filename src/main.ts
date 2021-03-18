@@ -85,8 +85,8 @@ function reloadTemplate() {
         {
           href:
             switchLanguage === "en"
-              ? "https://github.com/sara-sabr/dora-js"
-              : "https://github.com/sara-sabr/dora-js",
+              ? "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment"
+              : "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment",
           text: switchLanguage === "en" ? "Code source" : "Source code"
         }
       ],
