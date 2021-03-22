@@ -56,8 +56,8 @@ function reloadTemplate() {
     defPreFooter.innerHTML = wet.builder.preFooter({
       // see public index.html
       // get the build time which is injected into the root element at build time
-      dateModified: "2020-06-03",
-      versionIdentifier: "0.8.1",
+      dateModified: "2021-03-22",
+      versionIdentifier: "0.9.0",
       showPostContent: false,
       showShare: false
     });
