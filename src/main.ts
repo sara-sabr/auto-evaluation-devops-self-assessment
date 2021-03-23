@@ -69,25 +69,27 @@ function reloadTemplate() {
     defFooter.innerHTML = wet.builder.appFooter({
       footerSections: [
         {
-          href:
-            switchLanguage === "en"
-              ? "https://sara-sabr.github.io/ITStrategy/a-propos-de-nous.html"
-              : "https://sara-sabr.github.io/ITStrategy/about-us.html",
+          href: switchLanguage === "en"
+            ? "https://sara-sabr.github.io/ITStrategy/a-propos-de-nous.html"
+            : "https://sara-sabr.github.io/ITStrategy/about-us.html",
           text: switchLanguage === "en" ? "À propos de nous" : "About us"
         },
         {
-          href: switchLanguage === "en" ? "/" : "/",
+          href: switchLanguage === "en"
+            ? "https://sara-sabr.github.io/ITStrategy/auto-evaluation-devops.html"
+            : "https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html",
           text: switchLanguage === "en" ? "Fonctionnement" : "How it works"
         },
         {
-          href: switchLanguage === "en" ? "/" : "/",
+          href: switchLanguage === "en"
+            ? "https://sara-sabr.github.io/ITStrategy/contactez-nous.html"
+            : "https://sara-sabr.github.io/ITStrategy/contact-us.html",
           text: switchLanguage === "en" ? "Contactez-nous" : "Contact us"
         },
         {
-          href:
-            switchLanguage === "en"
-              ? "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment"
-              : "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment",
+          href: switchLanguage === "en"
+            ? "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment"
+            : "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment",
           text: switchLanguage === "en" ? "Code source" : "Source code"
         }
       ],
