@@ -59,6 +59,7 @@ function reloadTemplate() {
       dateModified: "2021-03-22",
       versionIdentifier: "0.9.0",
       showPostContent: false,
+      showFeedback: false,
       showShare: false
     });
   }
