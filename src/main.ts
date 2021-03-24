@@ -44,7 +44,7 @@ function reloadTemplate() {
       breadcrumbs: [
         {
           title: switchLanguage === "en" ? "Accueil" : "Home",
-          href: switchLanguage === "en" ? "/" : "/"
+          href: switchLanguage === "en" ? "./" : "./"
         }
       ]
     });
