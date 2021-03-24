@@ -1,8 +1,4 @@
 {
-  "title": {
-    "default": "DevOps Self-Assessment",
-    "fr": "Auto-Évaluation DevOps"
-  },
   "pages": [
     {
       "name": "section_one",
