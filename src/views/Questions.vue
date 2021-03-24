@@ -2,12 +2,7 @@
   <div class="results">
     <h1>{{ $t("appTitle") }}</h1>
     <BaseNavigation />
-    <form>
-      <ActionButtonBar
-        v-on:fileLoaded="fileLoaded($event)"
-        v-on:startAgain="startAgain"
-      />
-    </form>
+
     <AssessmentTool :survey="Survey" />
     <div class="page-actions">
       <div class="row" style="padding: 0 5px">

@@ -2,12 +2,7 @@
   <div class="home">
     <h1>{{ $t("appTitle") }}</h1>
     <BaseNavigation />
-    <form>
-      <ActionButtonBar
-        v-on:fileLoaded="fileLoaded($event)"
-        v-on:startAgain="startAgain"
-      />
-    </form>
+
     <div>
       <HomeSectionsContainer
         :sections="sections"

@@ -9,13 +9,6 @@
 
     <BaseNavigation v-on:exportResults="exportResults" />
 
-    <form>
-      <ActionButtonBar
-        v-on:fileLoaded="fileLoaded($event)"
-        v-on:startAgain="startAgain"
-      />
-    </form>
-
     <div v-if="this.$router.history.current['path'] == '/Results'">
       <div v-for="section in $store.state.sections" :key="section.id">
         <ResultsCard
