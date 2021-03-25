@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <h1>{{ $t("appTitle") }}</h1>
     <BaseNavigation />
-
     <div>
       <HomeSectionsContainer
         :sections="sections"

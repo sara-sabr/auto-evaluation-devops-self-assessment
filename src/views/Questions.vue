@@ -1,8 +1,6 @@
 <template>
   <div class="results">
-    <h1>{{ $t("appTitle") }}</h1>
     <BaseNavigation />
-
     <AssessmentTool :survey="Survey" />
     <div class="page-actions">
       <div class="row" style="padding: 0 5px">
