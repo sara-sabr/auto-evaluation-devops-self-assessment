@@ -7,17 +7,17 @@
         <div class="col-3 col-sm-2 col-md-3">
           <button
             type="button"
-            class="btn survey-button"
+            class="btn btn-default"
             style="width: inherit"
             v-on:click="goToHomePage()"
           >
-            {{ $t("navigation.goBack") }}
+            &#8672;&nbsp;{{ $t("navigation.goBack") }}
           </button>
         </div>
         <div class="col-3 col-sm-2 col-md-3">
           <button
             type="button"
-            class="btn survey-button"
+            class="btn btn-primary"
             style="width: inherit"
             v-on:click="goToSectionResults()"
           >

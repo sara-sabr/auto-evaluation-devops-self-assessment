@@ -46,11 +46,11 @@
         >
           <button
             type="button"
-            class="btn survey-button"
+            class="btn btn-primary"
             style="width: inherit"
             v-on:click="goToHomePage()"
           >
-            {{ $t("navigation.chooseAnotherSection") }}
+            &#8672;&nbsp;{{ $t("navigation.chooseAnotherSection") }}
           </button>
         </b-col>
         <b-col
@@ -60,7 +60,7 @@
         >
           <button
             type="button"
-            class="btn survey-button"
+            class="btn btn-default"
             style="width: inherit"
             v-on:click="goToAllResults()"
             :key="$route.path"

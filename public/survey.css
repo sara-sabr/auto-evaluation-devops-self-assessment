@@ -153,10 +153,6 @@ a:active, a:hover {
     background-color: #cfd1d5 !important;
     border-color: #bbbfc5 !important;
 }
-.btn.focus, .btn:focus, .btn:hover {
-    color: #335075 !important;
-    text-decoration: none !important;
-}
 
 .btn {
     display: inline-block !important;
