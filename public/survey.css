@@ -46,7 +46,7 @@ h1 {
     margin: .67em 0 !important;
 }
 
-.h1, h1 {
+.h1, h1, .app-name {
     font-size: 1.9em !important;
 }
 
