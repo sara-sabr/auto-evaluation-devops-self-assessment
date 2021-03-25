@@ -61,9 +61,10 @@ h2, .h2, h4, .h4 {
 
 .h3, h3, h5, .h5 {
     font-size: 1.2em !important;
+    margin-top: 20px !important;
 }
 
-p {
+p, .small {
     margin: 0 0 11.5px !important;
 }
 
@@ -132,8 +133,8 @@ a:active, a:hover {
 .btn {
     border-style: outset !important;
     height: auto !important;
-    min-height: 36px !important;
-    min-width: 36px !important;
+    min-height: 40px !important;
+    min-width: 50px !important;
     white-space: normal !important;
 }
 
@@ -169,7 +170,7 @@ a:active, a:hover {
     background-image: none !important;
     border: 1px solid transparent !important;
     padding: 10px 14px !important;
-    font-size: 16px !important;
+    font-size: 18px !important;
     line-height: 1.4375 !important;
     border-radius: 4px !important;
     -webkit-user-select: none !important;
