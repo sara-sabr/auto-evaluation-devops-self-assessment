@@ -1,104 +1,225 @@
 {
   "pages": [
     {
-      "name": "section_one",
+      "name": "section_eleven",
       "elements": [
         {
           "type": "html",
-          "name": "question102",
+          "name": "question112",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.<br/><br/>For the primary application or service my team works on:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.<br/><br/>Pour l’application ou le service principal auquel mon équipe travaille:"
+            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements as descriptive of your team and the organization:",
+            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
           }
         },
         {
           "type": "rating",
-          "name": "question1",
+          "name": "question96",
           "title": {
-            "default": "We can recover application code from the version control system.",
-            "fr": "Nous pouvons récupérer le code d’application du système de contrôle des versions."
+            "default": "My team understands clearly the current/target conditions, up to 5 (five) years in the future, and produces outcomes that match up with the purpose of the organization.",
+            "fr": "Mon équipe conçoit clairement les conditions actuelles et ciblées, jusqu’à 5 (cinq) ans dans l’avenir, et produit des résultats en phase avec l’objectif de l’organisation."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question2",
+          "name": "question97",
           "title": {
-            "default": "We can reconfigure systems from files in the version control system.",
-            "fr": "Nous pouvons reconfigurer les systèmes à partir de fichiers du système de contrôle des versions."
+            "default": "My team is running experiments on a daily basis to try to move toward the target conditions or key results.",
+            "fr": "Mon équipe procède quotidiennement à des mises à l’essai pour tenter de progresser vers les conditions ciblées ou les résultats clés."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question3",
+          "name": "question98",
           "title": {
-            "default": "It is easy to change code maintained by other teams if we need to.",
-            "fr": "Il est facile de modifier le code maintenu par les autres équipes, si besoin est."
+            "default": "Leaders understand clearly where my team and the organization are going, and where they want the team to be in five years.",
+            "fr": "Les chefs de file conçoivent clairement vers quoi mon équipe et l’organisation se dirigent et où ils souhaitent voir l’équipe dans cinq ans."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question4",
+          "name": "question99",
           "title": {
-            "default": "It is easy to find examples in our codebase.",
-            "fr": "Il est facile de trouver des exemples dans notre base de codes."
+            "default": "Leaders say positive things about my team and make employees proud to be a part of their organization.",
+            "fr": "Les chefs de file parlent en bien de mon équipe et, de ce fait, les employés sont fiers de faire partie de leur organisation."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question5",
+          "name": "question100",
           "title": {
-            "default": "It is easy to reuse other people’s code.",
-            "fr": "Il est facile de réutiliser le code des autres personnes."
+            "default": "Leaders challenge team members to think about old problems in new ways and to rethink some of their basic assumptions about their work.",
+            "fr": "Les chefs de file exhortent les membres de l’équipe à réfléchir de façon novatrice aux problèmes de longue date et à reconceptualiser certaines de leurs suppositions fondamentales au sujet de leur travail."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question6",
+          "name": "question101",
           "title": {
-            "default": "It is easy to add new dependencies to a project.",
-            "fr": "Il est facile d’ajouter de nouvelles interrelations à un projet"
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question7",
-          "title": {
-            "default": "It is easy to migrate to a new version of a dependency.",
-            "fr": "Il est facile de passer à la nouvelle version d’une interrelation."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question8",
-          "title": {
-            "default": "Dependencies are stable and rarely break teams’ code.",
-            "fr": "Les interrelations sont stables et les infractions à notre code sont rares."
+            "default": "Leaders behave in a manner which is thoughtful of my team member interests and personal needs.",
+            "fr": "Les chefs de file tiennent compte, dans leur comportement, des intérêts et besoins personnels des membres de mon équipe."
           },
           "isRequired": true,
           "rateMax": 7
         }
       ],
       "title": {
-        "default": "Version Control and Code Maintainability",
-        "fr": "Contrôle des versions et maintenabilité du code"
+        "default": "Transformation and Transformational Leadership",
+        "fr": "Transformation et leadership transformationnel"
       },
       "description": {
-        "default": "Learn how to implement better version control practices for reproducibility and traceability. Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date.",
-        "fr": "Apprendre comment mettre en œuvre des pratiques améliorées dans le contrôle des versions pour garantir la reproductibilité et la traçabilité. Faciliter la tâche des développeurs qui doivent trouver, réutiliser et modifier le code de même que tenir à jour les interrelations."
+        "fr": "À compléter",
+        "default": "Learn how effective leaders influence software delivery performance by driving the adoption of technical and product management capabilities."
+      }
+    },
+    {
+      "name": "section_ten",
+      "elements": [
+        {
+          "type": "html",
+          "name": "question111",
+          "html": {
+            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements as descriptive of your team and the organization:",
+            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "question84",
+          "title": {
+            "default": "Learning is the key to improvement.",
+            "fr": "L’apprentissage est indispensable à l’amélioration."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question85",
+          "title": {
+            "default": "Once we quit learning we endanger our future.",
+            "fr": "Dès que nous cessons d’apprendre, nous mettons notre avenir en péril."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question86",
+          "title": {
+            "default": "Learning is viewed as an investment, not an expense.",
+            "fr": "L’apprentissage est perçu comme un investissement plutôt qu’une dépense."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question87",
+          "title": {
+            "default": "Their is a regular cadence of opportunities for employees to share their knowledge.",
+            "fr": "Les possibilités offertes aux employés de communiquer leur savoir suivent une cadence régulière."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question88",
+          "title": {
+            "default": "Information is actively sought.",
+            "fr": "L’information est très recherchée."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question89",
+          "title": {
+            "default": "Messengers are not punished when they deliver news of failures or other bad news.",
+            "fr": "Les messagers ne sont pas tenus coupables des mauvaises nouvelles, notamment les échecs, qu’ils annoncent."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question90",
+          "title": {
+            "default": "Responsibilities are shared.",
+            "fr": "Les responsabilités sont partagées."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question91",
+          "title": {
+            "default": "Cross-functional collaboration is encouraged and rewarded.",
+            "fr": "La collaboration interfonctionnelle est encouragée et récompensée."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question92",
+          "title": {
+            "default": "Failures are treated primarily as opportunities to improve the system.",
+            "fr": "Les défaillances sont considérées essentiellement comme des occasions d’améliorer le système."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question93",
+          "title": {
+            "default": "Employees feel supported by each other and that their feedback is valued.",
+            "fr": "Les employés estiment qu’ils s’appuient les uns les autres et que leurs commentaires sont appréciés."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question94",
+          "title": {
+            "default": "Employees are given meaningful work that leverages their expertise.",
+            "fr": "On confie aux employés un travail valorisant qui met à profit leur savoir-faire."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question95",
+          "title": {
+            "default": "My team’s culture interacts with the broader organizational culture.",
+            "fr": "La culture de mon équipe agit avec la culture organisationnelle au sens large, et vice-versa."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Learning and Generative Culture",
+        "fr": "Apprentissage et culture génératrice"
+      },
+      "description": {
+        "fr": "Découvrir en quoi l’instauration d’une culture génératrice fondée sur la confiance contribue à l’amélioration du rendement organisationnel et dans la livraison de logiciels. Instaurer une culture d’apprentissage et en concevoir les retombées sur le rendement organisationnel.",
+        "default": "Discover how growing a generative, high-trust culture drives better organizational and software delivery performance. Grow a learning culture and understand its impact on your organization performance."
       }
     },
     {
@@ -920,6 +1041,107 @@
       }
     },
     {
+      "name": "section_one",
+      "elements": [
+        {
+          "type": "html",
+          "name": "question102",
+          "html": {
+            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.<br/><br/>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.<br/><br/>Pour l’application ou le service principal auquel mon équipe travaille:"
+          }
+        },
+        {
+          "type": "rating",
+          "name": "question1",
+          "title": {
+            "default": "We can recover application code from the version control system.",
+            "fr": "Nous pouvons récupérer le code d’application du système de contrôle des versions."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question2",
+          "title": {
+            "default": "We can reconfigure systems from files in the version control system.",
+            "fr": "Nous pouvons reconfigurer les systèmes à partir de fichiers du système de contrôle des versions."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question3",
+          "title": {
+            "default": "It is easy to change code maintained by other teams if we need to.",
+            "fr": "Il est facile de modifier le code maintenu par les autres équipes, si besoin est."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question4",
+          "title": {
+            "default": "It is easy to find examples in our codebase.",
+            "fr": "Il est facile de trouver des exemples dans notre base de codes."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question5",
+          "title": {
+            "default": "It is easy to reuse other people’s code.",
+            "fr": "Il est facile de réutiliser le code des autres personnes."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question6",
+          "title": {
+            "default": "It is easy to add new dependencies to a project.",
+            "fr": "Il est facile d’ajouter de nouvelles interrelations à un projet"
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question7",
+          "title": {
+            "default": "It is easy to migrate to a new version of a dependency.",
+            "fr": "Il est facile de passer à la nouvelle version d’une interrelation."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question8",
+          "title": {
+            "default": "Dependencies are stable and rarely break teams’ code.",
+            "fr": "Les interrelations sont stables et les infractions à notre code sont rares."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Version Control and Code Maintainability",
+        "fr": "Contrôle des versions et maintenabilité du code"
+      },
+      "description": {
+        "default": "Learn how to implement better version control practices for reproducibility and traceability. Make it easy for developers to find, reuse, and change code, and keep dependencies up-to-date.",
+        "fr": "Apprendre comment mettre en œuvre des pratiques améliorées dans le contrôle des versions pour garantir la reproductibilité et la traçabilité. Faciliter la tâche des développeurs qui doivent trouver, réutiliser et modifier le code de même que tenir à jour les interrelations."
+      }
+    },
+    {
       "name": "section_nine",
       "elements": [
         {
@@ -1018,228 +1240,6 @@
       "description": {
         "fr": "Définir les priorités des tâches, limiter la charge de travail de l’équipe, et se concentrer sur un nombre réduit de tâches à priorité élevée. Apprendre les principes de la gestion visuelle pour favoriser l’échange d’information, en arriver à une interprétation commune de la situation de l’équipe, et trouver des moyens par lesquels s’améliorer. ",
         "default": "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done. Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
-      }
-    },
-    {
-      "name": "section_ten",
-      "elements": [
-        {
-          "type": "html",
-          "name": "question111",
-          "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements as descriptive of your team and the organization:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "question84",
-          "title": {
-            "default": "Learning is the key to improvement.",
-            "fr": "L’apprentissage est indispensable à l’amélioration."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question85",
-          "title": {
-            "default": "Once we quit learning we endanger our future.",
-            "fr": "Dès que nous cessons d’apprendre, nous mettons notre avenir en péril."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question86",
-          "title": {
-            "default": "Learning is viewed as an investment, not an expense.",
-            "fr": "L’apprentissage est perçu comme un investissement plutôt qu’une dépense."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question87",
-          "title": {
-            "default": "Their is a regular cadence of opportunities for employees to share their knowledge.",
-            "fr": "Les possibilités offertes aux employés de communiquer leur savoir suivent une cadence régulière."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question88",
-          "title": {
-            "default": "Information is actively sought.",
-            "fr": "L’information est très recherchée."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question89",
-          "title": {
-            "default": "Messengers are not punished when they deliver news of failures or other bad news.",
-            "fr": "Les messagers ne sont pas tenus coupables des mauvaises nouvelles, notamment les échecs, qu’ils annoncent."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question90",
-          "title": {
-            "default": "Responsibilities are shared.",
-            "fr": "Les responsabilités sont partagées."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question91",
-          "title": {
-            "default": "Cross-functional collaboration is encouraged and rewarded.",
-            "fr": "La collaboration interfonctionnelle est encouragée et récompensée."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question92",
-          "title": {
-            "default": "Failures are treated primarily as opportunities to improve the system.",
-            "fr": "Les défaillances sont considérées essentiellement comme des occasions d’améliorer le système."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question93",
-          "title": {
-            "default": "Employees feel supported by each other and that their feedback is valued.",
-            "fr": "Les employés estiment qu’ils s’appuient les uns les autres et que leurs commentaires sont appréciés."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question94",
-          "title": {
-            "default": "Employees are given meaningful work that leverages their expertise.",
-            "fr": "On confie aux employés un travail valorisant qui met à profit leur savoir-faire."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question95",
-          "title": {
-            "default": "My team’s culture interacts with the broader organizational culture.",
-            "fr": "La culture de mon équipe agit avec la culture organisationnelle au sens large, et vice-versa."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        }
-      ],
-      "title": {
-        "default": "Learning and Generative Culture",
-        "fr": "Apprentissage et culture génératrice"
-      },
-      "description": {
-        "fr": "Découvrir en quoi l’instauration d’une culture génératrice fondée sur la confiance contribue à l’amélioration du rendement organisationnel et dans la livraison de logiciels. Instaurer une culture d’apprentissage et en concevoir les retombées sur le rendement organisationnel.",
-        "default": "Discover how growing a generative, high-trust culture drives better organizational and software delivery performance. Grow a learning culture and understand its impact on your organization performance."
-      }
-    },
-    {
-      "name": "section_eleven",
-      "elements": [
-        {
-          "type": "html",
-          "name": "question112",
-          "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements as descriptive of your team and the organization:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "question96",
-          "title": {
-            "default": "My team understands clearly the current/target conditions, up to 5 (five) years in the future, and produces outcomes that match up with the purpose of the organization.",
-            "fr": "Mon équipe conçoit clairement les conditions actuelles et ciblées, jusqu’à 5 (cinq) ans dans l’avenir, et produit des résultats en phase avec l’objectif de l’organisation."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question97",
-          "title": {
-            "default": "My team is running experiments on a daily basis to try to move toward the target conditions or key results.",
-            "fr": "Mon équipe procède quotidiennement à des mises à l’essai pour tenter de progresser vers les conditions ciblées ou les résultats clés."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question98",
-          "title": {
-            "default": "Leaders understand clearly where my team and the organization are going, and where they want the team to be in five years.",
-            "fr": "Les chefs de file conçoivent clairement vers quoi mon équipe et l’organisation se dirigent et où ils souhaitent voir l’équipe dans cinq ans."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question99",
-          "title": {
-            "default": "Leaders say positive things about my team and make employees proud to be a part of their organization.",
-            "fr": "Les chefs de file parlent en bien de mon équipe et, de ce fait, les employés sont fiers de faire partie de leur organisation."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question100",
-          "title": {
-            "default": "Leaders challenge team members to think about old problems in new ways and to rethink some of their basic assumptions about their work.",
-            "fr": "Les chefs de file exhortent les membres de l’équipe à réfléchir de façon novatrice aux problèmes de longue date et à reconceptualiser certaines de leurs suppositions fondamentales au sujet de leur travail."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question101",
-          "title": {
-            "default": "Leaders behave in a manner which is thoughtful of my team member interests and personal needs.",
-            "fr": "Les chefs de file tiennent compte, dans leur comportement, des intérêts et besoins personnels des membres de mon équipe."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        }
-      ],
-      "title": {
-        "default": "Transformation and Transformational Leadership",
-        "fr": "Transformation et leadership transformationnel"
-      },
-      "description": {
-        "fr": "À compléter",
-        "default": "Learn how effective leaders influence software delivery performance by driving the adoption of technical and product management capabilities."
       }
     }
   ],
