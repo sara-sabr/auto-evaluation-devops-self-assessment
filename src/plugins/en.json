@@ -8,7 +8,7 @@
   },
   "notice": {
     "localSaveWarningSummary": "Privacy Notice",
-    "localSaveWarningParagraph": "Information in the DevOps self-assessment is only stored locally on your computer, and the Government of Canada does not have access to the information you place into the tool. If you wish to keep your work, please save the data locally for future use.",
+    "localSaveWarningParagraph": "Information in the DevOps self-assessment is only stored locally on your computer, and the Government of Canada does not have access to the information you place into the tool.",
     "noProgress": "The DevOps self-assessment has not yet started. Please choose a section to complete."
   },
   "startAgain": "Start Again",
