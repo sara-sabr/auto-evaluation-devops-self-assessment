@@ -157,6 +157,7 @@ a:active, a:hover {
 .btn {
     display: inline-block !important;
     margin-bottom: 0 !important;
+    margin-right: 3px !important;
     font-weight: 400 !important;
     text-align: center !important;
     vertical-align: middle !important;
