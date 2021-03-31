@@ -223,6 +223,138 @@
       }
     },
     {
+      "name": "section_six",
+      "elements": [
+        {
+          "type": "html",
+          "name": "question107",
+          "html": {
+            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br></br>Dans mon équipe :"
+          }
+          
+        },
+        {
+          "type": "rating",
+          "name": "question47",
+          "title": {
+            "default": "We are able to work on new ideas and experiment.",
+            "fr": "Nous sommes en mesure de travailler à de nouvelles idées et de procéder à des mises à l’essai."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question48",
+          "title": {
+            "default": "We are able to do work and make changes without having to ask for permission.",
+            "fr": "Nous sommes en mesure d’exécuter le travail et d’apporter des changements sans devoir demander de permission."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question49",
+          "title": {
+            "default": "We are able to make changes to user needs and specifications during a project.",
+            "fr": "Nous sommes en mesure d’apporter des changements aux besoins et aux cahiers des charges des utilisateurs durant un projet."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question50",
+          "title": {
+            "default": "Changes can be promoted to production without manual change approvals.",
+            "fr": "Nous pouvons favoriser la réalisation des changements à la production sans nécessiter d’approbation manuelle pour autant."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question51",
+          "title": {
+            "default": "We have a clear understanding of the process to get changes approved for implementation.",
+            "fr": "Nous concevons clairement le processus d’approbation des changements en vue de leur mise en œuvre."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question52",
+          "title": {
+            "default": "We are confident they can get changes through the approval process in a timely manner and knows the steps it takes to go from “submitted” to “accepted”.",
+            "fr": "Nous avons l’assurance qu’il est possible d’apporter des changements au processus d’approbation en temps voulu et que les étapes nécessaires pour passer de « soumis » à « accepté » sont connues."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question53",
+          "title": {
+            "default": "Tools and platforms are agreed upon and tailored to the needs of the project.",
+            "fr": "Les outils et les plateformes sont convenus et adaptés en fonction des besoins du projet."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question54",
+          "title": {
+            "default": "We promote team development and handle cross-functional activities..",
+            "fr": "Nous favorisons la création d’une synergie et nous nous occupons des activités interfonctionnelles."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question55",
+          "title": {
+            "default": "We execute peer review which includes reviews, comments, and approvals captured as part of the development process.",
+            "fr": "Nous effectuons des examens par les pairs qui touchent les examens, les commentaires et les approbations saisis dans le cadre du processus d’élaboration."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question56",
+          "title": {
+            "default": "We consider the development platform as a product by evaluating the changes on multiple axes, including security, performance, and stability, as well as defects.",
+            "fr": "Nous considérons la plateforme de développement comme un produit par l’évaluation des changements selon plusieurs axes à la fois, dont la sécurité, le rendement et la stabilité, ainsi que des défauts."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question57",
+          "title": {
+            "default": "We continuously improve business processes by identifying and eliminating bottlenecks.",
+            "fr": "Nous améliorons continuellement les processus opérationnels par le repérage et l’élimination des goulots d’étranglement."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        }
+      ],
+      "title": {
+        "default": "Team Experimentation and Streamlining Change Approval",
+        "fr": "Expérimentation en équipe et rationalisation de l'approbation des changements"
+      },
+      "description": {
+        "fr": "Accélérer l’innovation par la mise sur pied d’équipes habilitées qui peuvent mettre à l’essai de nouvelles idées sans nécessiter l’approbation de personnes de l’extérieur. Remplacer le processus lourd d’approbation des changements lourds par un examen par les pairs afin de bénéficier des avantages liés à un processus de diffusion d’une fiabilité et d’une conformité accrues sans pour autant sacrifier la vitesse.",
+        "default": "Innovate faster by building empowered teams that can try out new ideas without approval from people outside the team. Replace heavyweight change-approval process with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
+      }
+    },
+    {
       "name": "section_two",
       "elements": [
         {
@@ -371,157 +503,6 @@
       "description": {
         "fr": "Apprenez-en sur les erreurs fréquentes, les moyens de mesurer et la façon de rehausser vos initiatives d’intégration continue. Meilleures pratiques et approches pour automatiser les déploiements et réduire les interventions manuelles dans le processus de lancement.",
         "default": "Learn about common mistakes, ways to measure, and how to improve on your continuous integration efforts. Best practices and approaches for deployment automation and reducing manual intervention in the release process."
-      }
-    },
-    {
-      "name": "section_three",
-      "elements": [
-        {
-          "type": "html",
-          "name": "question103",
-          "html": {
-            "default": "Please rate how strongly you agree or disagree with the following statements.</br></br>For the primary application or service my team works on:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
-          }
-        },
-        {
-          "type": "rating",
-          "name": "question22",
-          "title": {
-            "default": "Developers primarily create and maintain acceptance tests.",
-            "fr": "Les développeurs ont pour fonction principale de créer des tests de validation et de les tenir à jour."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question23",
-          "title": {
-            "default": "When the automated tests pass, we are confident the software is releasable.",
-            "fr": "Lorsque les tests automatisés réussissent, nous avons l’assurance que le logiciel peut être diffusé."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question24",
-          "title": {
-            "default": "Test failures are likely to indicate a real defect.",
-            "fr": "Les défaillances révélées par les tests sont vraisemblablement révélatrices d’un défaut concret."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question25",
-          "title": {
-            "default": "It is easy for developers to fix acceptance test failures.",
-            "fr": "Il est facile pour les développeurs de corriger les défaillances des tests de validation."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question26",
-          "title": {
-            "default": "Developers use their own development environment to reproduce acceptance failures.",
-            "fr": "Les développeurs se servent de leur propre environnement de développement pour reproduire les défaillances de validation."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question27",
-          "title": {
-            "default": "Automated tests are seamlessly integrated into our software delivery tech bricks.",
-            "fr": "Les tests automatisés s’intègrent harmonieusement à nos briques technologiques de livraison de logiciels."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question28",
-          "title": {
-            "default": "We continuously review and improve our test suite to better find defects and keep complexity and cost under control.",
-            "fr": "Nous procédons constamment à l’examen et à l’amélioration de notre série de tests pour déceler efficacement les défauts de même que maîtriser la complexité et les coûts."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question29",
-          "title": {
-            "default": "Testers work alongside developers throughout the software development and delivery process.",
-            "fr": "Les testeurs travaillent de concert avec les développeurs tout au long du processus de développement et de livraison des logiciels."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question30",
-          "title": {
-            "default": "Manual test activities such as exploratory testing, usability testing, and acceptance testing are performed continuously throughout the delivery process.",
-            "fr": "Les activités des tests manuels, comme les tests exploratoires, les tests de facilité d’utilisation et les tests de validation, sont exécutées constamment tout au long du processus de livraison."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question31",
-          "title": {
-            "default": "Developers practice test-driven development by writing unit tests before writing production code for all changes to the codebase.",
-            "fr": "Les développeurs mettent en pratique le développement piloté par les tests : ils rédigent les tests unitaires avant de rédiger le code de production des changements apportés à la base de codes."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question32",
-          "title": {
-            "default": "Adequate test data is available to run full automated test suites.",
-            "fr": "Des données de tests adéquates sont accessibles pour exécuter des séries de tests entièrement automatisés."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question33",
-          "title": {
-            "default": "Test data can be acquired on demand.",
-            "fr": "Des données de tests peuvent être obtenues sur demande."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question34",
-          "title": {
-            "default": "Test data does not limit or constrain the automated tests that we can run.",
-            "fr": "Les données de tests ne limitent ni n’entravent les tests automatisés que nous pouvons exécuter."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        }
-      ],
-      "title": {
-        "default": "Continuous Testing",
-        "fr": "Tests en continu"
-      },
-      "description": {
-        "fr": "Améliorer la qualité des logiciels par la création de séries de tests automatisés fiables et l’exécution de toutes sortes de tests tout au long du cycle de vie de livraison des logiciels. Faire du déploiement des logiciels un processus fiable et peu risqué qu’on peut exécuter à la demande et en tout temps.",
-        "default": "Improve software quality by building reliable automated test suits and performing all kinds of testing throughout the software delivery lifecycle. Make deploying software a reliable, low-risk process that can be performed on demand at any time."
       }
     },
     {
@@ -687,135 +668,104 @@
       }
     },
     {
-      "name": "section_six",
+      "name": "section_nine",
       "elements": [
         {
           "type": "html",
-          "name": "question107",
+          "name": "question110",
           "html": {
             "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br></br>Dans mon équipe :"
+            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br>Dans mon équipe :"
           }
-          
         },
         {
           "type": "rating",
-          "name": "question47",
+          "name": "question76",
           "title": {
-            "default": "We are able to work on new ideas and experiment.",
-            "fr": "Nous sommes en mesure de travailler à de nouvelles idées et de procéder à des mises à l’essai."
+            "default": "We are good at limiting our work in process (WIP).",
+            "fr": "Nous parvenons bien à établir les limites de notre travail en cours (TEC)."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question48",
+          "name": "question77",
           "title": {
-            "default": "We are able to do work and make changes without having to ask for permission.",
-            "fr": "Nous sommes en mesure d’exécuter le travail et d’apporter des changements sans devoir demander de permission."
+            "default": "We strive to limit our WIP, and have processes in place to do so.",
+            "fr": "Nous tâchons d’établir les limites de notre TEC et nous avons des processus en place pour ce faire."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question49",
+          "name": "question78",
           "title": {
-            "default": "We are able to make changes to user needs and specifications during a project.",
-            "fr": "Nous sommes en mesure d’apporter des changements aux besoins et aux cahiers des charges des utilisateurs durant un projet."
+            "default": "Our WIP limits lead to process improvement.",
+            "fr": "Les limites établies de notre TEC contribuent à l’amélioration des processus."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question50",
+          "name": "question79",
           "title": {
-            "default": "Changes can be promoted to production without manual change approvals.",
-            "fr": "Nous pouvons favoriser la réalisation des changements à la production sans nécessiter d’approbation manuelle pour autant."
+            "default": "We are not often assigned to work on multiple mutually exclusive tasks.",
+            "fr": "On nous confie rarement du travail relatif à plusieurs tâches à la fois qui ne se recoupent pas."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question51",
+          "name": "question80",
           "title": {
-            "default": "We have a clear understanding of the process to get changes approved for implementation.",
-            "fr": "Nous concevons clairement le processus d’approbation des changements en vue de leur mise en œuvre."
+            "default": "When faced with too much work and too few people to do it, we prioritize work and focus on completing a small number of high-priority tasks.",
+            "fr": "Si nous avons trop de travail à exécuter et trop peu d’effectifs à cette fin, nous donnons priorité au travail et à l’achèvement d’un nombre réduit de tâches à priorité élevée."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question52",
+          "name": "question81",
           "title": {
-            "default": "We are confident they can get changes through the approval process in a timely manner and knows the steps it takes to go from “submitted” to “accepted”.",
-            "fr": "Nous avons l’assurance qu’il est possible d’apporter des changements au processus d’approbation en temps voulu et que les étapes nécessaires pour passer de « soumis » à « accepté » sont connues."
+            "default": "Our work is visible to other teams and stakeholders.",
+            "fr": "Notre travail est visible pour les autres équipes et parties prenantes."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question53",
+          "name": "question82",
           "title": {
-            "default": "Tools and platforms are agreed upon and tailored to the needs of the project.",
-            "fr": "Les outils et les plateformes sont convenus et adaptés en fonction des besoins du projet."
+            "default": "We use up to date visual displays and dashboards to manage the work at various stages of a process.",
+            "fr": "Nous avons recours à des soutiens visuels et à des tableaux de bord actualisés pour gérer le travail à divers stades du processus."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question54",
+          "name": "question83",
           "title": {
-            "default": "We promote team development and handle cross-functional activities..",
-            "fr": "Nous favorisons la création d’une synergie et nous nous occupons des activités interfonctionnelles."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question55",
-          "title": {
-            "default": "We execute peer review which includes reviews, comments, and approvals captured as part of the development process.",
-            "fr": "Nous effectuons des examens par les pairs qui touchent les examens, les commentaires et les approbations saisis dans le cadre du processus d’élaboration."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question56",
-          "title": {
-            "default": "We consider the development platform as a product by evaluating the changes on multiple axes, including security, performance, and stability, as well as defects.",
-            "fr": "Nous considérons la plateforme de développement comme un produit par l’évaluation des changements selon plusieurs axes à la fois, dont la sécurité, le rendement et la stabilité, ainsi que des défauts."
-          },
-          "isRequired": true,
-          "rateMax": 7
-        },
-        {
-          "type": "rating",
-          "name": "question57",
-          "title": {
-            "default": "We continuously improve business processes by identifying and eliminating bottlenecks.",
-            "fr": "Nous améliorons continuellement les processus opérationnels par le repérage et l’élimination des goulots d’étranglement."
+            "default": "When looking at visual management displays we see the key process metrics the team cares about.",
+            "fr": "L’examen des soutiens de gestion visuelle permet de constater les principaux paramètres du processus dont l’équipe se soucie."
           },
           "isRequired": true,
           "rateMax": 7
         }
       ],
       "title": {
-        "default": "Team Experimentation and Streamlining Change Approval",
-        "fr": "Expérimentation en équipe et rationalisation de l'approbation des changements"
+        "default": "Work In Process Limits and Visual Management",
+        "fr": "Limites des travaux en cours et gestion visuelle"
       },
       "description": {
-        "fr": "Accélérer l’innovation par la mise sur pied d’équipes habilitées qui peuvent mettre à l’essai de nouvelles idées sans nécessiter l’approbation de personnes de l’extérieur. Remplacer le processus lourd d’approbation des changements lourds par un examen par les pairs afin de bénéficier des avantages liés à un processus de diffusion d’une fiabilité et d’une conformité accrues sans pour autant sacrifier la vitesse.",
-        "default": "Innovate faster by building empowered teams that can try out new ideas without approval from people outside the team. Replace heavyweight change-approval process with peer review, to get the benefits of a more reliable, compliant release process without sacrificing speed."
+        "fr": "Définir les priorités des tâches, limiter la charge de travail de l’équipe, et se concentrer sur un nombre réduit de tâches à priorité élevée. Apprendre les principes de la gestion visuelle pour favoriser l’échange d’information, en arriver à une interprétation commune de la situation de l’équipe, et trouver des moyens par lesquels s’améliorer. ",
+        "default": "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done. Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
       }
     },
     {
@@ -1142,104 +1092,154 @@
       }
     },
     {
-      "name": "section_nine",
+      "name": "section_three",
       "elements": [
         {
           "type": "html",
-          "name": "question110",
+          "name": "question103",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br>Dans mon équipe :"
+            "default": "Please rate how strongly you agree or disagree with the following statements.</br></br>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
           }
         },
         {
           "type": "rating",
-          "name": "question76",
+          "name": "question22",
           "title": {
-            "default": "We are good at limiting our work in process (WIP).",
-            "fr": "Nous parvenons bien à établir les limites de notre travail en cours (TEC)."
+            "default": "Developers primarily create and maintain acceptance tests.",
+            "fr": "Les développeurs ont pour fonction principale de créer des tests de validation et de les tenir à jour."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question77",
+          "name": "question23",
           "title": {
-            "default": "We strive to limit our WIP, and have processes in place to do so.",
-            "fr": "Nous tâchons d’établir les limites de notre TEC et nous avons des processus en place pour ce faire."
+            "default": "When the automated tests pass, we are confident the software is releasable.",
+            "fr": "Lorsque les tests automatisés réussissent, nous avons l’assurance que le logiciel peut être diffusé."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question78",
+          "name": "question24",
           "title": {
-            "default": "Our WIP limits lead to process improvement.",
-            "fr": "Les limites établies de notre TEC contribuent à l’amélioration des processus."
+            "default": "Test failures are likely to indicate a real defect.",
+            "fr": "Les défaillances révélées par les tests sont vraisemblablement révélatrices d’un défaut concret."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question79",
+          "name": "question25",
           "title": {
-            "default": "We are not often assigned to work on multiple mutually exclusive tasks.",
-            "fr": "On nous confie rarement du travail relatif à plusieurs tâches à la fois qui ne se recoupent pas."
+            "default": "It is easy for developers to fix acceptance test failures.",
+            "fr": "Il est facile pour les développeurs de corriger les défaillances des tests de validation."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question80",
+          "name": "question26",
           "title": {
-            "default": "When faced with too much work and too few people to do it, we prioritize work and focus on completing a small number of high-priority tasks.",
-            "fr": "Si nous avons trop de travail à exécuter et trop peu d’effectifs à cette fin, nous donnons priorité au travail et à l’achèvement d’un nombre réduit de tâches à priorité élevée."
+            "default": "Developers use their own development environment to reproduce acceptance failures.",
+            "fr": "Les développeurs se servent de leur propre environnement de développement pour reproduire les défaillances de validation."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question81",
+          "name": "question27",
           "title": {
-            "default": "Our work is visible to other teams and stakeholders.",
-            "fr": "Notre travail est visible pour les autres équipes et parties prenantes."
+            "default": "Automated tests are seamlessly integrated into our software delivery tech bricks.",
+            "fr": "Les tests automatisés s’intègrent harmonieusement à nos briques technologiques de livraison de logiciels."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question82",
+          "name": "question28",
           "title": {
-            "default": "We use up to date visual displays and dashboards to manage the work at various stages of a process.",
-            "fr": "Nous avons recours à des soutiens visuels et à des tableaux de bord actualisés pour gérer le travail à divers stades du processus."
+            "default": "We continuously review and improve our test suite to better find defects and keep complexity and cost under control.",
+            "fr": "Nous procédons constamment à l’examen et à l’amélioration de notre série de tests pour déceler efficacement les défauts de même que maîtriser la complexité et les coûts."
           },
           "isRequired": true,
           "rateMax": 7
         },
         {
           "type": "rating",
-          "name": "question83",
+          "name": "question29",
           "title": {
-            "default": "When looking at visual management displays we see the key process metrics the team cares about.",
-            "fr": "L’examen des soutiens de gestion visuelle permet de constater les principaux paramètres du processus dont l’équipe se soucie."
+            "default": "Testers work alongside developers throughout the software development and delivery process.",
+            "fr": "Les testeurs travaillent de concert avec les développeurs tout au long du processus de développement et de livraison des logiciels."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question30",
+          "title": {
+            "default": "Manual test activities such as exploratory testing, usability testing, and acceptance testing are performed continuously throughout the delivery process.",
+            "fr": "Les activités des tests manuels, comme les tests exploratoires, les tests de facilité d’utilisation et les tests de validation, sont exécutées constamment tout au long du processus de livraison."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question31",
+          "title": {
+            "default": "Developers practice test-driven development by writing unit tests before writing production code for all changes to the codebase.",
+            "fr": "Les développeurs mettent en pratique le développement piloté par les tests : ils rédigent les tests unitaires avant de rédiger le code de production des changements apportés à la base de codes."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question32",
+          "title": {
+            "default": "Adequate test data is available to run full automated test suites.",
+            "fr": "Des données de tests adéquates sont accessibles pour exécuter des séries de tests entièrement automatisés."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question33",
+          "title": {
+            "default": "Test data can be acquired on demand.",
+            "fr": "Des données de tests peuvent être obtenues sur demande."
+          },
+          "isRequired": true,
+          "rateMax": 7
+        },
+        {
+          "type": "rating",
+          "name": "question34",
+          "title": {
+            "default": "Test data does not limit or constrain the automated tests that we can run.",
+            "fr": "Les données de tests ne limitent ni n’entravent les tests automatisés que nous pouvons exécuter."
           },
           "isRequired": true,
           "rateMax": 7
         }
       ],
       "title": {
-        "default": "Work In Process Limits and Visual Management",
-        "fr": "Limites des travaux en cours et gestion visuelle"
+        "default": "Continuous Testing",
+        "fr": "Tests en continu"
       },
       "description": {
-        "fr": "Définir les priorités des tâches, limiter la charge de travail de l’équipe, et se concentrer sur un nombre réduit de tâches à priorité élevée. Apprendre les principes de la gestion visuelle pour favoriser l’échange d’information, en arriver à une interprétation commune de la situation de l’équipe, et trouver des moyens par lesquels s’améliorer. ",
-        "default": "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done. Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
+        "fr": "Améliorer la qualité des logiciels par la création de séries de tests automatisés fiables et l’exécution de toutes sortes de tests tout au long du cycle de vie de livraison des logiciels. Faire du déploiement des logiciels un processus fiable et peu risqué qu’on peut exécuter à la demande et en tout temps.",
+        "default": "Improve software quality by building reliable automated test suits and performing all kinds of testing throughout the software delivery lifecycle. Make deploying software a reliable, low-risk process that can be performed on demand at any time."
       }
     }
   ],
