@@ -8,7 +8,7 @@
   },
   "notice": {
     "localSaveWarningSummary": "Remarque vie privée",
-    "localSaveWarningParagraph": "Les informations contenues dans l'outil d'auto-évaluation DevOps ne sont stockées que localement sur votre ordinateur et le gouvernement du Canada n'a pas accès aux informations que vous placez dans l'outil.",
+    "localSaveWarningParagraph": "Les informations contenues dans l'outil d'auto-évaluation DevOps ne sont stockées que localement sur votre ordinateur et le gouvernement du Canada n'a pas accès aux informations que vous placez dans l'outil. Les réponses sont automatiquement enregistrées dans le cache du navigateur au fur et à mesure que l'on répond à chaque question. N'effacez pas la cache du navigateur pour conserver vos réponses précédentes.",
     "noProgress":"L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
   "startAgain": "Recommencer",
