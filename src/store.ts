@@ -56,6 +56,8 @@ const initializeSections = (state: RootState, surveyData: SurveyModel) => {
       completed: false,
       questionsNames: [],
       userScore: 0,
+      maxScore:
+        (surveyData.getPageByName(sectionName).questions.length - 1) * 7,
       questions: []
     };
     surveyData.getPageByName(sectionName).questions.forEach(question => {
