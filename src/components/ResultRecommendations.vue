@@ -14,7 +14,7 @@
   </div>
 </template>
 <script lang="ts">
-import { SectionRecommendation } from "@/types.ts";
+import { SectionRecommendation } from "@/types";
 import { Vue, Component, Prop } from "vue-property-decorator";
 @Component({
   components: {
