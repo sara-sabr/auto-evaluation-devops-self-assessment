@@ -68,6 +68,10 @@ p, .small {
     margin: 0 0 11.5px !important;
 }
 
+div.small {
+    font-size: 17px !important;
+}
+
 .col-md-2 {
     width: 16.6666666667% !important;
 }
