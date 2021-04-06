@@ -20,6 +20,7 @@ export interface Section {
   completed: boolean;
   questionsNames: string[];
   userScore: number;
+  maxScore: number;
   questions: Question[];
 }
 
