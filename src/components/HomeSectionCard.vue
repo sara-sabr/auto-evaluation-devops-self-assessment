@@ -21,12 +21,19 @@
         {{ section.description }}
       </p>
     </div>
-    <div class="card-footer">This section's status</div>
+    <div class="card-footer">
+      <span style="color: #269abc">
+        <i :class="setStatusIcon(section.name)">
+          {{ sectionScoreLevel(section.name) }}%</i
+        >
+      </span>
+    </div>
   </li>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { PageModel, SurveyModel } from "survey-vue";
+import { Section } from "@/types";
 
 @Component({
   data: function() {
@@ -55,6 +62,36 @@ import { PageModel, SurveyModel } from "survey-vue";
     setIconClass(icon: string) {
       let classDef: string = "fas fa-" + icon + " fa-3x";
       return classDef;
+    },
+    sectionScoreLevel(sectionName: string) {
+      const thisSection: Section = this.$store.getters.returnSectionByName(
+        sectionName
+      );
+      if (thisSection === undefined) {
+        return "0";
+      }
+      let scorePercentage: string = new Intl.NumberFormat("en-CA", {
+        style: "decimal",
+        maximumFractionDigits: 0
+      }).format((thisSection.userScore / thisSection.maxScore) * 100);
+      if (scorePercentage === "NaN") {
+        return "0";
+      }
+      return scorePercentage;
+    },
+    setStatusIcon(sectionName: string) {
+      const thisSection: Section = this.$store.getters.returnSectionByName(
+        sectionName
+      );
+      if (thisSection === undefined) {
+        return "far fa-circle";
+      } else if (thisSection.userScore === 0) {
+        return "far fa-circle";
+      } else if (thisSection.userScore > 0) {
+        return "fas fa-circle";
+      } else {
+        return "fas fa-circle";
+      }
     }
   }
 })
