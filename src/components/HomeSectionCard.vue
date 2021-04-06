@@ -23,8 +23,7 @@
     </div>
     <div class="card-footer">
       <span style="color: #269abc">
-        <i :class="setStatusIcon(section.name)">
-          {{ sectionScoreLevel(section.name) }}%</i
+        <i :class="setStatusIcon(section.name)"> {{ $t("currentScore") }}: {{ sectionScoreLevel(section.name) }}%</i
         >
       </span>
     </div>
