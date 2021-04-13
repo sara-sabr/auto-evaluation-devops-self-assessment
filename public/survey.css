@@ -17,10 +17,16 @@ div.sv_qstn_error_top  span.glyphicon-exclamation-sign {
     font-size: 2rem !important;
 }
 
-.btn-default {
+.btn-default:not(.active) {
     color: #335075 !important;
     background-color: #eaebed !important;
     border-color: #dcdee1 !important;
+}
+
+.btn-default:hover {
+    color: #335075 !important;
+    background-color: #d5cfcf !important;
+    border-color: #bbbfc5 !important;
 }
 
 .container-fluid {
@@ -134,28 +140,13 @@ a:active, a:hover {
 .btn {
     font-family: Lato,sans-serif !important;
 }
+
 .btn {
     border-style: outset !important;
     height: auto !important;
     min-height: 40px !important;
     min-width: 50px !important;
     white-space: normal !important;
-}
-
-.btn-default {
-    color: #335075 !important;
-    background-color: #eaebed !important;
-    border-color: #dcdee1 !important;
-}
-
-.btn-default:visited {
-    color: #335075 !important;
-}
-
-.btn-default:hover {
-    color: #335075 !important;
-    background-color: #cfd1d5 !important;
-    border-color: #bbbfc5 !important;
 }
 
 .btn {
