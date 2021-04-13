@@ -7,8 +7,8 @@
           "type": "html",
           "name": "question112",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements as descriptive of your team and the organization:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements as descriptive of your team and the organization:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
           }
         },
         {
@@ -88,8 +88,8 @@
           "type": "html",
           "name": "question111",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements as descriptive of your team and the organization:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements as descriptive of your team and the organization:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants comme étant représentatifs de votre équipe et de votre organisation :"
           }
         },
         {
@@ -229,8 +229,8 @@
           "type": "html",
           "name": "question107",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br></br>Dans mon équipe :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
           }
           
         },
@@ -361,8 +361,8 @@
           "type": "html",
           "name": "question104",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>For the primary application or service my team works on:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
           }
         },
         {
@@ -512,8 +512,8 @@
           "type": "html",
           "name": "question105",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>For the primary application or service my team works on:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
           }
         },
         {
@@ -603,8 +603,8 @@
           "type": "html",
           "name": "question106",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br></br>Dans mon équipe :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
           }
         },
         {
@@ -674,8 +674,8 @@
           "type": "html",
           "name": "question110",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br>Dans mon équipe :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br>Dans mon équipe :"
           }
         },
         {
@@ -775,8 +775,8 @@
           "type": "html",
           "name": "question108",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.</br></br>Dans mon équipe :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
           }
         },
         {
@@ -896,8 +896,8 @@
           "type": "html",
           "name": "question109",
           "html": {
-            "default": "How do you watch and understand your systems at work? Please rate how strongly you agree (7) or disagree (1) with the following statements.</br></br>On my team:",
-            "fr": "Comment surveillez-vous et concevez-vous vos systèmes au travail? Évaluez dans quelle mesure vous êtes fortement d’accord (7) ou en désaccord (1) avec les énoncés suivants.</br></br>Dans mon équipe :"
+            "default": "How do you watch and understand your systems at work? Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>On my team:",
+            "fr": "Comment surveillez-vous et concevez-vous vos systèmes au travail? Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Dans mon équipe :"
           }
         },
         {
@@ -997,8 +997,8 @@
           "type": "html",
           "name": "question102",
           "html": {
-            "default": "Please rate how strongly you agree (7) or disagree (1) with the following statements.<br/><br/>For the primary application or service my team works on:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.<br/><br/>Pour l’application ou le service principal auquel mon équipe travaille:"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.<br/><br/>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.<br/><br/>Pour l’application ou le service principal auquel mon équipe travaille:"
           }
         },
         {
@@ -1098,8 +1098,8 @@
           "type": "html",
           "name": "question103",
           "html": {
-            "default": "Please rate how strongly you agree or disagree with the following statements.</br></br>For the primary application or service my team works on:",
-            "fr": "Évaluez dans quelle mesure vous êtes fortement d’accord ou en désaccord avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
+            "default": "Please rate how strongly you disagree (1) or agree (7) with the following statements.</br></br>For the primary application or service my team works on:",
+            "fr": "Évaluez dans quelle mesure vous êtes en désaccord (1) ou d’accord (7) avec les énoncés suivants.</br></br>Pour l’application ou le service principal auquel mon équipe travaille :"
           }
         },
         {
