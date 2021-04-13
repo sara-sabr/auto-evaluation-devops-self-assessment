@@ -44,10 +44,6 @@ div.sv_qstn_error_top  span.glyphicon-exclamation-sign {
     font-weight: 600 !important;
 }
 
-.h1, .h2, h1, h2 {
-    margin-top: 38px !important;
-}
-
 h1 {
     margin: .67em 0 !important;
 }
@@ -56,16 +52,12 @@ h1 {
     font-size: 1.9em !important;
 }
 
-h2, .h2, h4, .h4 {
+h2, .h2, h3, .h3, h4, .h4 {
     font-size: 1.8em !important;
+    margin-top: 0px !important;
 }
 
-.h1, .h2, .h3, h1, h2, h3 {
-    margin-top: 23px !important;
-    margin-bottom: 11.5px !important;
-}
-
-.h3, h3, h5, .h5 {
+h5, .h5 {
     font-size: 1.2em !important;
     margin-top: 20px !important;
 }

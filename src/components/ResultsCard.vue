@@ -1,10 +1,10 @@
 <template>
   <b-card class="mt-2">
-    <b-card-header>
-      {{ getSectionName(thisSurveyData, sectionName) }}</b-card-header
-    >
+    <b-card-header class="h3">
+      {{ getSectionName(thisSurveyData, sectionName) }}
+    </b-card-header>
     <b-card-body>
-      <p>
+      <p class="h5">
         {{ $t("currentScore") }}: {{ sectionScoreLevel(userScore, maxScore) }}%
       </p>
       <p></p>
