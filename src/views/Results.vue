@@ -114,7 +114,7 @@ import { Section } from "@/types";
   },
   methods: {
     getMaxScore(section: Section) {
-      let maxScore: number = section.questions.length * 7;
+      let maxScore: number = (section.questions.length-1) * 7;
       return maxScore;
     }
   }
