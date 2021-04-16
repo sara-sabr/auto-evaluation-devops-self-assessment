@@ -158,7 +158,7 @@ export default class Results extends Vue {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      mode: "cors" as RequestMode,
+      mode: "no-cors" as RequestMode,
       name: "surveyData",
       body: saveFile
     };
