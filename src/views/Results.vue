@@ -151,7 +151,8 @@ export default class Results extends Vue {
       data: this.$store.state.toolData
     });
   }
-  saveSurveyData() {
+  saveSurveyData(): boolean {
+    var responseStatus: boolean = false;
     const saveFile = this.buildSurveyFile();
 
     const requestOptions = {
@@ -164,7 +165,12 @@ export default class Results extends Vue {
     fetch(
       "https://doraselfassessment.azurewebsites.net/api/SaveSelfAssessment",
       requestOptions
-    );
+    ).then(function(response) {
+      if (response.status === 200) {
+        responseStatus = true;
+      }
+    });
+    return responseStatus;
   }
   exportResults() {
     const source = window.document.getElementById(
