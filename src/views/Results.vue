@@ -68,7 +68,19 @@
             {{ $t("navigation.viewAllResults") }}
           </button>
         </b-col>
-        <b-col></b-col>
+        <b-col
+          v-if="this.$router.history.current['path'] == '/Results'"
+          class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
+          style="margin: 2px 2px;"
+          ><button
+            type="button"
+            class="btn survey-button"
+            style="width: inherit"
+            v-on:click="saveSurveyData"
+          >
+            {{ $t("submitButton") }}
+          </button></b-col
+        >
       </b-row>
     </div>
   </div>
@@ -114,7 +126,7 @@ import { Section } from "@/types";
   },
   methods: {
     getMaxScore(section: Section) {
-      let maxScore: number = (section.questions.length-1) * 7;
+      let maxScore: number = (section.questions.length - 1) * 7;
       return maxScore;
     }
   }
@@ -130,6 +142,29 @@ export default class Results extends Vue {
   }
   goToAllResults() {
     this.$router.push("/Results");
+  }
+  buildSurveyFile(): string {
+    return JSON.stringify({
+      name: "surveyResults",
+      version: this.$store.state.toolVersion,
+      currentPage: this.$store.state.currentPageNo,
+      data: this.$store.state.toolData
+    });
+  }
+  saveSurveyData() {
+    const saveFile = this.buildSurveyFile();
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      mode: "cors" as RequestMode,
+      name: "surveyData",
+      body: saveFile
+    };
+    fetch(
+      "https://doraselfassessment.azurewebsites.net/api/SaveSelfAssessment",
+      requestOptions
+    );
   }
   exportResults() {
     const source = window.document.getElementById(
