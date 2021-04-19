@@ -10,7 +10,7 @@ import {
   PageModel
 } from "survey-vue";
 import isEmpty from "lodash.isempty";
-import sectionsRecommendations from "./survey-results.json";
+import resultsData from "./survey-results.json";
 import { filter } from "vue/types/umd";
 import { stat } from "fs";
 import { STATUS_CODES } from "http";
@@ -103,7 +103,7 @@ export const getLocalizedSurveyString = (panel: any) => {
 const updateSurveyData = (state: RootState, surveyData: SurveyModel) => {
   state.surveyModel = surveyData;
   state.currentPageNo = surveyData.currentPageNo;
-  state.recommendations! = sectionsRecommendations;
+  state.recommendations! = resultsData;
   if (isEmpty(state.sectionsNames)) {
     determineAllSections(state, surveyData);
   }
@@ -249,7 +249,8 @@ const store: StoreOptions<RootState> = {
     currentPageNo: 0,
     currentPageName: undefined,
     recommendations: undefined,
-    toolVersion: sectionsRecommendations.settings.version
+    toolVersion: resultsData.settings.version,
+    sectionsPrefix: resultsData.settings.sectionsPrefix
   },
   mutations: {
     // mutation to reset the state when a user resets the survey
@@ -305,7 +306,7 @@ const store: StoreOptions<RootState> = {
       let sectionsNames: string[] = [];
       if (state.surveyModel === undefined) return {};
       state.surveyModel.pages.forEach(page => {
-        if (page.name.includes("section_")) {
+        if (page.name.includes(state.sectionsPrefix)) {
           sectionsNames.push(page.name);
         }
       });

@@ -37,7 +37,10 @@ import { returnAllSectionsByPrefix } from "@/store";
 })
 export default class Home extends Vue {
   Survey: Model = new Model(surveyJSON);
-  sections: PageModel[] = returnAllSectionsByPrefix(this.Survey, "section_");
+  sections: PageModel[] = returnAllSectionsByPrefix(
+    this.Survey,
+    resultsData.settings.sectionsPrefix
+  );
   sectionRecommendation: SectionRecommendation[] =
     resultsData.sectionRecommendations;
   startAgain() {
