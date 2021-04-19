@@ -242,7 +242,6 @@ const store: StoreOptions<RootState> = {
   state: {
     sections: [],
     sectionsNames: [],
-    sectionsAllEnabled: false,
     sectionsEnabled: [],
     answerData: [],
     surveyModel: undefined,
@@ -258,7 +257,6 @@ const store: StoreOptions<RootState> = {
       state.sections = [];
       state.answerData = [];
       state.sectionsNames = [];
-      state.sectionsAllEnabled = true;
       state.sectionsEnabled = [];
       state.surveyModel = undefined;
       state.currentPageNo = 0;
@@ -271,8 +269,6 @@ const store: StoreOptions<RootState> = {
     // every time a value has changed or survey completed
     updateSurveyData(state: RootState, result: SurveyModel) {
       updateSurveyData(state, result);
-      //TODO: reintroduce toggleButton(state) - was not ported over from AIA
-      //toggleButton(state);
     },
 
     calculateResult(state: RootState, result: SurveyModel) {
@@ -293,6 +289,11 @@ const store: StoreOptions<RootState> = {
 
     initializeSections(state: RootState, result: SurveyModel) {
       initializeSections(state, result);
+    }
+  },
+  actions: {
+    initializeSections(context) {
+      context.commit("initializeSections");
     }
   },
   getters: {

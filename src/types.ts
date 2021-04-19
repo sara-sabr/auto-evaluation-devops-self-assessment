@@ -3,7 +3,6 @@ import { IPanel, Question, SurveyModel } from "survey-vue";
 export interface RootState {
   sections: Section[];
   sectionsNames: string[];
-  sectionsAllEnabled: boolean;
   sectionsEnabled: string[];
   answerData: any[];
   surveyModel?: SurveyModel;
