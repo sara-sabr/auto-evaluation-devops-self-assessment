@@ -18,7 +18,7 @@
             "default": "My team understands clearly the current/target conditions, up to 5 (five) years in the future, and produces outcomes that match up with the purpose of the organization.",
             "fr": "Mon équipe conçoit clairement les conditions actuelles et ciblées, jusqu’à 5 (cinq) ans dans l’avenir, et produit des résultats en phase avec l’objectif de l’organisation."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -28,7 +28,7 @@
             "default": "My team is running experiments on a daily basis to try to move toward the target conditions or key results.",
             "fr": "Mon équipe procède quotidiennement à des mises à l’essai pour tenter de progresser vers les conditions ciblées ou les résultats clés."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -38,7 +38,7 @@
             "default": "Leaders understand clearly where my team and the organization are going, and where they want the team to be in five years.",
             "fr": "Les chefs de file conçoivent clairement vers quoi mon équipe et l’organisation se dirigent et où ils souhaitent voir l’équipe dans cinq ans."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -48,7 +48,7 @@
             "default": "Leaders say positive things about my team and make employees proud to be a part of their organization.",
             "fr": "Les chefs de file parlent en bien de mon équipe et, de ce fait, les employés sont fiers de faire partie de leur organisation."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -58,7 +58,7 @@
             "default": "Leaders challenge team members to think about old problems in new ways and to rethink some of their basic assumptions about their work.",
             "fr": "Les chefs de file exhortent les membres de l’équipe à réfléchir de façon novatrice aux problèmes de longue date et à reconceptualiser certaines de leurs suppositions fondamentales au sujet de leur travail."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -68,7 +68,7 @@
             "default": "Leaders behave in a manner which is thoughtful of my team member interests and personal needs.",
             "fr": "Les chefs de file tiennent compte, dans leur comportement, des intérêts et besoins personnels des membres de mon équipe."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -99,7 +99,7 @@
             "default": "Learning is the key to improvement.",
             "fr": "L’apprentissage est indispensable à l’amélioration."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -109,7 +109,7 @@
             "default": "Once we quit learning we endanger our future.",
             "fr": "Dès que nous cessons d’apprendre, nous mettons notre avenir en péril."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -119,7 +119,7 @@
             "default": "Learning is viewed as an investment, not an expense.",
             "fr": "L’apprentissage est perçu comme un investissement plutôt qu’une dépense."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -129,7 +129,7 @@
             "default": "Their is a regular cadence of opportunities for employees to share their knowledge.",
             "fr": "Les possibilités offertes aux employés de communiquer leur savoir suivent une cadence régulière."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -139,7 +139,7 @@
             "default": "Information is actively sought.",
             "fr": "L’information est très recherchée."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -149,7 +149,7 @@
             "default": "Messengers are not punished when they deliver news of failures or other bad news.",
             "fr": "Les messagers ne sont pas tenus coupables des mauvaises nouvelles, notamment les échecs, qu’ils annoncent."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -159,7 +159,7 @@
             "default": "Responsibilities are shared.",
             "fr": "Les responsabilités sont partagées."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -169,7 +169,7 @@
             "default": "Cross-functional collaboration is encouraged and rewarded.",
             "fr": "La collaboration interfonctionnelle est encouragée et récompensée."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -179,7 +179,7 @@
             "default": "Failures are treated primarily as opportunities to improve the system.",
             "fr": "Les défaillances sont considérées essentiellement comme des occasions d’améliorer le système."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -189,7 +189,7 @@
             "default": "Employees feel supported by each other and that their feedback is valued.",
             "fr": "Les employés estiment qu’ils s’appuient les uns les autres et que leurs commentaires sont appréciés."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -199,7 +199,7 @@
             "default": "Employees are given meaningful work that leverages their expertise.",
             "fr": "On confie aux employés un travail valorisant qui met à profit leur savoir-faire."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -209,7 +209,7 @@
             "default": "My team’s culture interacts with the broader organizational culture.",
             "fr": "La culture de mon équipe agit avec la culture organisationnelle au sens large, et vice-versa."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -241,7 +241,7 @@
             "default": "We are able to work on new ideas and experiment.",
             "fr": "Nous sommes en mesure de travailler à de nouvelles idées et de procéder à des mises à l’essai."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -251,7 +251,7 @@
             "default": "We are able to do work and make changes without having to ask for permission.",
             "fr": "Nous sommes en mesure d’exécuter le travail et d’apporter des changements sans devoir demander de permission."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -261,7 +261,7 @@
             "default": "We are able to make changes to user needs and specifications during a project.",
             "fr": "Nous sommes en mesure d’apporter des changements aux besoins et aux cahiers des charges des utilisateurs durant un projet."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -271,7 +271,7 @@
             "default": "Changes can be promoted to production without manual change approvals.",
             "fr": "Nous pouvons favoriser la réalisation des changements à la production sans nécessiter d’approbation manuelle pour autant."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -281,7 +281,7 @@
             "default": "We have a clear understanding of the process to get changes approved for implementation.",
             "fr": "Nous concevons clairement le processus d’approbation des changements en vue de leur mise en œuvre."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -291,7 +291,7 @@
             "default": "We are confident they can get changes through the approval process in a timely manner and knows the steps it takes to go from “submitted” to “accepted”.",
             "fr": "Nous avons l’assurance qu’il est possible d’apporter des changements au processus d’approbation en temps voulu et que les étapes nécessaires pour passer de « soumis » à « accepté » sont connues."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -301,7 +301,7 @@
             "default": "Tools and platforms are agreed upon and tailored to the needs of the project.",
             "fr": "Les outils et les plateformes sont convenus et adaptés en fonction des besoins du projet."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -311,7 +311,7 @@
             "default": "We promote team development and handle cross-functional activities..",
             "fr": "Nous favorisons la création d’une synergie et nous nous occupons des activités interfonctionnelles."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -321,7 +321,7 @@
             "default": "We execute peer review which includes reviews, comments, and approvals captured as part of the development process.",
             "fr": "Nous effectuons des examens par les pairs qui touchent les examens, les commentaires et les approbations saisis dans le cadre du processus d’élaboration."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -331,7 +331,7 @@
             "default": "We consider the development platform as a product by evaluating the changes on multiple axes, including security, performance, and stability, as well as defects.",
             "fr": "Nous considérons la plateforme de développement comme un produit par l’évaluation des changements selon plusieurs axes à la fois, dont la sécurité, le rendement et la stabilité, ainsi que des défauts."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -341,7 +341,7 @@
             "default": "We continuously improve business processes by identifying and eliminating bottlenecks.",
             "fr": "Nous améliorons continuellement les processus opérationnels par le repérage et l’élimination des goulots d’étranglement."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -372,7 +372,7 @@
             "default": "Code commits result in an automated build of the software.",
             "fr": "Les validations de code se traduisent par un script de construction automatisée du logiciel."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -382,7 +382,7 @@
             "default": "Code commits result in a series of automated tests being run.",
             "fr": "Les validations de code se traduisent par la tenue d’une série de tests automatisés."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -392,7 +392,7 @@
             "default": "Automated builds and tests are executed successfully every day.",
             "fr": "L’exécution des scripts de construction et des tests automatisés tests est réussie chaque jour."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -402,7 +402,7 @@
             "default": "Current builds are available to testers for exploratory testing.",
             "fr": "Les testeurs ont accès aux scripts de construction qui ont cours pour procéder à des tests exploratoires."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -412,7 +412,7 @@
             "default": "Developers get feedback from the acceptance and performance tests every day.",
             "fr": "Les développeurs reçoivent quotidiennement les commentaires relatifs aux tests d’acceptation et de rendement."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -422,7 +422,7 @@
             "default": "Our software is in a deployable state throughout its lifecycle.",
             "fr": "Nos logiciels sont en mesure d’être déployés tout au long de leur cycle de vie."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -432,7 +432,7 @@
             "default": "My team prioritizes keeping the software deployable over working on new features.",
             "fr": "Mon équipe cherche à maintenir la déployabilité des logiciels avant de travailler à de nouvelles fonctionnalités."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -442,7 +442,7 @@
             "default": "Fast feedback on the quality and deployability of the system is available to anyone on the team.",
             "fr": "Tous les membres de l’équipe ont accès rapidement aux commentaires sur la qualité et la déployabilité du système."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -452,7 +452,7 @@
             "default": "When people get feedback that the system is not deployable (such as failing builds or tests), they make fixing these issues their highest priority.",
             "fr": "Lorsque les effectifs apprennent que le système ne peut être déployé (à cause de scripts de construction ou de tests défaillants), ils cherchent avant toute chose à résoudre les problèmes s’y rapportant."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -462,7 +462,7 @@
             "default": "We can deploy our system to production, or to end users, at any time, on demand.",
             "fr": "Nous pouvons déployer notre système à la production ou aux utilisateurs finaux en tout temps, à la demande."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -472,7 +472,7 @@
             "default": "Features undergo security review early in the design process.",
             "fr": "Les fonctionnalités font l’objet d’un examen de sécurité au début du processus de conception."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -482,7 +482,7 @@
             "default": "Security reviews do not slow down the development cycle.",
             "fr": "Les examens de sécurité n’occasionnent pas le ralentissement du cycle de développement."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -492,7 +492,7 @@
             "default": "Security requirements are included in the automated testing process.",
             "fr": "Les exigences en matière de sécurité font partie du processus de test automatisé."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -523,7 +523,7 @@
             "default": "We can make large-scale changes to the design of our system without the permission of somebody outside the team or creating significant work for other teams.",
             "fr": "Nous pouvons apporter des changements à grande échelle à la conception de notre système sans demander la permission d’une personne extérieure à l’équipe ni alourdir le travail des autres équipes."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -533,7 +533,7 @@
             "default": "To complete our work, we do not need to communicate and coordinate with people outside the team.",
             "fr": "Pour terminer notre travail, la communication et la coordination avec des personnes extérieures à l’équipe ne sont pas nécessaires."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -543,7 +543,7 @@
             "default": "We can deploy and release our product or service on demand, independently of other services it depends upon.",
             "fr": "Nous pouvons déployer et diffuser notre produit ou service à la demande, en toute autonomie par rapport aux autres services qui en dépendent."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -553,7 +553,7 @@
             "default": "We can do most of our testing on demand, without requiring an integrated test environment.",
             "fr": "Nous pouvons effectuer la plupart de nos tests à la demande, sans nécessiter un environnement de test intégré."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -563,7 +563,7 @@
             "default": "We perform deployments during normal business hours with negligible downtime.",
             "fr": "Nous effectuons des déploiements pendant les heures ouvrables et le temps d’arrêt occasionné est négligeable."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -573,7 +573,7 @@
             "default": "My team feels that we are empowered to choose tools.",
             "fr": "Mon équipe estime que nous sommes en mesure de choisir les outils."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -583,7 +583,7 @@
             "default": "My team proactively investigates new tools for new projects.",
             "fr": "Mon équipe procède en amont à l’étude de nouveaux outils en vue de nouveaux projets."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -614,7 +614,7 @@
             "default": "Once we have access, we can independently provision and configure the cloud resources and capabilities required for our product or service on demand without raising tickets or requiring human interaction.",
             "fr": "Une fois l’accès obtenu, nous pouvons fournir et configurer en toute autonomie les ressources et les capacités infonuagiques requises pour notre produit ou service à la demande, sans devoir envoyer de demandes ni recourir à une interaction humaine."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -624,7 +624,7 @@
             "default": "The service or product that we primarily work on is designed to be accessed from a broad range of devices (e.g. smartphones, tablets, laptops) over the network without the need for proprietary plug-ins or protocols.",
             "fr": "Le service ou le produit auquel nous travaillons essentiellement est conçu pour être accessible à partir d’une vaste gamme d’appareils (p. ex., téléphones intelligents, tablettes, ordinateurs portables) sur le réseau sans nécessiter de modules externes ni de protocoles exclusifs."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -634,7 +634,7 @@
             "default": "The cloud our product or service runs on serves multiple teams and applications, with compute and infrastructure resources dynamically assigned and re-assigned based on demand.",
             "fr": "L’infonuagique à la base du fonctionnement de notre produit ou service est bénéfique à de nombreuses équipes et applications, et l’attribution ou la réattribution des ressources de calcul et d’infrastructure est dynamique et en fonction de la demande."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -644,7 +644,7 @@
             "default": "We can dynamically increase or decrease the cloud resources available for the service or product that we primarily support based on demand.",
             "fr": "Nous pouvons augmenter ou diminuer de façon dynamique les ressources infonuagiques offertes dans le cadre du service ou du produit que nous appuyons essentiellement en fonction de la demande."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -654,7 +654,7 @@
             "default": "We can monitor or control the quantity and/or cost of cloud resources used by the service or product that we primarily support.",
             "fr": "Nous pouvons suivre l’évolution ou assurer la maîtrise de la quantité ou du coût des ressources infonuagiques employées par le service ou le produit que nous appuyons essentiellement."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -685,7 +685,7 @@
             "default": "We are good at limiting our work in process (WIP).",
             "fr": "Nous parvenons bien à établir les limites de notre travail en cours (TEC)."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -695,7 +695,7 @@
             "default": "We strive to limit our WIP, and have processes in place to do so.",
             "fr": "Nous tâchons d’établir les limites de notre TEC et nous avons des processus en place pour ce faire."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -705,7 +705,7 @@
             "default": "Our WIP limits lead to process improvement.",
             "fr": "Les limites établies de notre TEC contribuent à l’amélioration des processus."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -715,7 +715,7 @@
             "default": "We are not often assigned to work on multiple mutually exclusive tasks.",
             "fr": "On nous confie rarement du travail relatif à plusieurs tâches à la fois qui ne se recoupent pas."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -725,7 +725,7 @@
             "default": "When faced with too much work and too few people to do it, we prioritize work and focus on completing a small number of high-priority tasks.",
             "fr": "Si nous avons trop de travail à exécuter et trop peu d’effectifs à cette fin, nous donnons priorité au travail et à l’achèvement d’un nombre réduit de tâches à priorité élevée."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -735,7 +735,7 @@
             "default": "Our work is visible to other teams and stakeholders.",
             "fr": "Notre travail est visible pour les autres équipes et parties prenantes."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -745,7 +745,7 @@
             "default": "We use up to date visual displays and dashboards to manage the work at various stages of a process.",
             "fr": "Nous avons recours à des soutiens visuels et à des tableaux de bord actualisés pour gérer le travail à divers stades du processus."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -755,7 +755,7 @@
             "default": "When looking at visual management displays we see the key process metrics the team cares about.",
             "fr": "L’examen des soutiens de gestion visuelle permet de constater les principaux paramètres du processus dont l’équipe se soucie."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -786,7 +786,7 @@
             "default": "We actively collect customer feedback on product and features quality.",
             "fr": "Nous recueillons activement les commentaires des clients sur la qualité des produits et des fonctionnalités."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -796,7 +796,7 @@
             "default": "We establish key metrics on customer satisfaction before gathering information from the customers.",
             "fr": "Nous mettons en place les paramètres clés de la satisfaction de la clientèle avant de recueillir l’information auprès des cette dernière."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -806,7 +806,7 @@
             "default": "After seeking customer feedbacks, the team utilizes the response to understand the pain points and find solutions quickly.",
             "fr": "Après avoir recueilli les commentaires de la clientèle, nous nous servons des suites données pour concevoir les sources d’agacement et découvrir rapidement des solutions."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -816,7 +816,7 @@
             "default": "We are able to use value streams to gain insight and guide necessary improvements to ensure we have the bandwidth to support functionality and the documentation to put it into place.",
             "fr": "Nous sommes en mesure d’utiliser les flux de valeur pour nous familiariser avec les améliorations nécessaires et guider celles-ci afin de disposer de la bande passante nécessaire à la fonctionnalité et de la documentation nécessaire pour la mettre en place."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -826,7 +826,7 @@
             "default": "We focus on building, testing, and releasing code changes to an (production or testing) environment in small batches.",
             "fr": "Nous prêtons attention à la création de changements de code, à leur mise à l’essai et à leur diffusion en petits lots dans un environnement (de production ou d’essai)."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -836,7 +836,7 @@
             "default": "Following production release, we are able to amplify feedback from users quickly using techniques (ex: AB testing) and enable short lead times faster.",
             "fr": "Après la diffusion de production, nous sommes en mesure d’amplifier rapidement les commentaires des utilisateurs à l’aide de techniques (p. ex., les tests AB) et d’accélérer la compression des délais d’exécution."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -846,7 +846,7 @@
             "default": "Feedback received is simple, easy to understand and provides actionable information.",
             "fr": "Les commentaires reçus sont simples, faciles à comprendre et il en découle une information exploitable."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -856,7 +856,7 @@
             "default": "Our features are sliced in a way that lend themselves to frequent production releases.",
             "fr": "Nos fonctionnalités sont réparties de telle sorte qu’elles se prêtent de fréquentes versions de production."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -866,7 +866,7 @@
             "default": "Our features are decomposed in a way that allows a developer to complete the work in a week or less.",
             "fr": "Nos fonctionnalités sont décomposées de telle sorte qu’elles permettent au promoteur de réaliser les travaux en une semaine ou moins."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -876,7 +876,7 @@
             "default": "Our work is decomposed into features that allow for minimum viable products (MVP) and rapid development, rather than complex and lengthy processes (an MVP has just enough features to get validated learning about the product & its continued development).",
             "fr": "Notre travail est décomposé en des fonctionnalités permettant les plus petits produits viables (PPPV) et un développement rapide, plutôt qu’en des processus complexes et fastidieux (le PPPV comporte tout juste assez de fonctionnalités pour permettre la validation de l’apprentissage du produit et de son développement continu)."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -907,7 +907,7 @@
             "default": "We have a solution in place to report on the overall health of systems (e.g, are my systems functioning? / do my systems have sufficient resources available?).",
             "fr": "Nous avons mis en place une solution pour rendre compte de la santé globale des systèmes (p. ex., mes systèmes fonctionnent-ils? disposent-ils de ressources suffisantes?)."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -917,7 +917,7 @@
             "default": "We have a solution in place to report on system state as experienced by customers (e.g., “do my customers know if my system is down and have a bad experience?”).",
             "fr": "Nous avons mis en place une solution pour rendre compte de l’état du système selon l’expérience vécue par la clientèle (p. ex. « mes clients savent-ils si mon système est en panne et vivent-ils une mauvaise expérience? »)."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -927,7 +927,7 @@
             "default": "We have a solution in place for monitoring key business and systems metrics.",
             "fr": "Nous avons mis en place une solution pour surveiller les principaux paramètres opérationnels et systémiques."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -937,7 +937,7 @@
             "default": "We have tooling in place that can help us with understanding and debugging our systems in production.",
             "fr": "Nous avons mis en place un outillage qui nous permet de concevoir nos systèmes en cours de production et de les dépanner."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -947,7 +947,7 @@
             "default": "We have tooling in place that provides the ability to find information about things we did not previously know (e.g., we can identify “unknown unknowns”).",
             "fr": "Nous avons mis en place un outillage qui donne la capacité de trouver de l’information sur des éléments qui nous étaient préalablement inconnus (p. ex., nous pouvons discerner les « éléments inconnus qui nous étaient inconnus »)."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -957,7 +957,7 @@
             "default": "We have access to tools and data which help us trace, understand, and diagnose infrastructure problems in our production environment, including interactions between services.",
             "fr": "Nous avons accès à des outils et à des données qui nous permettent de repérer, de concevoir et de diagnostiquer les problèmes d’infrastructure dans notre environnement de production, y compris les interactions entre services."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -967,7 +967,7 @@
             "default": "Data from infrastructure and application performance monitoring tools is used to make business decisions.",
             "fr": "Les données provenant des outils de surveillance du rendement de l’infrastructure et des applications servent à la prise de décisions opérationnelles."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -977,7 +977,7 @@
             "default": "Monitoring gives rapid feedback which helps quickly find and fix problems early in the project lifecycle.",
             "fr": "La surveillance se traduit par des commentaires rapides qui permettent de déceler et de régler précocement les problèmes durant le cycle de vie du projet."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -1008,7 +1008,7 @@
             "default": "We can recover application code from the version control system.",
             "fr": "Nous pouvons récupérer le code d’application du système de contrôle des versions."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1018,7 +1018,7 @@
             "default": "We can reconfigure systems from files in the version control system.",
             "fr": "Nous pouvons reconfigurer les systèmes à partir de fichiers du système de contrôle des versions."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1028,7 +1028,7 @@
             "default": "It is easy to change code maintained by other teams if we need to.",
             "fr": "Il est facile de modifier le code maintenu par les autres équipes, si besoin est."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1038,7 +1038,7 @@
             "default": "It is easy to find examples in our codebase.",
             "fr": "Il est facile de trouver des exemples dans notre base de codes."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1048,7 +1048,7 @@
             "default": "It is easy to reuse other people’s code.",
             "fr": "Il est facile de réutiliser le code des autres personnes."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1058,7 +1058,7 @@
             "default": "It is easy to add new dependencies to a project.",
             "fr": "Il est facile d’ajouter de nouvelles interrelations à un projet"
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1068,7 +1068,7 @@
             "default": "It is easy to migrate to a new version of a dependency.",
             "fr": "Il est facile de passer à la nouvelle version d’une interrelation."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1078,7 +1078,7 @@
             "default": "Dependencies are stable and rarely break teams’ code.",
             "fr": "Les interrelations sont stables et les infractions à notre code sont rares."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],
@@ -1109,7 +1109,7 @@
             "default": "Developers primarily create and maintain acceptance tests.",
             "fr": "Les développeurs ont pour fonction principale de créer des tests de validation et de les tenir à jour."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1119,7 +1119,7 @@
             "default": "When the automated tests pass, we are confident the software is releasable.",
             "fr": "Lorsque les tests automatisés réussissent, nous avons l’assurance que le logiciel peut être diffusé."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1129,7 +1129,7 @@
             "default": "Test failures are likely to indicate a real defect.",
             "fr": "Les défaillances révélées par les tests sont vraisemblablement révélatrices d’un défaut concret."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1139,7 +1139,7 @@
             "default": "It is easy for developers to fix acceptance test failures.",
             "fr": "Il est facile pour les développeurs de corriger les défaillances des tests de validation."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1149,7 +1149,7 @@
             "default": "Developers use their own development environment to reproduce acceptance failures.",
             "fr": "Les développeurs se servent de leur propre environnement de développement pour reproduire les défaillances de validation."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1159,7 +1159,7 @@
             "default": "Automated tests are seamlessly integrated into our software delivery tech bricks.",
             "fr": "Les tests automatisés s’intègrent harmonieusement à nos briques technologiques de livraison de logiciels."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1169,7 +1169,7 @@
             "default": "We continuously review and improve our test suite to better find defects and keep complexity and cost under control.",
             "fr": "Nous procédons constamment à l’examen et à l’amélioration de notre série de tests pour déceler efficacement les défauts de même que maîtriser la complexité et les coûts."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1179,7 +1179,7 @@
             "default": "Testers work alongside developers throughout the software development and delivery process.",
             "fr": "Les testeurs travaillent de concert avec les développeurs tout au long du processus de développement et de livraison des logiciels."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1189,7 +1189,7 @@
             "default": "Manual test activities such as exploratory testing, usability testing, and acceptance testing are performed continuously throughout the delivery process.",
             "fr": "Les activités des tests manuels, comme les tests exploratoires, les tests de facilité d’utilisation et les tests de validation, sont exécutées constamment tout au long du processus de livraison."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1199,7 +1199,7 @@
             "default": "Developers practice test-driven development by writing unit tests before writing production code for all changes to the codebase.",
             "fr": "Les développeurs mettent en pratique le développement piloté par les tests : ils rédigent les tests unitaires avant de rédiger le code de production des changements apportés à la base de codes."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1209,7 +1209,7 @@
             "default": "Adequate test data is available to run full automated test suites.",
             "fr": "Des données de tests adéquates sont accessibles pour exécuter des séries de tests entièrement automatisés."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1219,7 +1219,7 @@
             "default": "Test data can be acquired on demand.",
             "fr": "Des données de tests peuvent être obtenues sur demande."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         },
         {
@@ -1229,7 +1229,7 @@
             "default": "Test data does not limit or constrain the automated tests that we can run.",
             "fr": "Les données de tests ne limitent ni n’entravent les tests automatisés que nous pouvons exécuter."
           },
-          "isRequired": true,
+          "isRequired": false,
           "rateMax": 7
         }
       ],

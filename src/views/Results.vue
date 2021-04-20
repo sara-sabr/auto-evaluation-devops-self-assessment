@@ -1,28 +1,9 @@
 <template>
   <div class="results">
-    <h1 v-if="this.$router.history.current['path'] == '/Results'">
-      {{ $t("resultTitle") }}
-    </h1>
-    <h1 v-if="this.$router.history.current['path'] == '/sections'">
+    <h1>
       {{ $t("sectionResultsTitle") }}
     </h1>
-
-    <BaseNavigation v-on:exportResults="exportResults" />
-
-    <div v-if="this.$router.history.current['path'] == '/Results'">
-      <div v-for="section in $store.state.sections" :key="section.id">
-        <ResultsCard
-          v-if="section.enabled"
-          :section="section"
-          :section-name="section.sectionName"
-          :user-score="section.userScore"
-          :max-score="getMaxScore(section)"
-          :my-recommendations="myRecommendations"
-          :locale="locale"
-        />
-      </div>
-    </div>
-    <div v-else-if="this.$router.history.current['path'] == '/sections'">
+    <div>
       <ResultsCard
         v-if="currentSection !== undefined"
         :section="currentSection"
@@ -39,37 +20,29 @@
       </div>
     </div>
     <div class="page-actions">
-      <b-row class="no-gutters" align-h="center" style="padding: 0 15px">
-        <b-col
-          class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
-          style="margin: 2px 2px;"
-        >
+      <div class="row" style="padding: 0 15px">
+        <div class="col-3 col-sm-2 col-md-3">
           <button
             type="button"
             class="btn btn-primary"
             style="width: inherit"
-            v-on:click="goToHomePage()"
+            v-on:click="goToQuestions()"
           >
-            &#8672;&nbsp;{{ $t("navigation.chooseAnotherSection") }}
+            &#8672;&nbsp;{{ $t("navigation.goBack") }}
           </button>
-        </b-col>
-        <b-col
-          v-if="this.$router.history.current['path'] == '/sections'"
-          class="col-lg-2 col-sm-5 col-md-3 col-xs-6"
-          style="margin: 2px 2px;"
-        >
+        </div>
+        <div class="col-3 col-sm-2 col-md-3">
           <button
             type="button"
             class="btn btn-default"
             style="width: inherit"
-            v-on:click="goToAllResults()"
+            v-on:click="goToHomePage()"
             :key="$route.path"
           >
-            {{ $t("navigation.viewAllResults") }}
+            {{ $t("navigation.chooseAnotherSection") }}
           </button>
-        </b-col>
-        <b-col></b-col>
-      </b-row>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -88,9 +61,7 @@ import { Section } from "@/types";
 
 @Component({
   components: {
-    ActionButtonBar,
-    ResultsCard,
-    BaseNavigation
+    ResultsCard
   },
   computed: {
     sectionNames: function() {
@@ -114,7 +85,7 @@ import { Section } from "@/types";
   },
   methods: {
     getMaxScore(section: Section) {
-      let maxScore: number = (section.questions.length-1) * 7;
+      let maxScore: number = (section.questions.length - 1) * 7;
       return maxScore;
     }
   }
@@ -131,6 +102,40 @@ export default class Results extends Vue {
   goToAllResults() {
     this.$router.push("/Results");
   }
+  goToQuestions() {
+    this.$router.push("/Questions");
+  }
+  buildSurveyFile(): string {
+    return JSON.stringify({
+      name: "surveyResults",
+      version: this.$store.state.toolVersion,
+      currentPage: this.$store.state.currentPageNo,
+      data: this.$store.state.toolData
+    });
+  }
+  // async saveSurveyData(): Promise<boolean> {
+  //   var responseStatus: boolean = false;
+  //   const saveFile = this.buildSurveyFile();
+
+  //   var requestOptions = {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/text"
+  //     },
+  //     mode: "no-cors" as RequestMode,
+  //     name: "surveyData",
+  //     body: saveFile
+  //   };
+  //   await fetch(
+  //     "https://doraselfassessment.azurewebsites.net/api/saveselfassessment",
+  //     requestOptions
+  //   ).then(function(response) {
+  //     if (response.status === 200) {
+  //       responseStatus = true;
+  //     }
+  //   });
+  //   return responseStatus;
+  // }
   exportResults() {
     const source = window.document.getElementById(
       this.$i18n.locale + "-content"
