@@ -3,7 +3,6 @@ import { IPanel, Question, SurveyModel } from "survey-vue";
 export interface RootState {
   sections: Section[];
   sectionsNames: string[];
-  sectionsEnabled: string[];
   answerData: any[];
   surveyModel?: SurveyModel;
   toolData: any;
@@ -22,11 +21,6 @@ export interface Section {
   userScore: number;
   maxScore: number;
   questions: Question[];
-}
-
-export interface ResultsData {
-  sectionsEnabled: any;
-  data: any;
 }
 
 export type LanguageString = {
