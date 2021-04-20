@@ -1,6 +1,5 @@
 <template>
   <div class="results">
-    <BaseNavigation />
     <AssessmentTool :survey="Survey" />
     <div class="page-actions">
       <div class="row" style="padding: 0 5px">
@@ -72,8 +71,41 @@ export default class Questions extends Vue {
     this.$router.push("/");
   }
 
+  buildSurveyFile(): string {
+    return JSON.stringify({
+      name: "surveyResults",
+      version: this.$store.state.toolVersion,
+      currentPage: this.$store.state.currentPageNo,
+      data: this.$store.state.toolData
+    });
+  }
+  async saveSurveyData(): Promise<boolean> {
+    var responseStatus: boolean = false;
+    const saveFile = this.buildSurveyFile();
+
+    var requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/text"
+      },
+      mode: "no-cors" as RequestMode,
+      name: "surveyData",
+      body: saveFile
+    };
+    await fetch(
+      "https://doraselfassessment.azurewebsites.net/api/saveselfassessment",
+      requestOptions
+    ).then(function(response) {
+      if (response.status === 200) {
+        responseStatus = true;
+      }
+    });
+    return responseStatus;
+  }
+
   goToSectionResults() {
     this.$store.commit("updateSurveyData", this.Survey);
+    this.saveSurveyData();
     this.$router.push("/sections");
   }
   @Watch("$i18n.locale")
