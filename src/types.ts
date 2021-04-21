@@ -1,16 +1,17 @@
-import { IPanel, Question, SurveyModel } from "survey-vue";
+import { Question, SurveyModel } from "survey-vue";
 
 export interface RootState {
+  surveyModel?: SurveyModel;
+  answerData: any[];
+  toolData: any;
   sections: Section[];
   sectionsNames: string[];
-  answerData: any[];
-  surveyModel?: SurveyModel;
-  toolData: any;
   currentPageNo: number;
   currentPageName?: string;
   recommendations?: Recommendations;
   toolVersion: string;
   sectionsPrefix: string;
+  error: boolean;
 }
 
 export interface Section {
