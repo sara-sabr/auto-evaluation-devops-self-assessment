@@ -13,7 +13,7 @@
   >
     <i
       :class="setIconClass(icon)"
-      style="margin-top: 20px; margin-left: 25px;"
+      style="margin-top: 20px; color: #38414d; text-align:center;"
     ></i>
     <div class="card-body">
       <h2 class="card-title">{{ section.title }}</h2>
@@ -60,7 +60,7 @@ import { Section } from "@/types";
   },
   methods: {
     setIconClass(icon: string) {
-      let classDef: string = "fas fa-" + icon + " fa-3x";
+      let classDef: string = "fas fa-" + icon + " fa-4x";
       return classDef;
     },
     sectionScoreLevel(sectionName: string) {
