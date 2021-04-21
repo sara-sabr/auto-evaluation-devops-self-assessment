@@ -127,6 +127,8 @@ a:active, a:hover {
 
 #app a{
     color: #284162 !important;
+    text-decoration: underline;
+    font-size: 1.1em !important;
 }
 
 .btn {
