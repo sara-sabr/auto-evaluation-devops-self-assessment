@@ -18,7 +18,7 @@
     <div class="card-body">
       <h2 class="card-title">{{ section.title }}</h2>
       <p style="font-size: 16px" class="card-text">
-        {{ section.description }}
+        {{ getShortDescription(section.description) }}
       </p>
     </div>
     <div class="card-footer">
@@ -62,6 +62,11 @@ import { Section } from "@/types";
     setIconClass(icon: string) {
       let classDef: string = "fas fa-" + icon + " fa-4x";
       return classDef;
+    },
+    getShortDescription(description: string) {
+      let maxLen = 150;
+      if (description.length <= maxLen) return description;
+      return description.substr(0, description.lastIndexOf(" ", maxLen)) + " ...";
     },
     sectionScoreLevel(sectionName: string) {
       const thisSection: Section = this.$store.getters.returnSectionByName(
