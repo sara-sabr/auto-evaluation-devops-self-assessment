@@ -66,7 +66,7 @@ import { Section } from "@/types";
       return classDef;
     },
     getShortDescription(description: string) {
-      let maxLen = 150;
+      let maxLen = 160;
       if (description.length <= maxLen) return description;
       return description.substr(0, description.lastIndexOf(" ", maxLen)) + "... ";
     },
