@@ -14,7 +14,8 @@ export enum MutationType {
   SetCurrentPageName = "SET_CURRENT_PAGE_NAME",
   SetRecommendations = "SET_RECOMMENDATIONS",
   SetToolVersion = "SET_TOOL_VERSION",
-  SetSectionsPrefix = "SET_SECTIONS_PREFIX"
+  SetSectionsPrefix = "SET_SECTIONS_PREFIX",
+  SetLoading = "SET_LOADING"
 }
 
 export type Mutations = {
@@ -31,6 +32,7 @@ export type Mutations = {
   ): void;
   [MutationType.SetToolVersion](state: RootState, value: string): void;
   [MutationType.SetSectionsPrefix](state: RootState, value: string): void;
+  [MutationType.SetLoading](state: RootState, value: boolean): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -83,5 +85,8 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.SetSectionsPrefix](state: RootState, value: string) {
     state.sectionsPrefix = value;
+  },
+  [MutationType.SetLoading](state: RootState, value: boolean) {
+    state.loading = value;
   }
 };

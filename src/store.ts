@@ -235,7 +235,8 @@ const store: StoreOptions<RootState> = {
     recommendations: undefined,
     toolVersion: resultsData.settings.version,
     sectionsPrefix: resultsData.settings.sectionsPrefix,
-    error: false
+    error: false,
+    loading: false
   },
   mutations: {
     // mutation to reset the state when a user resets the survey
