@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "03505eccc20454ebf56f",
-    "url": "/auto-evaluation-devops-self-assessment/css/app.3b922273.css"
+    "revision": "f1aa1aafc71a7e570dd9",
+    "url": "/auto-evaluation-devops-self-assessment/css/app.f9b925ac.css"
   },
   {
     "revision": "55e6ea492daf13f5e42d",
@@ -140,12 +140,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/auto-evaluation-devops-self-assessment/helper/vfs_fonts.js"
   },
   {
-    "revision": "c49454b141038b51af09e95c94453993",
+    "revision": "c53fcbf270ea968c9c2cc526bbb6c5f0",
     "url": "/auto-evaluation-devops-self-assessment/index.html"
   },
   {
-    "revision": "03505eccc20454ebf56f",
-    "url": "/auto-evaluation-devops-self-assessment/js/app.2752ef68.js"
+    "revision": "f1aa1aafc71a7e570dd9",
+    "url": "/auto-evaluation-devops-self-assessment/js/app.09b808fb.js"
   },
   {
     "revision": "55e6ea492daf13f5e42d",
@@ -160,7 +160,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/auto-evaluation-devops-self-assessment/robots.txt"
   },
   {
-    "revision": "599286fa98ef0e40c3d18cbc6e9b5260",
+    "revision": "49704bf18c7652e00b9c6013a0369314",
     "url": "/auto-evaluation-devops-self-assessment/survey.css"
   }
 ]);
