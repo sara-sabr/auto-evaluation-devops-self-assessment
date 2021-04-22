@@ -196,3 +196,6 @@ a:active, a:hover {
     color: black;
 }
 
+ul.card-deck {
+padding-left: 0!important;
+}
