@@ -13,16 +13,16 @@
   >
     <i
       :class="setIconClass(icon)"
-      style="margin-top: 20px; color: #38414d; text-align:center;"
+      style="margin-top: 20px; color: #395072; text-align:center;"
     ></i>
     <div class="card-body">
-      <h2 class="card-title">{{ section.title }}</h2>
-      <p style="font-size: 16px" class="card-text">
+      <h2 style="color: #395072;" class="card-title">{{ section.title }}</h2>
+      <p style="font-size: 16px;" class="card-text">
         {{ getShortDescription(section.description) }}
       </p>
     </div>
     <div class="card-footer">
-      <span style="color: #269abc">
+      <span style="color: #395072">
         <i :class="setStatusIcon(section.name)">
           {{ $t("currentScore") }}: {{ sectionScoreLevel(section.name) }}%</i
         >
@@ -66,7 +66,7 @@ import { Section } from "@/types";
     getShortDescription(description: string) {
       let maxLen = 150;
       if (description.length <= maxLen) return description;
-      return description.substr(0, description.lastIndexOf(" ", maxLen)) + " ...";
+      return description.substr(0, description.lastIndexOf(" ", maxLen)) + "... Read more";
     },
     sectionScoreLevel(sectionName: string) {
       const thisSection: Section = this.$store.getters.returnSectionByName(
