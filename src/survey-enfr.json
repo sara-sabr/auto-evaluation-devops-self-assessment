@@ -592,8 +592,8 @@
         "fr": "Architecture"
       },
       "description": {
-        "fr": "Apprendre à passer d’une architecture étroitement couplée à une architecture axée sur le service et à base de microservices sans pour autant la reconstruire intégralement. Mettre les équipes en mesure de prendre des décisions éclairées sur les outils et les technologies. Apprendre en quoi de telles décisions favorisent une livraison fructueuse des logiciels.",
-        "default": "Learn about moving from a tightly coupled architecture to service-oriented and micro service architectures without re-architecting everything at once. Empower teams to make informed decisions on tools and technologies. Learn how these decisions drive more effective software delivery."
+        "fr": "Apprendre à passer d’une architecture étroitement couplée à une architecture axée sur le service et à base de microservices sans pour autant la reconstruire intégralement. Mettre les équipes en mesure de prendre des décisions éclairées sur les outils et les technologies.",
+        "default": "Learn about moving from a tightly coupled architecture to service-oriented and micro service architectures without re-architecting everything at once. Empower teams to make informed decisions on tools and technologies."
       }
     },
     {
@@ -764,8 +764,8 @@
         "fr": "Limites des travaux en cours et gestion visuelle"
       },
       "description": {
-        "fr": "Définir les priorités des tâches, limiter la charge de travail de l’équipe, et se concentrer sur un nombre réduit de tâches à priorité élevée. Apprendre les principes de la gestion visuelle pour favoriser l’échange d’information, en arriver à une interprétation commune de la situation de l’équipe, et trouver des moyens par lesquels s’améliorer. ",
-        "default": "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done. Learn about the principles of visual management to promote information sharing, get a common understanding of where the team is, and how to improve."
+        "fr": "Définir les priorités des tâches, limiter la charge de travail de l’équipe, et se concentrer sur un nombre réduit de tâches à priorité élevée. Apprendre les principes de la gestion visuelle pour favoriser l’échange d’information. ",
+        "default": "Prioritize work, limit the amount of things that people are working on, and focus on getting a small number of high-priority tasks done. Learn about the principles of visual management to promote information sharing."
       }
     },
     {

@@ -19,7 +19,7 @@
       <h2 style="color: #395072;" class="card-title">{{ section.title }}</h2>
       <p style="font-size: 16px;" class="card-text">
         {{ getShortDescription(section.description) }}
-        &nbsp;<a href="#" style="color:#8c8c8c!important; text-decoration: none; font-style: italic;">Read more</a>
+        
         
       </p>
     </div>
@@ -66,7 +66,7 @@ import { Section } from "@/types";
       return classDef;
     },
     getShortDescription(description: string) {
-      let maxLen = 160;
+      let maxLen = 280;
       if (description.length <= maxLen) return description;
       return description.substr(0, description.lastIndexOf(" ", maxLen)) + "... ";
     },

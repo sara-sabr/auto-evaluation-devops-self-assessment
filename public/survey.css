@@ -200,4 +200,12 @@ ul.card-deck {
 padding-left: 0!important;
 }
 
+p.card-text{
+    line-height: 1.5!important;
+}
+
+li.card {
+    height: 410px !important;
+}
+
 
