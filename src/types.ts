@@ -12,6 +12,7 @@ export interface RootState {
   toolVersion: string;
   sectionsPrefix: string;
   error: boolean;
+  loading: boolean;
 }
 
 export interface Section {
