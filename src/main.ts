@@ -56,7 +56,7 @@ function reloadTemplate() {
     defPreFooter.innerHTML = wet.builder.preFooter({
       // see public index.html
       // get the build time which is injected into the root element at build time
-      dateModified: "2021-03-22",
+      dateModified: "2021-04-22",
       versionIdentifier: "0.9.0",
       showPostContent: false,
       showFeedback: false,
@@ -73,6 +73,7 @@ function reloadTemplate() {
             switchLanguage === "en"
               ? "https://sara-sabr.github.io/ITStrategy/a-propos-de-nous.html"
               : "https://sara-sabr.github.io/ITStrategy/about-us.html",
+              newWindow: true,
           text: switchLanguage === "en" ? "À propos de nous" : "About us"
         },
         {
@@ -80,23 +81,31 @@ function reloadTemplate() {
             switchLanguage === "en"
               ? "https://sara-sabr.github.io/ITStrategy/auto-evaluation-devops.html"
               : "https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html",
+              newWindow: true,
           text: switchLanguage === "en" ? "Fonctionnement" : "How it works"
-        },
-        {
-          href:
-            switchLanguage === "en"
-              ? "https://sara-sabr.github.io/ITStrategy/contactez-nous.html"
-              : "https://sara-sabr.github.io/ITStrategy/contact-us.html",
-          text: switchLanguage === "en" ? "Contactez-nous" : "Contact us"
         },
         {
           href:
             switchLanguage === "en"
               ? "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment"
               : "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment",
+              newWindow: true,
           text: switchLanguage === "en" ? "Code source" : "Source code"
         }
       ],
+      contactLink: [{
+        href:
+          switchLanguage === "en"
+            ? "https://sara-sabr.github.io/ITStrategy/contactez-nous.html"
+            : "https://sara-sabr.github.io/ITStrategy/contact-us.html",
+        "newWindow": true
+      }],
+      termsLink: [{
+        "newWindow": true
+      }],
+      privacyLink: [{
+        "newWindow": true
+      }],
       showFeatures: false
     });
   }
