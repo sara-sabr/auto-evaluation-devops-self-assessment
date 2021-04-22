@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/auto-evaluation-devops-self-assessment/precache-manifest.5684ee7b4181d7a77a2c8f08e354d80f.js"
+  "/auto-evaluation-devops-self-assessment/precache-manifest.07c20e52c828f565b006930af1e21289.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "auto-evaluation-devops-self-assessment"});
