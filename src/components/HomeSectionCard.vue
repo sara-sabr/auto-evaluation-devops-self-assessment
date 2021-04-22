@@ -19,6 +19,8 @@
       <h2 style="color: #395072;" class="card-title">{{ section.title }}</h2>
       <p style="font-size: 16px;" class="card-text">
         {{ getShortDescription(section.description) }}
+        &nbsp;<a href="#" style="color:#8c8c8c!important; text-decoration: none; font-style: italic;">Read more</a>
+        
       </p>
     </div>
     <div class="card-footer">
@@ -66,7 +68,7 @@ import { Section } from "@/types";
     getShortDescription(description: string) {
       let maxLen = 150;
       if (description.length <= maxLen) return description;
-      return description.substr(0, description.lastIndexOf(" ", maxLen)) + "... Read more";
+      return description.substr(0, description.lastIndexOf(" ", maxLen)) + "... ";
     },
     sectionScoreLevel(sectionName: string) {
       const thisSection: Section = this.$store.getters.returnSectionByName(
