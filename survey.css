@@ -67,7 +67,8 @@ p, .small {
 }
 
 div.small {
-    font-size: 17px !important;
+    font-size: 18px !important;
+    color: #6C6B6B  !important;
 }
 
 .col-md-2 {
@@ -202,10 +203,13 @@ padding-left: 0!important;
 
 p.card-text{
     line-height: 1.5!important;
+    color: #6C6B6B!important;
 }
 
 li.card {
     height: 410px !important;
 }
+
+
 
 
