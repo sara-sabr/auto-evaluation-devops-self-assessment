@@ -4,6 +4,7 @@
       <details>
         <summary>{{ $t("notice.localSaveWarningSummary") }}</summary>
         <p class="small">{{ $t("notice.localSaveWarningParagraph") }}</p>
+        <p class="small"><strong>{{ $t("notice.exception") }}</strong>:&nbsp;{{ $t("notice.localSaveWarningParagraph2") }}</p>
       </details>
     </div>
   </div>
