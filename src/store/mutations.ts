@@ -1,5 +1,5 @@
 import { MutationTree } from "vuex";
-import { Recommendations, RootState, Section } from "@/types";
+import { Recommendations, RootState, Section } from "@/store/state";
 import { SurveyModel } from "survey-vue";
 
 export enum MutationType {
@@ -26,6 +26,7 @@ export type Mutations = {
   [MutationType.SetSections](state: RootState, value: Section[]): void;
   [MutationType.SetCurrentPageNo](state: RootState, value: number): void;
   [MutationType.SetCurrentPageName](state: RootState, value: string): void;
+  // TODO: Need to fix State structure to simplify Recommendations
   [MutationType.SetRecommendations](
     state: RootState,
     value: Recommendations
