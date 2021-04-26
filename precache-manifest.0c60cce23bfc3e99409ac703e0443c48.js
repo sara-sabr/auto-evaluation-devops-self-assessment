@@ -160,7 +160,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/auto-evaluation-devops-self-assessment/robots.txt"
   },
   {
-    "revision": "17fffc239ed2e460b98d6798907a75da",
+    "revision": "975da00401fe528d79fb147dfc08ef61",
     "url": "/auto-evaluation-devops-self-assessment/survey.css"
   }
 ]);

@@ -68,8 +68,8 @@ p, .small {
 }
 
 div.small {
-    font-size: 18px !important;
-    color: #6C6B6B  !important;
+    font-size: 20px !important;
+    color: black  !important;
 }
 
 .col-md-2 {
@@ -169,12 +169,12 @@ a:active, a:hover {
 
 .survey-button {
     color: white !important;
-    background-color: #11826b !important;
+    background-color: #2572b4 !important;
 }
 
 .survey-button:hover {
     color: white !important;
-    background-color: #0b5445!important;
+    background-color: #2572b4!important;
 }
 
 .language-button{
@@ -212,6 +212,38 @@ li.card {
     height: 410px !important;
 }
 
+.btnbtn btn-default btn-secondary active {
+    background-color: #2572b4!important;
+}
 
+/* instruction and questions font size */
+div .sv-vue-row-additional-div
+{
+  font-size: 18px !important;
+  
+}
+
+/* .sv_qstn form-group bmd-form-group{
+    color: red !important;
+} */
+
+/* .sv_qstn form-group bmd-form-group
+{
+    color:red !important;
+} */
+
+/* .sv-vue-row-additional-div
+{
+    color:red !important;
+} */
+
+
+/* .card-body p a :link {
+    color:red!important;
+} */
+
+/* .btn btn-default fixed-top language-button position-absolute page-actions {
+    background-color: red;
+} */
 
 
