@@ -315,12 +315,6 @@ const store: StoreOptions<RootState> = {
       allResults = state.toolData;
       return allResults;
     },
-    returnAllQuestions: state => {
-      return state.sectionsNames;
-    },
-    returnSections: state => {
-      return state.sections;
-    },
     returnSurveyModel: state => {
       if (state.surveyModel == undefined) {
         return undefined;
