@@ -71,3 +71,18 @@ export interface Title {
   en: string[];
   fr: string[];
 }
+
+export const state: RootState = {
+  surveyModel: undefined,
+  answerData: [],
+  toolData: undefined,
+  sections: [],
+  sectionsNames: [],
+  currentPageNo: 0,
+  currentPageName: undefined,
+  recommendations: undefined,
+  toolVersion: "",
+  sectionsPrefix: "",
+  error: false,
+  loading: false
+};
