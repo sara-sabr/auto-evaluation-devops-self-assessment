@@ -8,9 +8,8 @@ export type Getters = {
   inProgress(state: RootState): boolean;
   returnSectionsNames(state: RootState): string[];
   returnSectionByName(
-    state: RootState,
-    sectionName: string
-  ): Section | undefined;
+    state: RootState
+  ): (sectionName: string) => Section | undefined;
   returnCurrentSection(state: RootState): Section | undefined;
   resultsDataSections(state: RootState): any;
   returnSurveyModel(state: RootState): SurveyModel | undefined;
@@ -32,10 +31,12 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
     }
     return sectionsNames;
   },
-  returnSectionByName(state: RootState, sectionName: string) {
-    return state.sections.find(section => {
-      return section.sectionName === sectionName;
-    });
+  returnSectionByName(state: RootState) {
+    return (sectionName: string) => {
+      return state.sections.find(
+        section => section.sectionName === sectionName
+      );
+    };
   },
   returnCurrentSection(state: RootState) {
     return state.sections.find(section => {
