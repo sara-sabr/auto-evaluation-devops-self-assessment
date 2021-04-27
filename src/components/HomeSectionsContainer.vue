@@ -15,7 +15,7 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 import HomeSectionCard from "@/components/HomeSectionCard.vue";
 import { PageModel, SurveyModel } from "survey-vue";
-import { SectionRecommendation } from "@/types";
+import { SectionRecommendation } from "@/store/state";
 
 @Component({
   components: { HomeSectionCard },

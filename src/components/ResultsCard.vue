@@ -21,7 +21,7 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { Question, SurveyModel } from "survey-vue";
-import { Recommendations } from "@/types";
+import { Recommendations } from "@/store/state";
 import ResultRecommendations from "@/components/ResultRecommendations.vue";
 @Component({
   components: { ResultsCard, ResultRecommendations },
