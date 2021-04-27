@@ -33,7 +33,8 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { PageModel, SurveyModel } from "survey-vue";
-import { Section } from "@/types";
+import { Section } from "@/store/state";
+import { ActionTypes } from "@/store/actions";
 
 @Component({
   data: function() {
@@ -64,6 +65,8 @@ import { Section } from "@/types";
       return classDef;
     },
     sectionScoreLevel(sectionName: string) {
+      let newSection: Section;
+
       const thisSection: Section = this.$store.getters.returnSectionByName(
         sectionName
       );
@@ -102,8 +105,8 @@ export default class HomeSectionCard extends Vue {
 
   goToSection(sectionName: string) {
     this.survey.currentPage = sectionName;
-    this.$store.commit("updateSurveyData", this.survey);
-    this.$store.commit("updateCurrentPageName", sectionName);
+    this.$store.dispatch(ActionTypes.SaveAppData, this.survey);
+    // this.$store.dispatch("updateCurrentPageName", sectionName);
     this.$router.push("/questions");
   }
 }

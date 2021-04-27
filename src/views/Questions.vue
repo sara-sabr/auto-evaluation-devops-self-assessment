@@ -39,6 +39,7 @@ import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
+import { actions, ActionTypes } from "@/store/actions";
 
 @Component({
   components: {
@@ -62,12 +63,14 @@ export default class Questions extends Vue {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    this.$store.commit("updateSurveyData", this.Survey);
+    // this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
     this.$router.push("/");
   }
 
   goToHomePage() {
-    this.$store.commit("updateSurveyData", this.Survey);
+    // this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
     this.$router.push("/");
   }
 
@@ -104,7 +107,8 @@ export default class Questions extends Vue {
   }
 
   goToSectionResults() {
-    this.$store.commit("updateSurveyData", this.Survey);
+    // this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
     this.saveSurveyData();
     this.$router.push("/sections");
   }
