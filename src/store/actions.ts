@@ -1,10 +1,10 @@
 import { ActionTree, ActionContext } from "vuex";
 import { Mutations, MutationType } from "@/store/mutations";
-import { RootState } from "@/store/state";
+import { RootState, Section, state } from "@/store/state";
 import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
 import { Model, SurveyModel } from "survey-vue";
-import store from "@/store";
+import store from "@/store/index";
 
 const appConfigs = appConfig.settings;
 const recommendations = appConfig;
@@ -14,7 +14,8 @@ export enum ActionTypes {
   FetchAppData = "FETCH_APP_DATA",
   GetLocalAppData = "GET_APP_DATA",
   SetAppData = "SET_APP_DATA",
-  SaveAppData = "SAVE_APP_DATA"
+  SaveAppData = "SAVE_APP_DATA",
+  SetSections = "SET_SECTIONS"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -29,6 +30,7 @@ export type Actions = {
   [ActionTypes.GetLocalAppData](context: ActionAugments): void;
   [ActionTypes.SetAppData](context: ActionAugments): void;
   [ActionTypes.SaveAppData](context: ActionAugments, value: SurveyModel): void;
+  [ActionTypes.SetSections](context: ActionAugments, value: SurveyModel): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -58,20 +60,63 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     }
     commit(MutationType.SetLoading, false);
   },
-  async [ActionTypes.SetAppData]({ commit }) {
+  async [ActionTypes.SetAppData]({ commit, dispatch }) {
     commit(MutationType.SetLoading, true);
     if (store.state.error === false) {
-      const surveyData = store.state.surveyModel as SurveyModel;
+      // const surveyData = store.state.surveyModel as SurveyModel;
       commit(MutationType.SetCurrentPageNo, 0);
       commit(MutationType.SetCurrentPageName, "");
+      dispatch(ActionTypes.SetSections, store.state.surveyModel);
       commit(MutationType.SetRecommendations, recommendations);
       commit(MutationType.SetToolVersion, appConfigs.version);
       commit(MutationType.SetSectionsPrefix, appConfigs.sectionsPrefix);
     }
     commit(MutationType.SetLoading, false);
   },
-  // TODO: Complete action of saving app data (see store current steps)
   async [ActionTypes.SaveAppData]({ commit }, value: SurveyModel) {
-    commit(MutationType.SetAnswerData, value.getPlainData);
+    commit(MutationType.SetLoading, true);
+    commit(
+      MutationType.SetAnswerData,
+      value.getPlainData({ includeEmpty: false })
+    );
+    commit(MutationType.SetCurrentPageNo, value.currentPageNo);
+    commit(MutationType.SetToolData, value.data);
+    // TODO: Review setup of sections scores based on state
+    state.sections.forEach(section => {
+      let sectionScore: number = 0;
+      let page = value.getPageByName(section.sectionName);
+      page.questions.forEach(question => {
+        if (question.value !== undefined) {
+          let score: number = +question.value;
+          sectionScore += score;
+        }
+      });
+      // commit(MutationType.se)
+      section.userScore = sectionScore;
+    });
+    commit(MutationType.SetLoading, false);
+  },
+  async [ActionTypes.SetSections]({ commit }, value: SurveyModel) {
+    let sections: Section[] = [];
+    if (state.sectionsNames.length > 0) {
+      state.sectionsNames.forEach(sectionName => {
+        let newSection: Section = {
+          sectionName: sectionName,
+          enabled: false,
+          completed: false,
+          questionsNames: [],
+          userScore: 0,
+          maxScore:
+            (store.getters.getPageByName(sectionName).questions.length - 1) * 7,
+          questions: []
+        };
+        value.getPageByName(sectionName).questions.forEach(question => {
+          newSection.questionsNames.push(question.name);
+          newSection.questions.push(question);
+        });
+        sections.push(newSection);
+      });
+      commit(MutationType.SetSections, sections);
+    }
   }
 };
