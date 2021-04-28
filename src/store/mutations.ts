@@ -28,6 +28,7 @@ export type Mutations = {
   [MutationType.SetAnswerData](state: RootState, value: any[]): void;
   [MutationType.SetToolData](state: RootState, value: any): void;
   [MutationType.SetSections](state: RootState, value: Section[]): void;
+  [MutationType.SetSectionsNames](state: RootState, value: string[]): void;
   [MutationType.SetCurrentPageNo](state: RootState, value: number): void;
   [MutationType.SetCurrentPageName](state: RootState, value: string): void;
   // TODO: Need to fix State structure to simplify Recommendations
@@ -75,6 +76,9 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.SetToolData](state: RootState, value: any) {
     state.toolData = Object.freeze(value);
+  },
+  [MutationType.SetSectionsNames](state: RootState, value: string[]) {
+    state.sectionsNames = value;
   },
   [MutationType.SetSections](state: RootState, value: Section[]) {
     state.sections = value;
