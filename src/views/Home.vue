@@ -25,7 +25,6 @@ import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
 import { SectionRecommendation } from "@/store/state";
 import resultsData from "@/survey-results.json";
-import { returnAllSectionsByPrefix } from "@/store";
 import { ActionTypes } from "@/store/actions";
 
 @Component({
@@ -38,17 +37,19 @@ import { ActionTypes } from "@/store/actions";
 })
 export default class Home extends Vue {
   Survey: Model = new Model(surveyJSON);
-  sections: PageModel[] = returnAllSectionsByPrefix(
+  sections: PageModel[] = this.$store.getters.returnSectionsByPrefix(
     this.Survey,
     resultsData.settings.sectionsPrefix
   );
   sectionRecommendation: SectionRecommendation[] =
     resultsData.sectionRecommendations;
-  startAgain() {
-    this.Survey.clear(true, true);
-    window.localStorage.clear();
-    this.$store.commit("resetSurvey");
-  }
+
+  // Feature removed, used to reset local storage
+  // startAgain() {
+  //   this.Survey.clear(true, true);
+  //   window.localStorage.clear();
+  //   this.$store.commit("resetSurvey");
+  // }
 
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
@@ -70,7 +71,8 @@ export default class Home extends Vue {
     };
 
     this.Survey.onComplete.add(result => {
-      this.$store.commit("calculateResult", result);
+      // this.$store.commit("calculateResult", result);
+      this.$store.dispatch(ActionTypes.SaveAppData, result);
       this.$router.push("/results");
     });
 
