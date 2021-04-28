@@ -6,6 +6,9 @@ export enum MutationType {
   AppLoaded = "APP_LOADED",
   AppError = "APP_ERROR",
   SetSurveyData = "SET_SURVEY_DATA",
+  /**Sets state.answerData with value
+   * @param value Containts a SurveyModel object
+   */
   SetAnswerData = "SET_ANSWER_DATA",
   SetToolData = "SET_TOOL_DATA",
   SetSections = "SET_SECTIONS",
@@ -22,7 +25,8 @@ export type Mutations = {
   [MutationType.AppLoaded](state: RootState, value: SurveyModel): void;
   [MutationType.AppError](state: RootState): void;
   [MutationType.SetSurveyData](state: RootState, value: SurveyModel): void;
-  [MutationType.SetAnswerData](state: RootState, value: any): void;
+  [MutationType.SetAnswerData](state: RootState, value: any[]): void;
+  [MutationType.SetToolData](state: RootState, value: any): void;
   [MutationType.SetSections](state: RootState, value: Section[]): void;
   [MutationType.SetCurrentPageNo](state: RootState, value: number): void;
   [MutationType.SetCurrentPageName](state: RootState, value: string): void;
@@ -66,8 +70,11 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.SetSurveyData](state: RootState, value: SurveyModel) {
     state.surveyModel = value;
   },
-  [MutationType.SetAnswerData](state: RootState, value: any) {
+  [MutationType.SetAnswerData](state: RootState, value: any[]) {
     state.answerData = value;
+  },
+  [MutationType.SetToolData](state: RootState, value: any) {
+    state.toolData = Object.freeze(value);
   },
   [MutationType.SetSections](state: RootState, value: Section[]) {
     state.sections = value;
