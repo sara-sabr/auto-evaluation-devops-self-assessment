@@ -5,6 +5,7 @@ import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
 import { Model, SurveyModel } from "survey-vue";
 import store from "@/store/index";
+import { getters } from "./getters";
 
 const appConfigs = appConfig.settings;
 const recommendations = appConfig;
@@ -62,10 +63,13 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.SetAppData]({ commit, dispatch }) {
     commit(MutationType.SetLoading, true);
+    console.log(store.state.error);
     if (store.state.error === false) {
       // const surveyData = store.state.surveyModel as SurveyModel;
       commit(MutationType.SetCurrentPageNo, 0);
       commit(MutationType.SetCurrentPageName, "");
+      let sectionsNames: string[] = getters.returnSectionsNames(state);
+      commit(MutationType.SetSectionsNames, sectionsNames);
       dispatch(ActionTypes.SetSections, store.state.surveyModel);
       commit(MutationType.SetRecommendations, recommendations);
       commit(MutationType.SetToolVersion, appConfigs.version);
@@ -73,7 +77,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     }
     commit(MutationType.SetLoading, false);
   },
-  async [ActionTypes.SaveAppData]({ commit }, value: SurveyModel) {
+  async [ActionTypes.SaveAppData]({ commit, dispatch }, value: SurveyModel) {
     commit(MutationType.SetLoading, true);
     commit(
       MutationType.SetAnswerData,
@@ -94,6 +98,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       // commit(MutationType.se)
       section.userScore = sectionScore;
     });
+    dispatch(ActionTypes.SetSections, value);
     commit(MutationType.SetLoading, false);
   },
   async [ActionTypes.SetSections]({ commit }, value: SurveyModel) {
