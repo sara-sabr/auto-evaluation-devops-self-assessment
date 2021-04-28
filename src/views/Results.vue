@@ -179,7 +179,8 @@ export default class Results extends Vue {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    this.$store.commit("calculateResult", this.Survey);
+    // this.$store.commit("calculateResult", this.Survey);
+    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
 
     this.myResults = this.$store.getters.resultDataSections;
   }
@@ -197,7 +198,8 @@ export default class Results extends Vue {
     });
 
     this.Survey.onValueChanged.add(result => {
-      this.$store.commit("calculateResult", result);
+      // this.$store.commit("calculateResult", result);
+      this.$store.dispatch(ActionTypes.SaveAppData, result);
     });
 
     const converter = new showdown.Converter();

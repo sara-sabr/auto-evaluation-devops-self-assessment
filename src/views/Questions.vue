@@ -119,7 +119,8 @@ export default class Questions extends Vue {
   }
   created() {
     this.Survey.onComplete.add(result => {
-      this.$store.commit("calculateResult", result);
+      // this.$store.commit("calculateResult", result);
+      this.$store.dispatch(ActionTypes.SaveAppData, result);
       this.$router.push("/results");
     });
 
