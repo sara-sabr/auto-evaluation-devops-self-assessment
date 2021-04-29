@@ -1,12 +1,28 @@
 <template>
   <div id="app">
+    <i18n path=""></i18n>
     <div>
-      <b-button v-b-modal.modal-1>Launch demo modal</b-button>
-
-      <b-modal id="modal-1" title="BootstrapVue">
-        <p class="my-4">Hello from modal!</p>
+      <b-modal
+        id="modal-1"
+        :title="$t('notice.newUserModalTitle')"
+        v-model="newUser"
+      >
+        <h5>{{ $t("notice.localSaveWarningSummary") }}</h5>
+        <p>{{ $t("notice.localSaveWarningParagraph") }}</p>
+        <p>
+          <strong>{{ $t("notice.exception") }}</strong>
+        </p>
+        <p>{{ $t("notice.localSaveWarningParagraph2") }}</p>
       </b-modal>
     </div>
     <router-view />
   </div>
 </template>
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  data() {
+    return { newUser: true };
+  }
+});
+</script>
