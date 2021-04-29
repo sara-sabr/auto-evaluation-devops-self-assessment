@@ -7,6 +7,8 @@
     "goBack": "Back"
   },
   "notice": {
+    "newUserModalTitle": "Title",
+    "newUserModalBody": "Body",
     "localSaveWarningSummary": "Privacy Notice",
     "localSaveWarningParagraph": "Responses to the DevOps Self-Assessment are stored locally on your computer (browser's cache), and the Government of Canada does not save any information.",
     "localSaveWarningParagraph2": "Only for ESDC employees connected to the VPN. Anonymous responses of each completed section are saved for analysis by the DevOps CoE and IT Strategy team.",
