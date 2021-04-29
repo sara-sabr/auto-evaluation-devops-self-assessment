@@ -7,6 +7,9 @@
         :title="$t('notice.newUserModalTitle')"
         v-model="newUser"
       >
+        <p>
+          {{ $t("notice.newUserModalBody") }}
+        </p>
         <h5>{{ $t("notice.localSaveWarningSummary") }}</h5>
         <p>{{ $t("notice.localSaveWarningParagraph") }}</p>
         <p>
