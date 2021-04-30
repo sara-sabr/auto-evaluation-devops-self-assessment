@@ -7,6 +7,7 @@
     "goBack": "Retour"
   },
   "notice": {
+    "displayWelcome": "Afficher le mot de bienvenue",
     "newUserModalTitle": "Bienvenue à l'outil d'autoévaluation DevOps!",
     "newUserModalBody": "L'outil suivant s’appuie sur le Rapport sur l’état du DevOps publié chaque année depuis 2014 par DevOps Research and Assessment (DORA). Le programme de recherche DevOps, qui existe depuis six ans, a permis de valider plusieurs capacités techniques, de processus, de mesure et culturelles afin d’accélérer la livraison de logiciels et le rendement organisationnel. Les questions du sondage serviront à mesurer et à appuyer l’amélioration continue de ces capacités à la DGIIT et à EDSC. Les équipes sont priées de répondre au sondage tous les 6 (six) à 12 (douze) mois pour mesurer la réussite de leurs activités. L’équipe de la stratégie des TI recommande aux équipes de répondre à toutes les capacités pour déterminer la situation initiale et mesurer les progrès accomplis. Pour de plus amples détails, nous vous invitons à consulter ",
     "newUserModalURL": "https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html",

@@ -7,6 +7,7 @@
     "goBack": "Back"
   },
   "notice": {
+    "displayWelcome": "Display Welcome Message",
     "newUserModalTitle": "Welcome to the Devops Self-Assessment Tool!",
     "newUserModalBody": "The following tool is based on the State of DevOps Report that has been published annually since 2014, as part of the DevOps Research and Assessment (DORA). This six-year research program has validated a number of technical, process, measurement, and cultural capabilities to drive higher software delivery and organizational performance. The survey questions will measure and support the Continuous Improvement of these capabilities in IITB and ESDC. Teams are invited to complete the survey every 6 (six) to 12 (twelve) months to measure the success of their activities. The IT Strategy team recommends that teams complete all capabilities at least once to establish a full baseline. For more details, please consult ",
     "newUserModalURL": "https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html",
