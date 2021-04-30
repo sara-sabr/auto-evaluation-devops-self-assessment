@@ -19,4 +19,3 @@ export default Vue.extend({
   }
 });
 </script>
-0
