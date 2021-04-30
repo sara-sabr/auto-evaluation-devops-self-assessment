@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <BaseNavigation />
     <div>
       <HomeSectionsContainer
         :sections="sections"
