@@ -3,7 +3,7 @@
     <i18n path=""></i18n>
     <div>
       <b-modal
-        id="modal-1"
+        id="welcome-modal"
         :title="$t('notice.newUserModalTitle')"
         v-model="newUser"
       >
@@ -16,6 +16,16 @@
           <strong>{{ $t("notice.exception") }}</strong>
         </p>
         <p>{{ $t("notice.localSaveWarningParagraph2") }}</p>
+        <b-form-checkbox
+          id="checkbox-1"
+          v-model="checkbox"
+          name="checkbox-1"
+          value="true"
+          unchecked-value="true"
+          size="lg"
+        >
+          {{ $t("notice.hideNotice") }}
+        </b-form-checkbox>
       </b-modal>
     </div>
     <router-view />
@@ -25,7 +35,8 @@
 import Vue from "vue";
 export default Vue.extend({
   data() {
-    return { newUser: true };
+    return { newUser: true, checkbox: "true" };
   }
 });
 </script>
+0
