@@ -8,7 +8,10 @@
         v-model="newUser"
       >
         <p>
-          {{ $t("notice.newUserModalBody") }}
+          {{ $t("notice.newUserModalBody")
+          }}<a :href="$t('notice.newUserModalURL')">{{
+            $t("notice.newUserModalURLText")
+          }}</a>
         </p>
         <h5>{{ $t("notice.localSaveWarningSummary") }}</h5>
         <p>{{ $t("notice.localSaveWarningParagraph") }}</p>
