@@ -11,6 +11,11 @@ import BaseNotice from "@/components/BaseNotice.vue";
 export default Vue.extend({
   components: {
     BaseNotice
+  },
+  mounted() {
+    if (this.$store.getters.returnDisplayWelcome === true) {
+      this.$bvModal.show("welcome-modal");
+    }
   }
 });
 </script>
