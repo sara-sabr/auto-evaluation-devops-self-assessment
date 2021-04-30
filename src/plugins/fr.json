@@ -13,6 +13,8 @@
     "localSaveWarningParagraph": "Les réponses à l'auto-évaluation DevOps sont stockées localement sur votre ordinateur (cache du navigateur), et le gouvernement du Canada ne sauvegarde aucune information.",
     "localSaveWarningParagraph2": "Uniquement pour les employés d'EDSC connectés au VPN. Les réponses anonymes de chaque section complétée sont sauvegardées pour être analysées par le CdE DevOps et l'équipe de stratégie TI.",
     "exception": "Exception",
+    "hideNotice": "Ne plus afficher le message d'accueil.",
+    "showNotice": "Afficher le Message d'accueil",
     "noProgress":"L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
   },
   "startAgain": "Recommencer",
