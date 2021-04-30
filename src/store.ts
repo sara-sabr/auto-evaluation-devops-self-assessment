@@ -46,7 +46,6 @@ const determineAllSections = (state: RootState, surveyData: SurveyModel) => {
 
 /**
  * Helper function generating the state Sections based on the Survey data.
- * @param An object containing the state of the survey.
  * @param surveyData An object containing the survey data.
  */
 const initializeSections = (state: RootState, surveyData: SurveyModel) => {
