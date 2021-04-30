@@ -20,9 +20,9 @@
         </p>
         <p>{{ $t("notice.localSaveWarningParagraph2") }}</p>
         <b-form-checkbox
-          id="checkbox-1"
+          id="checkbox-notice"
           v-model="checkbox"
-          name="checkbox-1"
+          name="checkbox-notice"
           value="true"
           unchecked-value="true"
           size="lg"
