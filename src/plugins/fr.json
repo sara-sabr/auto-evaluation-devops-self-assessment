@@ -8,14 +8,8 @@
   },
   "notice": {
     "displayWelcome": "Afficher le mot de bienvenue",
-    "newUserModalTitle": "Bienvenue à l'outil d'autoévaluation DevOps!",
-    "newUserModalBody": "L'outil suivant s’appuie sur le Rapport sur l’état du DevOps publié chaque année depuis 2014 par DevOps Research and Assessment (DORA). Le programme de recherche DevOps, qui existe depuis six ans, a permis de valider plusieurs capacités techniques, de processus, de mesure et culturelles afin d’accélérer la livraison de logiciels et le rendement organisationnel. Les questions du sondage serviront à mesurer et à appuyer l’amélioration continue de ces capacités à la DGIIT et à EDSC. Les équipes sont priées de répondre au sondage tous les 6 (six) à 12 (douze) mois pour mesurer la réussite de leurs activités. L’équipe de la stratégie des TI recommande aux équipes de répondre à toutes les capacités pour déterminer la situation initiale et mesurer les progrès accomplis. Pour de plus amples détails, nous vous invitons à consulter ",
-    "newUserModalURL": "https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html",
-    "newUserModalURLText": "notre page web dédiée.",
-    "localSaveWarningSummary": "Remarque vie privée",
-    "localSaveWarningParagraph": "Les réponses à l'auto-évaluation DevOps sont stockées localement sur votre ordinateur (cache du navigateur), et le gouvernement du Canada ne sauvegarde aucune information.",
-    "localSaveWarningParagraph2": "Uniquement pour les employés d'EDSC connectés au VPN. Les réponses anonymes de chaque section complétée sont sauvegardées pour être analysées par le CdE DevOps et l'équipe de stratégie TI.",
-    "exception": "Exception",
+    "welcomeNoticeTitle": "##### Bienvenue à l'outil d'autoévaluation DevOps!",
+    "welcomeNoticeBody": "L'outil suivant est basé sur le rapport sur l'état du DevOps qui est publié chaque année depuis 2014, dans le cadre de la recherche et de l'évaluation du DevOps (DORA).\n\nLes questions de l'outil permettront de mesurer et de soutenir l'amélioration continue de la maturité DevOps à la DGIIT et à EDSC.\n\nLes équipes sont invitées à remplir l'outil tous les 6 (six) à 12 (douze) mois pour mesurer le succès de leurs activités.\n\nIl y a 11 sections, qui prennent environ 4 à 6 minutes chacune à remplir dans n'importe quel ordre. Remplir toutes les sections prendrait donc environ 60 minutes.  Vous n'êtes pas tenu de répondre à chaque section en une seule visite, mais nous encourageons les équipes à les remplir toutes au moins une fois afin d'établir une base de référence complète.\n\nPour plus de détails, veuillez consulter notre <a href='https://sara-sabr.github.io/ITStrategy/auto-evaluation-devops.html' target=\"_blank\">page web dédiée</a>.\n\n##### Avis de confidentialité\n\nLes réponses à l'auto-évaluation DevOps sont stockées localement sur votre ordinateur (cache du navigateur), et le gouvernement du Canada ne sauvegarde aucune information.\n\n**Exception**\n\nSeules les réponses des employés de EDSC connectés au VPN seront sauvegardées de manière anonyme pour être analysées par le CoE DevOps et l'équipe de la stratégie TI.",
     "hideNotice": "Ne plus afficher le message d'accueil.",
     "showNotice": "Afficher le Message d'accueil",
     "noProgress":"L'auto-évaluation DevOps n'a pas encore commencée. Veuillez choisir une section à compléter."
