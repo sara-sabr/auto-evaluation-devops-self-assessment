@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d9bd5e0240b23ad034a0",
+    "revision": "2d05b0913db60e80f3ff",
     "url": "/auto-evaluation-devops-self-assessment/css/app.f9b925ac.css"
   },
   {
-    "revision": "55e6ea492daf13f5e42d",
-    "url": "/auto-evaluation-devops-self-assessment/css/chunk-vendors.8b7f2bbf.css"
+    "revision": "43fed563fd3523d7208c",
+    "url": "/auto-evaluation-devops-self-assessment/css/chunk-vendors.513c581d.css"
   },
   {
     "revision": "4dce5bbb129034eed4e25f00baabd8b3",
@@ -140,15 +140,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/auto-evaluation-devops-self-assessment/helper/vfs_fonts.js"
   },
   {
-    "revision": "f97fbc4c9cfa8b0ea24b2e86dda8a485",
+    "revision": "64f78d502c29e9585381a398ee62a6de",
     "url": "/auto-evaluation-devops-self-assessment/index.html"
   },
   {
-    "revision": "d9bd5e0240b23ad034a0",
-    "url": "/auto-evaluation-devops-self-assessment/js/app.eaa97d4d.js"
+    "revision": "2d05b0913db60e80f3ff",
+    "url": "/auto-evaluation-devops-self-assessment/js/app.4443619a.js"
   },
   {
-    "revision": "55e6ea492daf13f5e42d",
+    "revision": "43fed563fd3523d7208c",
     "url": "/auto-evaluation-devops-self-assessment/js/chunk-vendors.40e33344.js"
   },
   {
