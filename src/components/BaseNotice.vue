@@ -1,22 +1,13 @@
 <template>
   <div>
     <b-modal id="welcome-modal">
-      <template #modal-header>
-        <h5>{{ $t("notice.newUserModalTitle") }}</h5>
+      <template #modal-header >
+        <div v-html="markdownToHtml($t('notice.welcomeNoticeTitle'))">
+          >
+        </div>
       </template>
       <template #default>
-        <p>
-          {{ $t("notice.newUserModalBody")
-          }}<a :href="$t('notice.newUserModalURL')" target="_blank">{{
-            $t("notice.newUserModalURLText")
-          }}</a>
-        </p>
-        <h5>{{ $t("notice.localSaveWarningSummary") }}</h5>
-        <p>{{ $t("notice.localSaveWarningParagraph") }}</p>
-        <p>
-          <strong>{{ $t("notice.exception") }}</strong>
-        </p>
-        <p>{{ $t("notice.localSaveWarningParagraph2") }}</p>
+        <div v-html="markdownToHtml($t('notice.welcomeNoticeBody'))"></div>
         <b-form-checkbox
           id="checkbox-notice"
           v-model="checkbox"
@@ -56,6 +47,11 @@ export default Vue.extend({
       }
       this.$store.commit("updateDisplayNotice", displayNotice);
       this.$bvModal.hide("welcome-modal");
+    },
+    markdownToHtml(item: string) {
+      const marked = require("marked");
+      return marked(item);
+      // return marked(messages.en.displayNoticeStatus)
     }
   }
 });
