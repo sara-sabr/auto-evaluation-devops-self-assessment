@@ -22,7 +22,8 @@ const vuexLocal = new VuexPersistence({
   reducer: (state: RootState) => ({
     toolData: state.toolData,
     currentPageNo: state.currentPageNo,
-    currentPageName: state.currentPageName
+    currentPageName: state.currentPageName,
+    displayWelcomeNotice: state.displayWelcomeNotice
   })
 });
 
@@ -45,7 +46,6 @@ const determineAllSections = (state: RootState, surveyData: SurveyModel) => {
 
 /**
  * Helper function generating the state Sections based on the Survey data.
- * @param An object containing the state of the survey.
  * @param surveyData An object containing the survey data.
  */
 const initializeSections = (state: RootState, surveyData: SurveyModel) => {
@@ -114,6 +114,7 @@ const updateSurveyData = (state: RootState, surveyData: SurveyModel) => {
 
   //freeze this data so we can load from localStorage
   state.toolData = Object.freeze(surveyData.data);
+  state.displayWelcomeNotice = Object.freeze(state.displayWelcomeNotice);
   state.answerData = surveyData.getPlainData({
     includeEmpty: false
   });
@@ -250,7 +251,8 @@ const store: StoreOptions<RootState> = {
     currentPageNo: 0,
     currentPageName: undefined,
     recommendations: undefined,
-    toolVersion: sectionsRecommendations.settings.version
+    toolVersion: sectionsRecommendations.settings.version,
+    displayWelcomeNotice: true
   },
   mutations: {
     // mutation to reset the state when a user resets the survey
@@ -265,6 +267,7 @@ const store: StoreOptions<RootState> = {
       state.currentPageName = undefined;
       state.toolData = {};
       state.recommendations = undefined;
+      state.displayWelcomeNotice = true;
     },
 
     // update state with results from survey
@@ -289,6 +292,9 @@ const store: StoreOptions<RootState> = {
     },
     updateCurrentPageName(state: RootState, currentPageName: string) {
       updateCurrentPageName(state, currentPageName);
+    },
+    updateDisplayNotice(state: RootState, displayWelcomeNotice: boolean) {
+      state.displayWelcomeNotice = displayWelcomeNotice;
     },
 
     initializeSections(state: RootState, result: SurveyModel) {
@@ -343,6 +349,9 @@ const store: StoreOptions<RootState> = {
     },
     returnCurrentPageNumber: state => {
       return state.currentPageNo;
+    },
+    returnDisplayWelcome: state => {
+      return state.displayWelcomeNotice;
     }
   }
 };

@@ -12,6 +12,7 @@ export interface RootState {
   currentPageName?: string;
   recommendations?: Recommendations;
   toolVersion: string;
+  displayWelcomeNotice: boolean;
 }
 
 export interface Section {

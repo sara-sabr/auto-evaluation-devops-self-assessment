@@ -1,13 +1,13 @@
 import Vue from "vue";
+import BootstrapVue from "bootstrap-vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import i18n from "@/plugins/i18n";
 import "./registerServiceWorker";
 import { StylesManager } from "survey-vue";
-import BootstrapVue from "bootstrap-vue";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap-vue/dist/bootstrap-vue.css";
 
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);
@@ -73,7 +73,7 @@ function reloadTemplate() {
             switchLanguage === "en"
               ? "https://sara-sabr.github.io/ITStrategy/a-propos-de-nous.html"
               : "https://sara-sabr.github.io/ITStrategy/about-us.html",
-              newWindow: true,
+          newWindow: true,
           text: switchLanguage === "en" ? "À propos de nous" : "About us"
         },
         {
@@ -81,7 +81,7 @@ function reloadTemplate() {
             switchLanguage === "en"
               ? "https://sara-sabr.github.io/ITStrategy/auto-evaluation-devops.html"
               : "https://sara-sabr.github.io/ITStrategy/devops-self-assessment.html",
-              newWindow: true,
+          newWindow: true,
           text: switchLanguage === "en" ? "Fonctionnement" : "How it works"
         },
         {
@@ -89,23 +89,29 @@ function reloadTemplate() {
             switchLanguage === "en"
               ? "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment"
               : "https://github.com/sara-sabr/auto-evaluation-devops-self-assessment",
-              newWindow: true,
+          newWindow: true,
           text: switchLanguage === "en" ? "Code source" : "Source code"
         }
       ],
-      contactLink: [{
-        href:
-          switchLanguage === "en"
-            ? "https://sara-sabr.github.io/ITStrategy/contactez-nous.html"
-            : "https://sara-sabr.github.io/ITStrategy/contact-us.html",
-        "newWindow": true
-      }],
-      termsLink: [{
-        "newWindow": true
-      }],
-      privacyLink: [{
-        "newWindow": true
-      }],
+      contactLink: [
+        {
+          href:
+            switchLanguage === "en"
+              ? "https://sara-sabr.github.io/ITStrategy/contactez-nous.html"
+              : "https://sara-sabr.github.io/ITStrategy/contact-us.html",
+          newWindow: true
+        }
+      ],
+      termsLink: [
+        {
+          newWindow: true
+        }
+      ],
+      privacyLink: [
+        {
+          newWindow: true
+        }
+      ],
       showFeatures: false
     });
   }

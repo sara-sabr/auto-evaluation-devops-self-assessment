@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <BaseNavigation />
+    <b-button @click="displayWelcomeMessage()">{{
+      $t("notice.displayWelcome")
+    }}</b-button>
     <div>
       <HomeSectionsContainer
         :sections="sections"
@@ -33,6 +35,11 @@ import { returnAllSectionsByPrefix } from "@/store";
     ActionButtonBar,
     BaseNavigation,
     HomeSectionsContainer
+  },
+  methods: {
+    displayWelcomeMessage() {
+      this.$bvModal.show("welcome-modal");
+    }
   }
 })
 export default class Home extends Vue {
