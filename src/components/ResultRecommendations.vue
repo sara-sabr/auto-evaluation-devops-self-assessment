@@ -20,12 +20,6 @@ import { Vue, Component, Prop } from "vue-property-decorator";
   components: {
     ResultRecommendations
   },
-  computed: {
-    getMarkdown() {
-      const marked = require("marked");
-      return marked("# Title\n## subtitle\n\n- test\n- test\n- test")
-    }
-  },
   methods: {
     /**
      * Gets the recommendations based on the section name provided and the level achieved in the section
