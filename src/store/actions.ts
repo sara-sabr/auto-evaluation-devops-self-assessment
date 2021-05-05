@@ -4,8 +4,8 @@ import { RootState, Section, state } from "@/store/state";
 import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
 import { Model, SurveyModel } from "survey-vue";
-import store from "@/store/index";
-import { getters } from "./getters";
+import { store } from "@/store/index";
+import { getters } from "@/store/getters";
 
 const appConfigs = appConfig.settings;
 const recommendations = appConfig;
@@ -44,8 +44,9 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
         remoteAppData = new Model(data);
         if (remoteAppData) {
           commit(MutationType.SetSurveyData, remoteAppData);
+          commit(MutationType.AppLoadingSuccess, undefined);
         } else {
-          commit(MutationType.AppError, undefined);
+          commit(MutationType.AppLoadingError, undefined);
         }
       })
       .catch(error => console.error(error));
@@ -53,24 +54,25 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.GetLocalAppData]({ commit }) {
     commit(MutationType.StartLoading, undefined);
-    let survey: Model = new Model(appData);
-    if (survey) {
-      commit(MutationType.SetSurveyData, survey);
+    let localAppData: Model = new Model(appData);
+    if (localAppData) {
+      commit(MutationType.SetSurveyData, localAppData);
+      commit(MutationType.AppLoadingSuccess, undefined);
     } else {
-      commit(MutationType.AppError, undefined);
+      commit(MutationType.AppLoadingError, undefined);
     }
     commit(MutationType.StopLoading, undefined);
   },
-  async [ActionTypes.SetAppData]({ commit, dispatch }) {
+  async [ActionTypes.SetAppData]({ commit, dispatch, getters }) {
     commit(MutationType.StartLoading, undefined);
-    console.log(store.state.error);
-    if (store.state.error === false) {
+    if (getters.isStateError === false) {
       // const surveyData = store.state.surveyModel as SurveyModel;
       commit(MutationType.SetCurrentPageNo, 0);
       commit(MutationType.SetCurrentPageName, "");
-      let sectionsNames: string[] = getters.returnSectionsNames(state);
+      let sectionsNames: string[] = getters.returnSectionsNames;
+      let surveyModel: SurveyModel = getters.returnSurveyModel;
       commit(MutationType.SetSectionsNames, sectionsNames);
-      dispatch(ActionTypes.SetSections, store.state.surveyModel);
+      // dispatch(ActionTypes.SetSections, surveyModel);
       commit(MutationType.SetRecommendations, recommendations);
       commit(MutationType.SetToolVersion, appConfigs.version);
       commit(MutationType.SetSectionsPrefix, appConfigs.sectionsPrefix);
@@ -86,33 +88,33 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
     commit(MutationType.SetToolData, value.data);
     // TODO: Review setup of sections scores based on state
-    state.sections.forEach(section => {
-      let sectionScore: number = 0;
-      let page = value.getPageByName(section.sectionName);
-      page.questions.forEach(question => {
-        if (question.value !== undefined) {
-          let score: number = +question.value;
-          sectionScore += score;
-        }
-      });
-      // commit(MutationType.se)
-      section.userScore = sectionScore;
-    });
-    dispatch(ActionTypes.SetSections, value);
+    // state.sections.forEach(section => {
+    //   let sectionScore: number = 0;
+    //   let page = value.getPageByName(section.sectionName);
+    //   page.questions.forEach(question => {
+    //     if (question.value !== undefined) {
+    //       let score: number = +question.value;
+    //       sectionScore += score;
+    //     }
+    //   });
+    //   // commit(MutationType.se)
+    //   section.userScore = sectionScore;
+    // });
+    // dispatch(ActionTypes.SetSections, value);
     commit(MutationType.StopLoading, undefined);
   },
-  async [ActionTypes.SetSections]({ commit }, value: SurveyModel) {
+  async [ActionTypes.SetSections]({ commit, getters }, value: SurveyModel) {
     let sections: Section[] = [];
-    if (state.sectionsNames.length > 0) {
-      state.sectionsNames.forEach(sectionName => {
+    if (getters.returnSectionsNames.length > 0) {
+      const sectionNames: string[] = getters.returnSectionsNames;
+      sectionNames.forEach(sectionName => {
         let newSection: Section = {
           sectionName: sectionName,
           enabled: false,
           completed: false,
           questionsNames: [],
           userScore: 0,
-          maxScore:
-            (store.getters.getPageByName(sectionName).questions.length - 1) * 7,
+          maxScore: (value.getPageByName(sectionName).questions.length - 1) * 7,
           questions: []
         };
         value.getPageByName(sectionName).questions.forEach(question => {
