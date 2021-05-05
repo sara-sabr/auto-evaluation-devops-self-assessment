@@ -36,7 +36,7 @@ export type Actions = {
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.FetchAppData]({ commit }, value) {
-    commit(MutationType.SetLoading, true);
+    commit(MutationType.StartLoading, undefined);
     let remoteAppData: Model;
     fetch(value)
       .then(response => response.json()) // one extra step
@@ -49,20 +49,20 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
         }
       })
       .catch(error => console.error(error));
-    commit(MutationType.SetLoading, false);
+    commit(MutationType.StopLoading, undefined);
   },
   async [ActionTypes.GetLocalAppData]({ commit }) {
-    commit(MutationType.SetLoading, true);
+    commit(MutationType.StartLoading, undefined);
     let survey: Model = new Model(appData);
     if (survey) {
       commit(MutationType.SetSurveyData, survey);
     } else {
       commit(MutationType.AppError, undefined);
     }
-    commit(MutationType.SetLoading, false);
+    commit(MutationType.StopLoading, undefined);
   },
   async [ActionTypes.SetAppData]({ commit, dispatch }) {
-    commit(MutationType.SetLoading, true);
+    commit(MutationType.StartLoading, undefined);
     console.log(store.state.error);
     if (store.state.error === false) {
       // const surveyData = store.state.surveyModel as SurveyModel;
@@ -75,10 +75,10 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       commit(MutationType.SetToolVersion, appConfigs.version);
       commit(MutationType.SetSectionsPrefix, appConfigs.sectionsPrefix);
     }
-    commit(MutationType.SetLoading, false);
+    commit(MutationType.StopLoading, undefined);
   },
   async [ActionTypes.SaveAppData]({ commit, dispatch }, value: SurveyModel) {
-    commit(MutationType.SetLoading, true);
+    commit(MutationType.StartLoading, undefined);
     commit(
       MutationType.SetAnswerData,
       value.getPlainData({ includeEmpty: false })
@@ -99,7 +99,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       section.userScore = sectionScore;
     });
     dispatch(ActionTypes.SetSections, value);
-    commit(MutationType.SetLoading, false);
+    commit(MutationType.StopLoading, undefined);
   },
   async [ActionTypes.SetSections]({ commit }, value: SurveyModel) {
     let sections: Section[] = [];
