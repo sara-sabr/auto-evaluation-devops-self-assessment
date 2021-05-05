@@ -3,12 +3,12 @@ import { Recommendations, RootState, Section } from "@/store/state";
 import { SurveyModel } from "survey-vue";
 
 export enum MutationType {
-  AppLoaded = "APP_LOADED",
-  AppError = "APP_ERROR",
+  AppLoadingSuccess = "APP_LOADED",
+  AppLoadingError = "APP_ERROR",
   SetSurveyData = "SET_SURVEY_DATA",
-  /**Sets state.answerData with value
-   * @param value Containts a SurveyModel object
-   */
+  // /**Sets state.answerData with value
+  //  * @param value Containts a SurveyModel object
+  //  */
   SetAnswerData = "SET_ANSWER_DATA",
   SetToolData = "SET_TOOL_DATA",
   SetSections = "SET_SECTIONS",
@@ -23,8 +23,8 @@ export enum MutationType {
 }
 
 export type Mutations = {
-  [MutationType.AppLoaded](state: RootState, value: SurveyModel): void;
-  [MutationType.AppError](state: RootState): void;
+  [MutationType.AppLoadingSuccess](state: RootState): void;
+  [MutationType.AppLoadingError](state: RootState): void;
   [MutationType.SetSurveyData](state: RootState, value: SurveyModel): void;
   [MutationType.SetAnswerData](state: RootState, value: any[]): void;
   [MutationType.SetToolData](state: RootState, value: any): void;
@@ -44,30 +44,10 @@ export type Mutations = {
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
-  [MutationType.AppLoaded](state: RootState, value: SurveyModel) {
-    state.surveyModel = value;
-    state.answerData = [];
-    state.toolData = undefined;
-    state.sections = [];
-    state.sectionsNames = [];
-    state.currentPageNo = 0;
-    state.currentPageName = undefined;
-    state.recommendations = undefined;
-    state.toolVersion = "";
-    state.sectionsPrefix = "";
+  [MutationType.AppLoadingSuccess](state: RootState) {
     state.error = false;
   },
-  [MutationType.AppError](state: RootState) {
-    state.surveyModel = undefined;
-    state.answerData = [];
-    state.toolData = undefined;
-    state.sections = [];
-    state.sectionsNames = [];
-    state.currentPageNo = 0;
-    state.currentPageName = undefined;
-    state.recommendations = undefined;
-    state.toolVersion = "";
-    state.sectionsPrefix = "";
+  [MutationType.AppLoadingError](state: RootState) {
     state.error = true;
   },
   [MutationType.SetSurveyData](state: RootState, value: SurveyModel) {
