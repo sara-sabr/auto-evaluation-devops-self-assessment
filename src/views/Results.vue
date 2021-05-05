@@ -106,37 +106,6 @@ export default class Results extends Vue {
   goToQuestions() {
     this.$router.push("/Questions");
   }
-  buildSurveyFile(): string {
-    return JSON.stringify({
-      name: "surveyResults",
-      version: this.$store.state.toolVersion,
-      currentPage: this.$store.state.currentPageNo,
-      data: this.$store.state.toolData
-    });
-  }
-  // async saveSurveyData(): Promise<boolean> {
-  //   var responseStatus: boolean = false;
-  //   const saveFile = this.buildSurveyFile();
-
-  //   var requestOptions = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/text"
-  //     },
-  //     mode: "no-cors" as RequestMode,
-  //     name: "surveyData",
-  //     body: saveFile
-  //   };
-  //   await fetch(
-  //     "https://doraselfassessment.azurewebsites.net/api/saveselfassessment",
-  //     requestOptions
-  //   ).then(function(response) {
-  //     if (response.status === 200) {
-  //       responseStatus = true;
-  //     }
-  //   });
-  //   return responseStatus;
-  // }
   exportResults() {
     const source = window.document.getElementById(
       this.$i18n.locale + "-content"
@@ -169,17 +138,17 @@ export default class Results extends Vue {
     window.removeEventListener("afterprint", afterPrint);
   }
 
-  startAgain() {
-    this.Survey.clear(true, true);
-    window.localStorage.clear();
-    this.$store.commit("resetSurvey");
-    this.$router.push({ path: "/" });
-  }
+  /** */
+  // startAgain() {
+  //   this.Survey.clear(true, true);
+  //   window.localStorage.clear();
+  //   this.$store.commit("resetSurvey");
+  //   this.$router.push({ path: "/" });
+  // }
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    // this.$store.commit("calculateResult", this.Survey);
     this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
 
     this.myResults = this.$store.getters.resultDataSections;
@@ -193,12 +162,10 @@ export default class Results extends Vue {
 
   created() {
     this.Survey.onComplete.add(result => {
-      // this.$store.commit("updateSurveyData", result);
       this.$store.dispatch(ActionTypes.SaveAppData, result);
     });
 
     this.Survey.onValueChanged.add(result => {
-      // this.$store.commit("calculateResult", result);
       this.$store.dispatch(ActionTypes.SaveAppData, result);
     });
 

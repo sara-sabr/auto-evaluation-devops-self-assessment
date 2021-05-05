@@ -55,7 +55,6 @@ export default class Home extends Vue {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    // this.$store.commit("updateSurveyData", this.Survey);
     this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
   }
 
@@ -66,24 +65,20 @@ export default class Home extends Vue {
   }
 
   created() {
-    this.Survey.css = {
-      navigationButton: "btn survey-button"
-    };
+    /** Disabled - no longer used */
+    // this.Survey.css = {
+    //   navigationButton: "btn survey-button"
+    // };
 
-    this.Survey.onComplete.add(result => {
-      // this.$store.commit("calculateResult", result);
-      this.$store.dispatch(ActionTypes.SaveAppData, result);
-      this.$router.push("/results");
-    });
+    /** Disabled - no longer used */
+    // this.Survey.onComplete.add(result => {
+    //   this.$store.dispatch(ActionTypes.SaveAppData, result);
+    //   this.$router.push("/results");
+    // });
 
-    /*this.Survey.onComplete.add(result => {
-      this.$router.push("Results");
-    });*/
-
-    this.Survey.onValueChanged.add(result => {
-      // this.$store.commit("updateSurveyData", result);
-      this.$store.dispatch(ActionTypes.SaveAppData, result);
-    });
+    // this.Survey.onValueChanged.add(result => {
+    //   this.$store.dispatch(ActionTypes.SaveAppData, result);
+    // });
 
     const converter = new showdown.Converter();
 

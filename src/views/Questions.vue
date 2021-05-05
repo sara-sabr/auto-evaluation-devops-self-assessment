@@ -52,24 +52,23 @@ export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
   Survey: Model = new Model(surveyJSON);
 
-  startAgain() {
-    this.Survey.clear(true, true);
-    window.localStorage.clear();
-    this.$store.commit("resetSurvey");
-    this.$router.push("/");
-  }
+  /** Feature disabled */
+  // startAgain() {
+  //   this.Survey.clear(true, true);
+  //   window.localStorage.clear();
+  //   this.$store.commit("resetSurvey");
+  //   this.$router.push("/");
+  // }
 
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    // this.$store.commit("updateSurveyData", this.Survey);
     this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
     this.$router.push("/");
   }
 
   goToHomePage() {
-    // this.$store.commit("updateSurveyData", this.Survey);
     this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
     this.$router.push("/");
   }
@@ -107,7 +106,6 @@ export default class Questions extends Vue {
   }
 
   goToSectionResults() {
-    // this.$store.commit("updateSurveyData", this.Survey);
     this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
     this.saveSurveyData();
     this.$router.push("/sections");
@@ -119,9 +117,12 @@ export default class Questions extends Vue {
   }
   created() {
     this.Survey.onComplete.add(result => {
-      // this.$store.commit("calculateResult", result);
       this.$store.dispatch(ActionTypes.SaveAppData, result);
       this.$router.push("/results");
+    });
+
+    this.Survey.onValueChanged.add(result => {
+      this.$store.dispatch(ActionTypes.SaveAppData, result);
     });
 
     this.Survey.currentPageNo = this.$store.getters.returnCurrentPageNumber;
