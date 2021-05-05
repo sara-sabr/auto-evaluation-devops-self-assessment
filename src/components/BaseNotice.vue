@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-modal id="welcome-modal">
-      <template #modal-header >
+      <template #modal-header>
         <div v-html="markdownToHtml($t('notice.welcomeNoticeTitle'))">
           >
         </div>
