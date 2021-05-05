@@ -5,6 +5,10 @@ import { Section } from "@/store/state";
 import { PageModel, SurveyModel } from "survey-vue";
 
 export type Getters = {
+  /**Checks whether the state status is errored or not
+   * @returns Returns false if no error, true if error.
+   */
+  isStateError(state: RootState): boolean;
   /**
    * Checks whether the store has any user data saved.
    * @returns Returns true if data is saved, false if not
@@ -33,6 +37,9 @@ export type Getters = {
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
+  isStateError(state: RootState) {
+    return state.error;
+  },
   inProgress(state: RootState) {
     return !isEmpty(state.toolData);
   },
