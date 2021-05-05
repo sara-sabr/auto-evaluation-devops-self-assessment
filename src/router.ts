@@ -25,11 +25,6 @@ export default new Router({
       component: Questions
     },
     { path: "/sections", name: "sections", component: Results },
-    {
-      path: "/results",
-      name: "results",
-      component: Results
-    },
     { path: "*", name: "notFound", component: Home }
   ]
 });
