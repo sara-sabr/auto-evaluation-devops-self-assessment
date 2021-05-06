@@ -3,7 +3,7 @@ import { Mutations, MutationType } from "@/store/mutations";
 import { RootState, Section, state } from "@/store/state";
 import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
-import { Model, SurveyModel } from "survey-vue";
+import { PageModel, Model, SurveyModel } from "survey-vue";
 import { store } from "@/store/index";
 import { getters } from "@/store/getters";
 
@@ -16,7 +16,8 @@ export enum ActionTypes {
   GetLocalAppData = "GET_APP_DATA",
   SetAppData = "SET_APP_DATA",
   SaveAppData = "SAVE_APP_DATA",
-  SetSections = "SET_SECTIONS"
+  SetSections = "SET_SECTIONS",
+  UpdateSectionScore = "UPDATE_SECTION_SCORE"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -32,6 +33,10 @@ export type Actions = {
   [ActionTypes.SetAppData](context: ActionAugments): void;
   [ActionTypes.SaveAppData](context: ActionAugments, value: SurveyModel): void;
   [ActionTypes.SetSections](context: ActionAugments, value: SurveyModel): void;
+  [ActionTypes.UpdateSectionScore](
+    context: ActionAugments,
+    value: PageModel
+  ): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -78,11 +83,9 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.SaveAppData]({ commit, dispatch }, value: SurveyModel) {
     commit(MutationType.StartLoading, undefined);
-    commit(
-      MutationType.SetAnswerData,
-      value.getPlainData({ includeEmpty: false })
-    );
+    commit(MutationType.SetAnswerData, value.getPlainData());
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
+    // commit(MutationType.SetCurrentPageName, value.currentPageName);
     commit(MutationType.SetToolData, value.data);
     // TODO: Review setup of sections scores based on state
     // state.sections.forEach(section => {
@@ -122,5 +125,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       });
       commit(MutationType.SetSections, sections);
     }
+  },
+  async [ActionTypes.UpdateSectionScore]({ commit }, value: PageModel) {
+    let thisA: string;
   }
 };
