@@ -17,6 +17,7 @@ export enum ActionTypes {
   SetAppData = "SET_APP_DATA",
   SaveAppData = "SAVE_APP_DATA",
   SetSections = "SET_SECTIONS",
+  SetCurrentSection = "SET_CURRENT_SECTION",
   UpdateSectionScore = "UPDATE_SECTION_SCORE"
 }
 
@@ -33,6 +34,10 @@ export type Actions = {
   [ActionTypes.SetAppData](context: ActionAugments): void;
   [ActionTypes.SaveAppData](context: ActionAugments, value: SurveyModel): void;
   [ActionTypes.SetSections](context: ActionAugments, value: SurveyModel): void;
+  [ActionTypes.SetCurrentSection](
+    context: ActionAugments,
+    value: { sectionNo: number; sectionPageName: string }
+  ): void;
   [ActionTypes.UpdateSectionScore](
     context: ActionAugments,
     value: PageModel
@@ -68,16 +73,19 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     }
     commit(MutationType.StopLoading, undefined);
   },
-  async [ActionTypes.SetAppData]({ commit, dispatch, getters }) {
+  async [ActionTypes.SetAppData]({ commit, getters }) {
     commit(MutationType.StartLoading, undefined);
     if (getters.isStateError === false) {
       commit(MutationType.SetCurrentPageNo, 0);
       commit(MutationType.SetCurrentPageName, "");
       let sectionsNames: string[] = getters.returnSectionsNames;
       commit(MutationType.SetSectionsNames, sectionsNames);
+      let toolData: any = getters.returnToolData;
+      commit(MutationType.SetToolData, toolData);
       commit(MutationType.SetRecommendations, recommendations);
       commit(MutationType.SetToolVersion, appConfigs.version);
       commit(MutationType.SetSectionsPrefix, appConfigs.sectionsPrefix);
+      commit(MutationType.Initialize, undefined);
     }
     commit(MutationType.StopLoading, undefined);
   },
@@ -125,6 +133,13 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       });
       commit(MutationType.SetSections, sections);
     }
+  },
+  async [ActionTypes.SetCurrentSection](
+    { commit },
+    value: { sectionNo: number; sectionPageName: string }
+  ) {
+    commit(MutationType.SetCurrentPageNo, value.sectionNo);
+    commit(MutationType.SetCurrentPageName, value.sectionPageName);
   },
   async [ActionTypes.UpdateSectionScore]({ commit }, value: PageModel) {
     let thisA: string;
