@@ -66,13 +66,10 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.SetAppData]({ commit, dispatch, getters }) {
     commit(MutationType.StartLoading, undefined);
     if (getters.isStateError === false) {
-      // const surveyData = store.state.surveyModel as SurveyModel;
       commit(MutationType.SetCurrentPageNo, 0);
       commit(MutationType.SetCurrentPageName, "");
       let sectionsNames: string[] = getters.returnSectionsNames;
-      let surveyModel: SurveyModel = getters.returnSurveyModel;
       commit(MutationType.SetSectionsNames, sectionsNames);
-      // dispatch(ActionTypes.SetSections, surveyModel);
       commit(MutationType.SetRecommendations, recommendations);
       commit(MutationType.SetToolVersion, appConfigs.version);
       commit(MutationType.SetSectionsPrefix, appConfigs.sectionsPrefix);
