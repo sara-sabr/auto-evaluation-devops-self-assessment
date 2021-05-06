@@ -1,7 +1,6 @@
 import { GetterTree } from "vuex";
-import { RootState } from "@/store/state";
+import { Section, Recommendations, RootState } from "@/store/state";
 import isEmpty from "lodash.isempty";
-import { Section } from "@/store/state";
 import { PageModel, SurveyModel } from "survey-vue";
 
 export type Getters = {
@@ -27,6 +26,10 @@ export type Getters = {
   returnSectionByName(
     state: RootState
   ): (sectionName: string) => Section | undefined;
+  /**Returns all recommendations
+   * @param state The store state
+   */
+  returnRecommendations(state: RootState): Recommendations | undefined;
   returnSectionsByPrefix(
     state: RootState
   ): (surveyData: SurveyModel, prefix: string) => PageModel[];
@@ -60,6 +63,13 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
         section => section.sectionName === sectionName
       );
     };
+  },
+  returnRecommendations(state: RootState) {
+    if (state.recommendations === undefined) {
+      return undefined;
+    } else {
+      return state.recommendations;
+    }
   },
   returnSectionsByPrefix(state: RootState) {
     return (surveyData: SurveyModel, prefix: string) => {
