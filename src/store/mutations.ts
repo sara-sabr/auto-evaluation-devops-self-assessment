@@ -5,10 +5,14 @@ import { SurveyModel } from "survey-vue";
 export enum MutationType {
   AppLoadingSuccess = "APP_LOADED",
   AppLoadingError = "APP_ERROR",
+  /**
+   * Sets survey data
+   * @param value Contains a SurveyModel object
+   */
   SetSurveyData = "SET_SURVEY_DATA",
-  // /**Sets state.answerData with value
-  //  * @param value Containts a SurveyModel object
-  //  */
+  /**Sets state.answerData with value
+   * @param value Contains any array
+   */
   SetAnswerData = "SET_ANSWER_DATA",
   SetToolData = "SET_TOOL_DATA",
   SetSections = "SET_SECTIONS",
