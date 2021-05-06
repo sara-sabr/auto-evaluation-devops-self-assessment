@@ -9,6 +9,11 @@ export type Getters = {
    */
   isStateError(state: RootState): boolean;
   /**
+   * Returns loaded status
+   * @returns Returns true if app data successfully loaded, false otherwise
+   * */
+  isLoaded(state: RootState): boolean;
+  /**
    * Checks whether the store has any user data saved.
    * @returns Returns true if data is saved, false if not
    */
@@ -34,7 +39,7 @@ export type Getters = {
     state: RootState
   ): (surveyData: SurveyModel, prefix: string) => PageModel[];
   returnCurrentSection(state: RootState): Section | undefined;
-  resultsDataSections(state: RootState): any;
+  returnToolData(state: RootState): any;
   returnSurveyModel(state: RootState): SurveyModel | undefined;
   returnCurrentPageNumber(state: RootState): number;
 };
@@ -42,6 +47,9 @@ export type Getters = {
 export const getters: GetterTree<RootState, RootState> & Getters = {
   isStateError(state: RootState) {
     return state.error;
+  },
+  isLoaded(state: RootState) {
+    return state.initialized;
   },
   inProgress(state: RootState) {
     return !isEmpty(state.toolData);
@@ -91,7 +99,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
    * Following functions were kept during refactor to avoid breaking
    * functionalities but should be removed and replaced by
    * mapState instead*/
-  resultsDataSections(state: RootState) {
+  returnToolData(state: RootState) {
     let allResults = [];
     if (state.toolData === undefined) return {};
     allResults = state.toolData;
