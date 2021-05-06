@@ -69,7 +69,7 @@ import { ActionTypes } from "@/store/actions";
       return this.$store.getters.returnSectionsNames;
     },
     results() {
-      return this.$store.getters.resultsDataSections;
+      return this.$store.getters.returnToolData;
     },
     sections() {
       return this.$store.getters.returnAllSections;
@@ -94,7 +94,7 @@ import { ActionTypes } from "@/store/actions";
 export default class Results extends Vue {
   @Prop() data: any;
   @Prop() public section!: Section;
-  myResults = this.$store.getters.resultsDataSections;
+  myResults = this.$store.getters.returnToolData;
 
   Survey: Model = new Model(surveyJSON);
   goToHomePage() {
