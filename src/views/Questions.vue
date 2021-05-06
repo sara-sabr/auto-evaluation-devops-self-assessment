@@ -1,6 +1,6 @@
 <template>
   <div class="results">
-    <AssessmentTool :survey="Survey" />
+    <AssessmentTool :survey="survey" />
     <div class="page-actions">
       <div class="row" style="padding: 0 5px">
         <div class="col-3 col-sm-2 col-md-3">
@@ -50,26 +50,27 @@ import { actions, ActionTypes } from "@/store/actions";
 })
 export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
-  Survey: Model = new Model(surveyJSON);
+  @Prop() public survey!: Model;
+  // survey: Model = new Model(surveyJSON);
 
   /** Feature disabled */
   // startAgain() {
-  //   this.Survey.clear(true, true);
+  //   this.survey.clear(true, true);
   //   window.localStorage.clear();
   //   this.$store.commit("resetSurvey");
   //   this.$router.push("/");
   // }
 
   fileLoaded($event: SurveyFile) {
-    this.Survey.data = $event.data;
-    this.Survey.currentPageNo = $event.currentPage;
-    this.Survey.start();
-    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
+    this.survey.data = $event.data;
+    this.survey.currentPageNo = $event.currentPage;
+    this.survey.start();
+    this.$store.dispatch(ActionTypes.SaveAppData, this.survey);
     this.$router.push("/");
   }
 
   goToHomePage() {
-    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
+    this.$store.dispatch(ActionTypes.SaveAppData, this.survey);
     this.$router.push("/");
   }
 
@@ -106,28 +107,28 @@ export default class Questions extends Vue {
   }
 
   goToSectionResults() {
-    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
+    this.$store.dispatch(ActionTypes.SaveAppData, this.survey);
     this.saveSurveyData();
     this.$router.push("/sections");
   }
   @Watch("$i18n.locale")
   changeLanguage(value: string, oldValue: string) {
-    this.Survey.locale = value;
-    this.Survey.render();
+    this.survey.locale = value;
+    this.survey.render();
   }
   created() {
-    this.Survey.onComplete.add(result => {
+    this.survey.onComplete.add(result => {
       this.$store.dispatch(ActionTypes.SaveAppData, result);
       this.$router.push("/results");
     });
 
-    this.Survey.onValueChanged.add(result => {
+    this.survey.onValueChanged.add(result => {
       this.$store.dispatch(ActionTypes.SaveAppData, result);
     });
 
-    this.Survey.currentPageNo = this.$store.getters.returnCurrentPageNumber;
-    this.Survey.data = this.$store.getters.resultsDataSections;
-    this.Survey.locale = this.$i18n.locale;
+    this.survey.currentPageNo = this.$store.getters.returnCurrentPageNumber;
+    this.survey.data = this.$store.getters.resultsDataSections;
+    this.survey.locale = this.$i18n.locale;
   }
 }
 </script>
