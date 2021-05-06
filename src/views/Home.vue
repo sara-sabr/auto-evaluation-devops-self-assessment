@@ -77,10 +77,6 @@ export default class Home extends Vue {
     //   this.$router.push("/results");
     // });
 
-    // this.survey.onValueChanged.add(result => {
-    //   this.$store.dispatch(ActionTypes.SaveAppData, result);
-    // });
-
     const converter = new showdown.Converter();
 
     this.survey.onTextMarkdown.add(function(survey, options) {
