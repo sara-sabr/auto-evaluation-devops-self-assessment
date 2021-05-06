@@ -13,6 +13,7 @@ export interface RootState {
   sectionsPrefix: string;
   error: boolean;
   loading: boolean;
+  initialized: boolean;
 }
 
 export interface Section {
@@ -84,5 +85,6 @@ export const state: RootState = {
   toolVersion: "",
   sectionsPrefix: "",
   error: false,
-  loading: false
+  loading: false,
+  initialized: false
 };
