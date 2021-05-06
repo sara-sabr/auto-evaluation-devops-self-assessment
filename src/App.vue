@@ -13,10 +13,15 @@ import { Recommendations } from "./store/state";
 export default class App extends Vue {
   survey: Model = new Model(surveyJSON);
   recommendations: Recommendations = this.$store.getters.returnRecommendations;
-  mounted() {
+
+  created() {
     this.$store.dispatch(ActionTypes.GetLocalAppData, undefined);
-    this.$store.dispatch(ActionTypes.SetAppData, this.survey);
-    this.$store.dispatch(ActionTypes.SetSections, this.survey);
+  }
+  mounted() {
+    if (this.$store.getters.inProgress === false) {
+      this.$store.dispatch(ActionTypes.SetAppData, this.survey);
+      this.$store.dispatch(ActionTypes.SetSections, this.survey);
+    }
   }
 }
 </script>
