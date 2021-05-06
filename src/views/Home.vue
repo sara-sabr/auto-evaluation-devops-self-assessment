@@ -36,7 +36,8 @@ import { ActionTypes } from "@/store/actions";
   }
 })
 export default class Home extends Vue {
-  Survey: Model = new Model(surveyJSON);
+  @Prop() public Survey!: Model;
+  // Survey: Model = new Model(surveyJSON);
   sections: PageModel[] = this.$store.getters.returnSectionsByPrefix(
     this.Survey,
     resultsData.settings.sectionsPrefix
