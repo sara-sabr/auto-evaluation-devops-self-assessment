@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-view :survey="Survey" :recommendations="recommendations" />
+    <router-view :survey="survey" :recommendations="recommendations" />
   </div>
 </template>
 <script lang="ts">
@@ -11,12 +11,12 @@ import surveyJSON from "@/survey-enfr.json";
 import { Recommendations } from "./store/state";
 
 export default class App extends Vue {
-  Survey: Model = new Model(surveyJSON);
+  survey: Model = new Model(surveyJSON);
   recommendations: Recommendations = this.$store.getters.returnRecommendations;
   mounted() {
     this.$store.dispatch(ActionTypes.GetLocalAppData, undefined);
-    this.$store.dispatch(ActionTypes.SetAppData, this.Survey);
-    this.$store.dispatch(ActionTypes.SetSections, this.Survey);
+    this.$store.dispatch(ActionTypes.SetAppData, this.survey);
+    this.$store.dispatch(ActionTypes.SetSections, this.survey);
   }
 }
 </script>

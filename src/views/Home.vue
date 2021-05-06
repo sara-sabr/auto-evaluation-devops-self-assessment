@@ -4,7 +4,7 @@
     <div>
       <HomeSectionsContainer
         :sections="sections"
-        :survey="Survey"
+        :survey="survey"
         :section-recommendation="sectionRecommendation"
       />
     </div>
@@ -36,10 +36,10 @@ import { ActionTypes } from "@/store/actions";
   }
 })
 export default class Home extends Vue {
-  @Prop() public Survey!: Model;
-  // Survey: Model = new Model(surveyJSON);
+  @Prop() public survey!: Model;
+  // survey: Model = new Model(surveyJSON);
   sections: PageModel[] = this.$store.getters.returnSectionsByPrefix(
-    this.Survey,
+    this.survey,
     resultsData.settings.sectionsPrefix
   );
   sectionRecommendation: SectionRecommendation[] =
@@ -47,43 +47,43 @@ export default class Home extends Vue {
 
   // Feature removed, used to reset local storage
   // startAgain() {
-  //   this.Survey.clear(true, true);
+  //   this.survey.clear(true, true);
   //   window.localStorage.clear();
   //   this.$store.commit("resetSurvey");
   // }
 
   fileLoaded($event: SurveyFile) {
-    this.Survey.data = $event.data;
-    this.Survey.currentPageNo = $event.currentPage;
-    this.Survey.start();
-    this.$store.dispatch(ActionTypes.SaveAppData, this.Survey);
+    this.survey.data = $event.data;
+    this.survey.currentPageNo = $event.currentPage;
+    this.survey.start();
+    this.$store.dispatch(ActionTypes.SaveAppData, this.survey);
   }
 
   @Watch("$i18n.locale")
   changeLanguage(value: string, oldValue: string) {
-    this.Survey.locale = value;
-    this.Survey.render();
+    this.survey.locale = value;
+    this.survey.render();
   }
 
   created() {
     /** Disabled - no longer used */
-    // this.Survey.css = {
+    // this.survey.css = {
     //   navigationButton: "btn survey-button"
     // };
 
     /** Disabled - no longer used */
-    // this.Survey.onComplete.add(result => {
+    // this.survey.onComplete.add(result => {
     //   this.$store.dispatch(ActionTypes.SaveAppData, result);
     //   this.$router.push("/results");
     // });
 
-    // this.Survey.onValueChanged.add(result => {
+    // this.survey.onValueChanged.add(result => {
     //   this.$store.dispatch(ActionTypes.SaveAppData, result);
     // });
 
     const converter = new showdown.Converter();
 
-    this.Survey.onTextMarkdown.add(function(survey, options) {
+    this.survey.onTextMarkdown.add(function(survey, options) {
       //convert the markdown text to html
       var str = converter.makeHtml(options.text);
       //remove root paragraphs <p></p>
@@ -94,11 +94,11 @@ export default class Home extends Vue {
     });
 
     // Set locale
-    this.Survey.locale = i18n.locale;
+    this.survey.locale = i18n.locale;
 
     // accessibility fix... aria-labelledby being needlessly generated for html question
     // TODO: make this dynamic by looping over questions and doing this for all html questions
-    this.Survey.onAfterRenderQuestion.add(function(sender, options) {
+    this.survey.onAfterRenderQuestion.add(function(sender, options) {
       let welcomePage = document.getElementsByName("welcome1");
       if (welcomePage && welcomePage.length > 0) {
         let welcomePageElement = welcomePage[0];
