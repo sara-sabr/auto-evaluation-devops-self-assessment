@@ -9,7 +9,7 @@ export type Getters = {
    */
   isStateError(state: RootState): boolean;
   /**
-   * Returns loaded status
+   * Checks whether the app data successfully loaded
    * @returns Returns true if app data successfully loaded, false otherwise
    * */
   isLoaded(state: RootState): boolean;
@@ -42,6 +42,12 @@ export type Getters = {
   returnToolData(state: RootState): any;
   returnSurveyModel(state: RootState): SurveyModel | undefined;
   returnCurrentPageNumber(state: RootState): number;
+  // ---------------
+  // Getters below are to help transition to new store structure
+  // ---------------
+  // This getter is never used
+  returnSectionsNamesGenerated(state: RootState): string[];
+  determineAllSections(state: RootState, payload: string): string[];
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
@@ -95,10 +101,31 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
       return section.sectionName === state.currentPageName;
     });
   },
-  /**
-   * Following functions were kept during refactor to avoid breaking
-   * functionalities but should be removed and replaced by
-   * mapState instead*/
+  // ---------------
+  // Getters below are to help transition to new store structure
+  // ---------------
+
+  returnSectionsNamesGenerated(state: RootState) {
+    let sectionsNames: string[] = [];
+    if (state.surveyModel === undefined) return sectionsNames;
+    state.surveyModel.pages.forEach(page => {
+      if (page.name.includes(state.sectionsPrefix)) {
+        sectionsNames.push(page.name);
+      }
+    });
+    return sectionsNames;
+  },
+  determineAllSections(state: RootState, payload: string) {
+    let sectionsNames: string[] = [];
+    if (state.surveyModel === undefined) return sectionsNames;
+    state.surveyModel.pages.forEach(page => {
+      if (page.name.includes(payload)) {
+        sectionsNames.push(page.name);
+      }
+    });
+    return sectionsNames;
+  },
+
   returnToolData(state: RootState) {
     let allResults = [];
     if (state.toolData === undefined) return {};
