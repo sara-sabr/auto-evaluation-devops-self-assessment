@@ -259,20 +259,21 @@ const store: StoreOptions<RootState> = {
     initialized: false
   },
   mutations: {
+    // Disabled resetSurvey mutation
     // mutation to reset the state when a user resets the survey
-    resetSurvey(state: RootState) {
-      state.sections = [];
-      state.answerData = [];
-      state.sectionsNames = [];
-      // state.sectionsAllEnabled = true;
-      // state.sectionsEnabled = [];
-      state.surveyModel = undefined;
-      state.currentPageNo = 0;
-      state.currentPageName = undefined;
-      state.toolData = {};
-      state.recommendations = undefined;
-      state.displayWelcomeNotice = true;
-    },
+    // resetSurvey(state: RootState) {
+    //   state.sections = [];
+    //   state.answerData = [];
+    //   state.sectionsNames = [];
+    //   // state.sectionsAllEnabled = true;
+    //   // state.sectionsEnabled = [];
+    //   state.surveyModel = undefined;
+    //   state.currentPageNo = 0;
+    //   state.currentPageName = undefined;
+    //   state.toolData = {};
+    //   state.recommendations = undefined;
+    //   state.displayWelcomeNotice = true;
+    // },
 
     // update state with results from survey
     // every time a value has changed or survey completed
