@@ -29,7 +29,8 @@ export enum ActionTypes {
    * @param
    */
   UpdateSurveyData = "UPDATE_SURVEY_DATA",
-  UpdateDisplayNotice = "UPDATE_DISPLAY_NOTICE"
+  UpdateDisplayNotice = "UPDATE_DISPLAY_NOTICE",
+  UpdateCurrentPageName = "UPDATE_CURRENT_PAGE_NAME"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -68,6 +69,10 @@ export type Actions = {
     context: ActionAugments,
     value: boolean
   ): void;
+  [ActionTypes.UpdateCurrentPageName](
+    context: ActionAugments,
+    value: string
+  ): void;
 };
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
@@ -92,7 +97,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.StartLoading, undefined);
     const localAppData: Model = new Model(appData);
     if (localAppData) {
-      // commit(MutationType.SetSurveyData, localAppData);
       commit(MutationType.AppLoadingSuccess, undefined);
     } else {
       commit(MutationType.AppLoadingError, undefined);
@@ -118,22 +122,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.SaveAppData]({ commit, dispatch }, value: SurveyModel) {
     commit(MutationType.StartLoading, undefined);
     commit(MutationType.SetAnswerData, value.getPlainData());
-    // commit(MutationType.SetCurrentPageNo, value.currentPageNo);
-    // commit(MutationType.SetCurrentPageName, value.currentPageName);
     commit(MutationType.SetToolData, value.data);
-    // TODO: Review setup of sections scores based on state
-    // state.sections.forEach(section => {
-    //   let sectionScore: number = 0;
-    //   let page = value.getPageByName(section.sectionName);
-    //   page.questions.forEach(question => {
-    //     if (question.value !== undefined) {
-    //       let score: number = +question.value;
-    //       sectionScore += score;
-    //     }
-    //   });
-    //   // commit(MutationType.se)
-    //   section.userScore = sectionScore;
-    // });
     commit(MutationType.StopLoading, undefined);
   },
   async [ActionTypes.SetSections]({ commit, getters }, value: SurveyModel) {
@@ -186,11 +175,10 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetSurveyModel, value);
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
     commit(MutationType.SetRecommendations, appConfig);
+    console.log(isEmpty(state.sectionsNames));
     if (isEmpty(state.sectionsNames)) {
-      const sectionNames: string[] = getters.determineAllSections(
-        state,
-        recommendations.settings.sectionsPrefix
-      );
+      let sectionNames: string[];
+      sectionNames = getters.returnSectionsNamesGenerated(state);
       commit(MutationType.SetSectionsNames, sectionNames);
     }
     if (isEmpty(state.sections)) {
@@ -206,5 +194,10 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.UpdateDisplayNotice]({ commit }, value: boolean) {
     commit(MutationType.SetDisplayNoticeStatus, value);
+  },
+  async [ActionTypes.UpdateCurrentPageName]({ commit }, value: string) {
+    if (value.length > 0) {
+      commit(MutationType.SetCurrentPageName, value);
+    }
   }
 };
