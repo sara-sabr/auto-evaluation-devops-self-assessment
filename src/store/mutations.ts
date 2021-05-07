@@ -14,56 +14,61 @@ export enum MutationType {
    */
   AppLoadingError = "APP_LOADING_ERROR",
   /**
-   * Sets ```state.surveyModel``` with value
-   * @param value Contains a ```SurveyModel``` object
+   * Sets ```state.surveyModel``` with payload
+   * @param payload Contains a ```SurveyModel``` object
    */
   SetSurveyModel = "SET_SURVEY_MODEL",
-  /**Sets ```state.answerData``` with value
-   * @param value Contains ```any[]```
+  /**Sets ```state.answerData``` with payload
+   * @param payload Contains ```any``` array
    */
   SetAnswerData = "SET_ANSWER_DATA",
-  /**Sets ```state.toolData``` with value
-   * @param value Contains ```any```
+  /**Sets ```state.toolData``` with payload
+   * @param payload Contains ```any```
    */
   SetToolData = "SET_TOOL_DATA",
-  /**Sets ```state.sections``` with value
-   * @param value Contains ```Section``` array
+  /**Sets ```state.sections``` with payload
+   * @param payload Contains ```Section``` array
    */
   SetSections = "SET_SECTIONS",
-  /**Sets ```state.sectionsNames``` with value
-   * @param value Contains ```string``` array
+  /**Sets ```state.sectionsNames``` with payload
+   * @param payload Contains ```string``` array
    */
   SetSectionsNames = "SET_SECTIONS_NAMES",
-  /**Sets ```state.currentPageNo``` with value
-   * @param value Contains ```number```
+  /**Sets ```state.currentPageNo``` with payload
+   * @param payload Contains ```number```
    */
   SetCurrentPageNo = "SET_CURRENT_PAGE_NO",
-  /**Sets ```state.currentPageName``` with value
-   * @param value Contains ```string```
+  /**Sets ```state.currentPageName``` with payload
+   * @param payload Contains ```string```
    */
   SetCurrentPageName = "SET_CURRENT_PAGE_NAME",
-  /**Sets ```state.recommendations``` with value
-   * @param value Contains ```string```
+  /**Sets ```state.recommendations``` with payload
+   * @param payload Contains ```string```
    */
   SetRecommendations = "SET_RECOMMENDATIONS",
-  /**Sets ```state.toolVersion``` with value
-   * @param value Contains ```Recommendations``` object
+  /**
+   * Sets ```state.displayWelcomeNotice``` with payload
+   * @param payload Contains ```boolean```
+   */
+  SetWelcomeNoticeStatus = "SET_WELCOME_NOTICE_STATUS",
+  /**Sets ```state.toolVersion``` with payload
+   * @param payload Contains ```Recommendations``` object
    */
   SetToolVersion = "SET_TOOL_VERSION",
-  /**Sets ```state.sectionsPrefix``` with value
-   * @param value Contains ```string```
+  /**Sets ```state.sectionsPrefix``` with payload
+   * @param payload Contains ```string```
    */
   SetSectionsPrefix = "SET_SECTIONS_PREFIX",
   /**Sets ```state.loading``` to ```true```
-   * @param value Contains ```undefined```
+   * @param payload Contains ```undefined```
    */
   StartLoading = "START_LOADING",
   /**Sets ```state.loading``` to ```false```
-   * @param value Contains ```undefined```
+   * @param payload Contains ```undefined```
    */
   StopLoading = "STOP_LOADING",
   /**Sets ```state.initialized``` to ```true```
-   * @param value Contains ```undefined```
+   * @param payload Contains ```undefined```
    */
   Initialize = "INITIALIZE"
 }
@@ -71,20 +76,20 @@ export enum MutationType {
 export type Mutations = {
   [MutationType.AppLoadingSuccess](state: RootState): void;
   [MutationType.AppLoadingError](state: RootState): void;
-  [MutationType.SetSurveyModel](state: RootState, value: SurveyModel): void;
-  [MutationType.SetAnswerData](state: RootState, value: any[]): void;
-  [MutationType.SetToolData](state: RootState, value: any): void;
-  [MutationType.SetSections](state: RootState, value: Section[]): void;
-  [MutationType.SetSectionsNames](state: RootState, value: string[]): void;
-  [MutationType.SetCurrentPageNo](state: RootState, value: number): void;
-  [MutationType.SetCurrentPageName](state: RootState, value: string): void;
+  [MutationType.SetSurveyModel](state: RootState, payload: SurveyModel): void;
+  [MutationType.SetAnswerData](state: RootState, payload: any[]): void;
+  [MutationType.SetToolData](state: RootState, payload: any): void;
+  [MutationType.SetSections](state: RootState, payload: Section[]): void;
+  [MutationType.SetSectionsNames](state: RootState, payload: string[]): void;
+  [MutationType.SetCurrentPageNo](state: RootState, payload: number): void;
+  [MutationType.SetCurrentPageName](state: RootState, payload: string): void;
   // TODO: Need to fix State structure to simplify Recommendations
   [MutationType.SetRecommendations](
     state: RootState,
-    value: Recommendations
+    payload: Recommendations
   ): void;
-  [MutationType.SetToolVersion](state: RootState, value: string): void;
-  [MutationType.SetSectionsPrefix](state: RootState, value: string): void;
+  [MutationType.SetToolVersion](state: RootState, payload: string): void;
+  [MutationType.SetSectionsPrefix](state: RootState, payload: string): void;
   [MutationType.StartLoading](state: RootState): void;
   [MutationType.StopLoading](state: RootState): void;
   [MutationType.Initialize](state: RootState): void;
@@ -97,35 +102,35 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.AppLoadingError](state: RootState) {
     state.error = true;
   },
-  [MutationType.SetSurveyModel](state: RootState, value: SurveyModel) {
-    state.surveyModel = value;
+  [MutationType.SetSurveyModel](state: RootState, payload: SurveyModel) {
+    state.surveyModel = payload;
   },
-  [MutationType.SetAnswerData](state: RootState, value: any[]) {
-    state.answerData = value;
+  [MutationType.SetAnswerData](state: RootState, payload: any[]) {
+    state.answerData = payload;
   },
-  [MutationType.SetToolData](state: RootState, value: any) {
-    state.toolData = Object.freeze(value);
+  [MutationType.SetToolData](state: RootState, payload: any) {
+    state.toolData = Object.freeze(payload);
   },
-  [MutationType.SetSectionsNames](state: RootState, value: string[]) {
-    state.sectionsNames = value;
+  [MutationType.SetSectionsNames](state: RootState, payload: string[]) {
+    state.sectionsNames = payload;
   },
-  [MutationType.SetSections](state: RootState, value: Section[]) {
-    state.sections = value;
+  [MutationType.SetSections](state: RootState, payload: Section[]) {
+    state.sections = payload;
   },
-  [MutationType.SetCurrentPageNo](state: RootState, value: number) {
-    state.currentPageNo = value;
+  [MutationType.SetCurrentPageNo](state: RootState, payload: number) {
+    state.currentPageNo = payload;
   },
-  [MutationType.SetCurrentPageName](state: RootState, value: string) {
-    state.currentPageName = value;
+  [MutationType.SetCurrentPageName](state: RootState, payload: string) {
+    state.currentPageName = payload;
   },
-  [MutationType.SetRecommendations](state: RootState, value: Recommendations) {
-    state.recommendations = value;
+  [MutationType.SetRecommendations](state: RootState, payload: Recommendations) {
+    state.recommendations = payload;
   },
-  [MutationType.SetToolVersion](state: RootState, value: string) {
-    state.toolVersion = value;
+  [MutationType.SetToolVersion](state: RootState, payload: string) {
+    state.toolVersion = payload;
   },
-  [MutationType.SetSectionsPrefix](state: RootState, value: string) {
-    state.sectionsPrefix = value;
+  [MutationType.SetSectionsPrefix](state: RootState, payload: string) {
+    state.sectionsPrefix = payload;
   },
   [MutationType.StartLoading](state: RootState) {
     state.loading = true;
