@@ -311,7 +311,7 @@ const store: StoreOptions<RootState> = {
     inProgress: state => {
       return !isEmpty(state.toolData);
     },
-    returnSectionsNames: state => {
+    returnSectionsNamesGenerated: state => {
       let sectionsNames: string[] = [];
       if (state.surveyModel === undefined) return {};
       state.surveyModel.pages.forEach(page => {
