@@ -10,6 +10,7 @@ export interface RootState {
   currentPageName?: string;
   recommendations?: Recommendations;
   toolVersion: string;
+  displayWelcomeNotice: boolean;
   sectionsPrefix: string;
   error: boolean;
   loading: boolean;
@@ -83,6 +84,7 @@ export const state: RootState = {
   currentPageName: undefined,
   recommendations: undefined,
   toolVersion: "",
+  displayWelcomeNotice: true,
   sectionsPrefix: "",
   error: false,
   loading: false,
