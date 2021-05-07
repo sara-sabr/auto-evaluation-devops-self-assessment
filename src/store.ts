@@ -68,20 +68,20 @@ const initializeSections = (state: RootState, surveyData: SurveyModel) => {
   });
 };
 
-/**
- * Helper function which determining enabled sections based on surveyData.
- * @param state An object containing the state of the survey.
- * @param surveyData An object containing the survey data.
- */
-const determineSectionsEnabled = (
-  state: RootState,
-  surveyData: SurveyModel
-) => {
-  if (isEmpty(state.sectionsNames)) {
-    determineAllSections(state, surveyData);
-  }
-  state.sectionsEnabled = state.sectionsNames;
-};
+// /**
+//  * Helper function which determining enabled sections based on surveyData.
+//  * @param state An object containing the state of the survey.
+//  * @param surveyData An object containing the survey data.
+//  */
+// const determineSectionsEnabled = (
+//   state: RootState,
+//   surveyData: SurveyModel
+// ) => {
+//   if (isEmpty(state.sectionsNames)) {
+//     determineAllSections(state, surveyData);
+//   }
+//   state.sectionsEnabled = state.sectionsNames;
+// };
 
 /**
  * Function returning the localized strings of a Survey.js Panel object.
@@ -243,8 +243,8 @@ const store: StoreOptions<RootState> = {
   state: {
     sections: [],
     sectionsNames: [],
-    sectionsAllEnabled: false,
-    sectionsEnabled: [],
+    // sectionsAllEnabled: false,
+    // sectionsEnabled: [],
     answerData: [],
     surveyModel: undefined,
     toolData: undefined,
@@ -264,8 +264,8 @@ const store: StoreOptions<RootState> = {
       state.sections = [];
       state.answerData = [];
       state.sectionsNames = [];
-      state.sectionsAllEnabled = true;
-      state.sectionsEnabled = [];
+      // state.sectionsAllEnabled = true;
+      // state.sectionsEnabled = [];
       state.surveyModel = undefined;
       state.currentPageNo = 0;
       state.currentPageName = undefined;

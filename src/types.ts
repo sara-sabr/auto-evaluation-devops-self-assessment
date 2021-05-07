@@ -6,8 +6,8 @@ export interface RootState {
   toolData: any;
   sections: Section[];
   sectionsNames: string[];
-  sectionsAllEnabled: boolean;
-  sectionsEnabled: string[];
+  // sectionsAllEnabled: boolean;
+  // sectionsEnabled: string[];
   currentPageNo: number;
   currentPageName?: string;
   recommendations?: Recommendations;
