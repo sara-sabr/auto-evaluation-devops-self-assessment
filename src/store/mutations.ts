@@ -88,6 +88,10 @@ export type Mutations = {
     state: RootState,
     payload: Recommendations
   ): void;
+  [MutationType.SetWelcomeNoticeStatus](
+    state: RootState,
+    payload: boolean
+  ): void;
   [MutationType.SetToolVersion](state: RootState, payload: string): void;
   [MutationType.SetSectionsPrefix](state: RootState, payload: string): void;
   [MutationType.StartLoading](state: RootState): void;
@@ -123,8 +127,14 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.SetCurrentPageName](state: RootState, payload: string) {
     state.currentPageName = payload;
   },
-  [MutationType.SetRecommendations](state: RootState, payload: Recommendations) {
+  [MutationType.SetRecommendations](
+    state: RootState,
+    payload: Recommendations
+  ) {
     state.recommendations = payload;
+  },
+  [MutationType.SetWelcomeNoticeStatus](state: RootState, payload: boolean) {
+    state.displayWelcomeNotice = Object.freeze(payload);
   },
   [MutationType.SetToolVersion](state: RootState, payload: string) {
     state.toolVersion = payload;
