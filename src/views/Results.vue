@@ -63,8 +63,9 @@ import { Section } from "@/types";
     ResultsCard
   },
   computed: {
+    // TODO: This computed property is never used
     sectionNames: function() {
-      return this.$store.getters.returnSectionsNames;
+      return this.$store.getters.returnSectionsNamesGenerated;
     },
     results() {
       return this.$store.getters.resultsDataSections;
