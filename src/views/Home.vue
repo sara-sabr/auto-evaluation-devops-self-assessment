@@ -45,11 +45,13 @@ export default class Home extends Vue {
   sections: PageModel[] = returnAllSectionsByPrefix(this.Survey, "section_");
   sectionRecommendation: SectionRecommendation[] =
     resultsData.sectionRecommendations;
-  startAgain() {
-    this.Survey.clear(true, true);
-    window.localStorage.clear();
-    this.$store.commit("resetSurvey");
-  }
+  
+  // Feature disabled, will be removed from store actions
+  // startAgain() {
+  //   this.Survey.clear(true, true);
+  //   window.localStorage.clear();
+  //   this.$store.commit("resetSurvey");
+  // }
 
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
