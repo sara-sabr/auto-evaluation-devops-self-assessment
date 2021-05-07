@@ -27,7 +27,12 @@ const vuexLocal = new VuexPersistence({
 export const store: StoreOptions<RootState> = {
   plugins:
     process.env.NODE_ENV === "development"
-      ? [createLogger(), vuexLocal.plugin]
+      ? [
+          createLogger({
+            collapsed: false
+          }),
+          vuexLocal.plugin
+        ]
       : [vuexLocal.plugin],
   state,
   mutations,
