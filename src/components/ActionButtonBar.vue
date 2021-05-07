@@ -64,8 +64,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import showdown from "showdown";
-import i18n from "@/plugins/i18n";
 import SurveyFile from "@/interfaces/SurveyFile";
 
 @Component

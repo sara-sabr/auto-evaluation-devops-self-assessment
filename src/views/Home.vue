@@ -19,7 +19,6 @@ import { Model, PageModel, PanelModel } from "survey-vue";
 import showdown from "showdown";
 
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
-import ActionButtonBar from "@/components/ActionButtonBar.vue";
 import HomeSectionsContainer from "@/components/HomeSectionsContainer.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
@@ -32,7 +31,6 @@ import { returnAllSectionsByPrefix } from "@/store";
 @Component({
   components: {
     AssessmentTool,
-    ActionButtonBar,
     BaseNavigation,
     HomeSectionsContainer
   },

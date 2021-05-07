@@ -51,7 +51,6 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Model } from "survey-vue";
 import showdown from "showdown";
-import ActionButtonBar from "@/components/ActionButtonBar.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import ResultsCard from "@/components/ResultsCard.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
