@@ -45,7 +45,7 @@ export default class Home extends Vue {
   sections: PageModel[] = returnAllSectionsByPrefix(this.Survey, "section_");
   sectionRecommendation: SectionRecommendation[] =
     resultsData.sectionRecommendations;
-  
+
   // Feature disabled, will be removed from store actions
   // startAgain() {
   //   this.Survey.clear(true, true);

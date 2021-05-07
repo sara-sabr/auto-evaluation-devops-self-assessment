@@ -48,7 +48,7 @@ import surveyJSON from "@/survey-enfr.json";
 export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
   Survey: Model = new Model(surveyJSON);
-  // 
+  //
   // startAgain() {
   //   this.Survey.clear(true, true);
   //   window.localStorage.clear();
