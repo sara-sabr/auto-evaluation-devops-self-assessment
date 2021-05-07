@@ -50,7 +50,7 @@ export enum MutationType {
    * Sets ```state.displayWelcomeNotice``` with payload
    * @param payload Contains ```boolean```
    */
-  SetWelcomeNoticeStatus = "SET_WELCOME_NOTICE_STATUS",
+  SetDisplayNoticeStatus = "SET_DISPLAY_NOTICE_STATUS",
   /**Sets ```state.toolVersion``` with payload
    * @param payload Contains ```Recommendations``` object
    */
@@ -88,7 +88,7 @@ export type Mutations = {
     state: RootState,
     payload: Recommendations
   ): void;
-  [MutationType.SetWelcomeNoticeStatus](
+  [MutationType.SetDisplayNoticeStatus](
     state: RootState,
     payload: boolean
   ): void;
@@ -133,7 +133,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
   ) {
     state.recommendations = payload;
   },
-  [MutationType.SetWelcomeNoticeStatus](state: RootState, payload: boolean) {
+  [MutationType.SetDisplayNoticeStatus](state: RootState, payload: boolean) {
     state.displayWelcomeNotice = Object.freeze(payload);
   },
   [MutationType.SetToolVersion](state: RootState, payload: string) {
