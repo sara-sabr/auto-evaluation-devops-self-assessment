@@ -2,7 +2,8 @@
   "settings": {
     "version": "0.0.1",
     "score_type": "percentage",
-    "score_tags": "disabled"
+    "score_tags": "disabled",
+    "sectionsPrefix": "section_"
   },
   "sectionRecommendations": [
     {
