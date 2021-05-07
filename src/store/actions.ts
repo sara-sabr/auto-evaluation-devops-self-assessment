@@ -169,17 +169,23 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   //Actions below are to help transition to new store structure
   // ---------------
   async [ActionTypes.UpdateSurveyData](
-    { commit, dispatch },
+    { commit, dispatch, getters },
     value: SurveyModel
   ) {
-    commit(MutationType.SetSurveyModel, value);
+    if (getters.returnSurveyModel === undefined) {
+      commit(MutationType.SetSurveyModel, value);
+    }
+    if (getters.returnSectionPrefix === "") {
+      commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
+    }
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
-    commit(MutationType.SetRecommendations, appConfig);
-    console.log(isEmpty(state.sectionsNames));
-    if (isEmpty(state.sectionsNames)) {
-      let sectionNames: string[];
-      sectionNames = getters.returnSectionsNamesGenerated(state);
-      commit(MutationType.SetSectionsNames, sectionNames);
+    if (getters.returnRecommendations === undefined) {
+      commit(MutationType.SetRecommendations, appConfig);
+    }
+    let sectionsNames: string[] = getters.returnSectionsNames as string[];
+    if (sectionsNames.length === 0) {
+      sectionsNames = getters.returnSectionsNamesGenerated;
+      commit(MutationType.SetSectionsNames, sectionsNames);
     }
     if (isEmpty(state.sections)) {
       dispatch(ActionTypes.SetSections, value);
