@@ -27,6 +27,7 @@ import surveyJSON from "@/survey-enfr.json";
 import { SectionRecommendation } from "@/types";
 import resultsData from "@/survey-results.json";
 import { returnAllSectionsByPrefix } from "@/store";
+import { ActionTypes } from "@/store/actions";
 
 @Component({
   components: {
@@ -57,7 +58,8 @@ export default class Home extends Vue {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    this.$store.commit("updateSurveyData", this.Survey);
+    // this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
   }
 
   @Watch("$i18n.locale")
@@ -72,7 +74,8 @@ export default class Home extends Vue {
     };
 
     this.Survey.onComplete.add(result => {
-      this.$store.commit("calculateResult", result);
+      // this.$store.commit("calculateResult", result);
+      this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
       this.$router.push("/results");
     });
 
@@ -81,7 +84,8 @@ export default class Home extends Vue {
     });*/
 
     this.Survey.onValueChanged.add(result => {
-      this.$store.commit("updateSurveyData", result);
+      // this.$store.commit("updateSurveyData", result);
+      this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
     });
 
     const converter = new showdown.Converter();

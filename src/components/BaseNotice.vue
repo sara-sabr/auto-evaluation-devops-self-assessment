@@ -26,6 +26,7 @@
   </div>
 </template>
 <script lang="ts">
+import { ActionTypes } from "@/store/actions";
 import Vue from "vue";
 export default Vue.extend({
   name: "BaseNotice",
@@ -45,7 +46,8 @@ export default Vue.extend({
       } else {
         displayNotice = true;
       }
-      this.$store.commit("updateDisplayNotice", displayNotice);
+      // this.$store.commit("updateDisplayNotice", displayNotice);
+      this.$store.dispatch(ActionTypes.UpdateDisplayNotice, displayNotice);
       this.$bvModal.hide("welcome-modal");
     },
     markdownToHtml(item: string) {
