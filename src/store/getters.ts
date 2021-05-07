@@ -48,6 +48,9 @@ export type Getters = {
   // This getter is never used
   returnSectionsNamesGenerated(state: RootState): string[];
   determineAllSections(state: RootState, payload: string): string[];
+  resultsDataSections(state: RootState): any[];
+  returnSections(state: RootState): Section[];
+  returnDisplayWelcome(state: RootState): boolean;
 };
 
 export const getters: GetterTree<RootState, RootState> & Getters = {
@@ -61,15 +64,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
     return !isEmpty(state.toolData);
   },
   returnSectionsNames(state: RootState) {
-    let sectionsNames: string[] = [];
-    if (state.surveyModel !== undefined) {
-      state.surveyModel.pages.forEach(page => {
-        if (page.name.includes(state.sectionsPrefix)) {
-          sectionsNames.push(page.name);
-        }
-      });
-    }
-    return sectionsNames;
+    return state.sectionsNames;
   },
   returnSectionByName(state: RootState) {
     return (sectionName: string) => {
@@ -104,7 +99,13 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   // ---------------
   // Getters below are to help transition to new store structure
   // ---------------
-
+  resultsDataSections(state: RootState) {
+    let allResults: any[] = [];
+    if (state.toolData !== undefined) {
+      allResults = state.toolData;
+    }
+    return allResults;
+  },
   returnSectionsNamesGenerated(state: RootState) {
     let sectionsNames: string[] = [];
     if (state.surveyModel === undefined) return sectionsNames;
@@ -125,13 +126,14 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
     });
     return sectionsNames;
   },
-
+  // Should use mapstate instead
   returnToolData(state: RootState) {
     let allResults = [];
     if (state.toolData === undefined) return {};
     allResults = state.toolData;
     return allResults;
   },
+  //Logic is useless, it's either defined or not at state level, should use mapstate instead
   returnSurveyModel(state: RootState) {
     if (state.surveyModel === undefined) {
       return undefined;
@@ -139,7 +141,16 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
       return state.surveyModel;
     }
   },
+  // Should use mapstate instead
   returnCurrentPageNumber(state: RootState) {
     return state.currentPageNo;
+  },
+  // Should use mapstate instead
+  returnSections(state: RootState) {
+    return state.sections;
+  },
+  // Should use mapstate instead
+  returnDisplayWelcome(state: RootState) {
+    return state.displayWelcomeNotice;
   }
 };
