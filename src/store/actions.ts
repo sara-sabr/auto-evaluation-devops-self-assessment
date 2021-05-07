@@ -6,8 +6,9 @@ import appData from "@/survey-enfr.json";
 import { PageModel, Model, SurveyModel } from "survey-vue";
 import { store } from "@/store/index";
 import { getters } from "@/store/getters";
+import isEmpty from "lodash.isempty";
 
-const appConfigs = appConfig.settings;
+const appConfigSettings = appConfig.settings;
 const recommendations = appConfig;
 //const performance = appConfig.performance;
 
@@ -19,7 +20,16 @@ export enum ActionTypes {
   SetSections = "SET_SECTIONS",
   SetCurrentSection = "SET_CURRENT_SECTION",
   UpdateSectionAnswers = "UPDATE_SECTION_ANSWERS",
-  UpdateSectionScore = "UPDATE_SECTION_SCORE"
+  UpdateSectionScore = "UPDATE_SECTION_SCORE",
+  // ---------------
+  //Actions below are to help transition to new store structure
+  // ---------------
+  /**
+   * Action to update the Survey Data
+   * @param
+   */
+  UpdateSurveyData = "UPDATE_SURVEY_DATA",
+  UpdateDisplayNotice = "UPDATE_DISPLAY_NOTICE"
 }
 
 type ActionAugments = Omit<ActionContext<RootState, RootState>, "commit"> & {
@@ -46,6 +56,17 @@ export type Actions = {
   [ActionTypes.UpdateSectionScore](
     context: ActionAugments,
     value: PageModel
+  ): void;
+  // ---------------
+  //Actions below are to help transition to new store structure
+  // ---------------
+  [ActionTypes.UpdateSurveyData](
+    context: ActionAugments,
+    value: SurveyModel
+  ): void;
+  [ActionTypes.UpdateDisplayNotice](
+    context: ActionAugments,
+    value: boolean
   ): void;
 };
 
@@ -88,8 +109,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let toolData: any = getters.returnToolData;
       commit(MutationType.SetToolData, toolData);
       commit(MutationType.SetRecommendations, recommendations);
-      commit(MutationType.SetToolVersion, appConfigs.version);
-      commit(MutationType.SetSectionsPrefix, appConfigs.sectionsPrefix);
+      commit(MutationType.SetToolVersion, appConfigSettings.version);
+      commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
       commit(MutationType.Initialize, undefined);
     }
     commit(MutationType.StopLoading, undefined);
@@ -154,5 +175,36 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
   },
   async [ActionTypes.UpdateSectionScore]({ commit }, value: PageModel) {
     let thisA: string;
+  },
+  // ---------------
+  //Actions below are to help transition to new store structure
+  // ---------------
+  async [ActionTypes.UpdateSurveyData](
+    { commit, dispatch },
+    value: SurveyModel
+  ) {
+    commit(MutationType.SetSurveyModel, value);
+    commit(MutationType.SetCurrentPageNo, value.currentPageNo);
+    commit(MutationType.SetRecommendations, appConfig);
+    if (isEmpty(state.sectionsNames)) {
+      const sectionNames: string[] = getters.determineAllSections(
+        state,
+        recommendations.settings.sectionsPrefix
+      );
+      commit(MutationType.SetSectionsNames, sectionNames);
+    }
+    if (isEmpty(state.sections)) {
+      dispatch(ActionTypes.SetSections, value);
+    }
+    dispatch(ActionTypes.UpdateSectionScore);
+    commit(MutationType.SetToolData, value.data);
+    commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
+    commit(
+      MutationType.SetAnswerData,
+      value.getPlainData({ includeEmpty: false })
+    );
+  },
+  async [ActionTypes.UpdateDisplayNotice]({ commit }, value: boolean) {
+    commit(MutationType.SetDisplayNoticeStatus, value);
   }
 };
