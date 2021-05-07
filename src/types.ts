@@ -45,8 +45,8 @@ export interface Recommendations {
 
 export interface Settings {
   version: string;
-  score_type: string;
-  score_tags: string;
+  scoreType: string;
+  scoreTags: string;
 }
 
 export interface Performance {
