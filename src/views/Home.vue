@@ -83,10 +83,10 @@ export default class Home extends Vue {
       this.$router.push("Results");
     });*/
 
-    this.Survey.onValueChanged.add(result => {
-      // this.$store.commit("updateSurveyData", result);
-      this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
-    });
+    // this.Survey.onValueChanged.add(result => {
+    //   // this.$store.commit("updateSurveyData", result);
+    //   this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
+    // });
 
     const converter = new showdown.Converter();
 
