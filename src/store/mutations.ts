@@ -42,6 +42,11 @@ export enum MutationType {
    * @param payload Contains ```string```
    */
   SetCurrentPageName = "SET_CURRENT_PAGE_NAME",
+  /**
+   * Updates a section with payload
+   * @param payload Contains a ```Section``` object
+   */
+  UpdateSection = "UPDATE_SECTION",
   /**Sets ```state.recommendations``` with payload
    * @param payload Contains ```string```
    */
@@ -84,6 +89,7 @@ export type Mutations = {
   [MutationType.SetCurrentPageNo](state: RootState, payload: number): void;
   [MutationType.SetCurrentPageName](state: RootState, payload: string): void;
   // TODO: Need to fix State structure to simplify Recommendations
+  [MutationType.UpdateSection](state: RootState, payload: Section): void;
   [MutationType.SetRecommendations](
     state: RootState,
     payload: Recommendations
@@ -126,6 +132,14 @@ export const mutations: MutationTree<RootState> & Mutations = {
   },
   [MutationType.SetCurrentPageName](state: RootState, payload: string) {
     state.currentPageName = payload;
+  },
+  [MutationType.UpdateSection](state: RootState, payload: Section) {
+    state.sections = state.sections.map(section => {
+      if (section.sectionName === payload.sectionName) {
+        return { ...section, ...payload };
+      }
+      return section;
+    });
   },
   [MutationType.SetRecommendations](
     state: RootState,
