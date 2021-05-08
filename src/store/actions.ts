@@ -20,7 +20,7 @@ export enum ActionTypes {
   SetSections = "SET_SECTIONS",
   SetCurrentSection = "SET_CURRENT_SECTION",
   UpdateSectionAnswers = "UPDATE_SECTION_ANSWERS",
-  UpdateSectionScore = "UPDATE_SECTION_SCORE",
+  UpdateSectionScore = "UPDATE_SECTIONS_SCORES",
   // ---------------
   //Actions below are to help transition to new store structure
   // ---------------
@@ -162,8 +162,22 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     commit(MutationType.SetAnswerData, value.answerData);
     commit(MutationType.SetToolData, value.toolData);
   },
-  async [ActionTypes.UpdateSectionScore]({ commit }, value: PageModel) {
-    let thisA: string;
+  async [ActionTypes.UpdateSectionScore](
+    { commit, getters },
+    value: PageModel
+  ) {
+    let sectionScore: number = 0;
+    let section: Section = getters.returnSectionByName(value.name);
+    if (section !== undefined) {
+      value.questions.forEach(question => {
+        if (question.value !== undefined) {
+          let score: number = +question.value;
+          sectionScore += score;
+        }
+      });
+      section.userScore = sectionScore;
+      commit(MutationType.UpdateSection, section);
+    }
   },
   // ---------------
   //Actions below are to help transition to new store structure
@@ -187,10 +201,12 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       sectionsNames = getters.returnSectionsNamesGenerated;
       commit(MutationType.SetSectionsNames, sectionsNames);
     }
-    if (isEmpty(state.sections)) {
+    let sections: Section[] = getters.returnSections as Section[];
+    if (sections.length === 0) {
       dispatch(ActionTypes.SetSections, value);
     }
-    dispatch(ActionTypes.UpdateSectionScore);
+    let currentPage: PageModel = value.getPageByName(value.currentPage);
+    dispatch(ActionTypes.UpdateSectionScore, currentPage);
     commit(MutationType.SetToolData, value.data);
     commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
     commit(
