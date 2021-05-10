@@ -204,29 +204,13 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     { commit, dispatch, getters },
     value: SurveyModel
   ) {
-    // if (getters.returnSurveyModel === undefined) {
-    //   commit(MutationType.SetSurveyModel, value);
-    // }
-    // if (getters.returnSectionPrefix === "") {
-    //   commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
-    // }
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
     if (getters.returnRecommendations === undefined) {
       commit(MutationType.SetRecommendations, appConfig);
     }
-    // let sectionsNames: string[] = getters.returnSectionsNames as string[];
-    // if (sectionsNames.length === 0) {
-    //   sectionsNames = getters.returnSectionsNamesGenerated;
-    //   commit(MutationType.SetSectionsNames, sectionsNames);
-    // }
-    // let sections: Section[] = getters.returnSections as Section[];
-    // if (sections.length === 0) {
-    //   dispatch(ActionTypes.SetSections, value);
-    // }
     let currentPage: PageModel = value.getPageByName(value.currentPage);
     dispatch(ActionTypes.UpdateSectionScore, currentPage);
     commit(MutationType.SetToolData, value.data);
-    // commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
     commit(
       MutationType.SetAnswerData,
       value.getPlainData({ includeEmpty: false })
