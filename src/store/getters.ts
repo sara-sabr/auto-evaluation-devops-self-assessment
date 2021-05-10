@@ -12,7 +12,7 @@ export type Getters = {
    * Checks whether the app data successfully loaded
    * @returns Returns true if app data successfully loaded, false otherwise
    * */
-  isLoaded(state: RootState): boolean;
+  isInitialized(state: RootState): boolean;
   /**
    * Checks whether the store has any user data saved.
    * @returns Returns true if data is saved, false if not
@@ -58,7 +58,7 @@ export const getters: GetterTree<RootState, RootState> & Getters = {
   isStateError(state: RootState) {
     return state.error;
   },
-  isLoaded(state: RootState) {
+  isInitialized(state: RootState) {
     return state.initialized;
   },
   inProgress(state: RootState) {
