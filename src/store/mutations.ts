@@ -75,7 +75,7 @@ export enum MutationType {
   /**Sets ```state.initialized``` to ```true```
    * @param payload Contains ```undefined```
    */
-  Initialize = "INITIALIZE"
+  Initialized = "INITIALIZED"
 }
 
 export type Mutations = {
@@ -102,7 +102,7 @@ export type Mutations = {
   [MutationType.SetSectionsPrefix](state: RootState, payload: string): void;
   [MutationType.StartLoading](state: RootState): void;
   [MutationType.StopLoading](state: RootState): void;
-  [MutationType.Initialize](state: RootState): void;
+  [MutationType.Initialized](state: RootState): void;
 };
 
 export const mutations: MutationTree<RootState> & Mutations = {
@@ -162,7 +162,7 @@ export const mutations: MutationTree<RootState> & Mutations = {
   [MutationType.StopLoading](state: RootState) {
     state.loading = false;
   },
-  [MutationType.Initialize](state: RootState) {
+  [MutationType.Initialized](state: RootState) {
     state.initialized = true;
   }
 };
