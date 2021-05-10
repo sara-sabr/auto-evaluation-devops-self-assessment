@@ -4,16 +4,22 @@ import { RootState, Section, state } from "@/store/state";
 import appConfig from "@/survey-results.json";
 import appData from "@/survey-enfr.json";
 import { PageModel, Model, SurveyModel } from "survey-vue";
-import { store } from "@/store/index";
-import { getters } from "@/store/getters";
-import isEmpty from "lodash.isempty";
 
+//TODO: use config file to trigger local vs remote data fetch
+// at build time
 const appConfigSettings = appConfig.settings;
 const recommendations = appConfig;
-//const performance = appConfig.performance;
 
 export enum ActionTypes {
+  /**
+   * Fetches app data from provided API URL
+   * @param value ```string``` containing API URL
+   */
   FetchAppData = "FETCH_APP_DATA",
+  /**
+   * Fetches app data from local file and sets state.surveyModel.
+   * If
+   */
   GetLocalAppData = "GET_LOCAL_APP_DATA",
   SetAppData = "SET_APP_DATA",
   SaveAppData = "SAVE_APP_DATA",
@@ -77,7 +83,7 @@ export type Actions = {
 
 export const actions: ActionTree<RootState, RootState> & Actions = {
   async [ActionTypes.FetchAppData]({ commit }, value) {
-    commit(MutationType.StartLoading, undefined);
+    // commit(MutationType.StartLoading, undefined);
     let remoteAppData: Model;
     fetch(value)
       .then(response => response.json()) // one extra step
@@ -91,31 +97,43 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
         }
       })
       .catch(error => console.error(error));
-    commit(MutationType.StopLoading, undefined);
+    // commit(MutationType.StopLoading, undefined);
   },
-  async [ActionTypes.GetLocalAppData]({ commit }) {
-    commit(MutationType.StartLoading, undefined);
-    const localAppData: Model = new Model(appData);
-    if (localAppData) {
+  async [ActionTypes.GetLocalAppData]({ commit, getters }) {
+    const thisAppData: Model = new Model(appData);
+    commit(MutationType.SetSurveyModel, thisAppData);
+    if (getters.returnSurveyModel !== undefined) {
       commit(MutationType.AppLoadingSuccess, undefined);
     } else {
       commit(MutationType.AppLoadingError, undefined);
     }
-    commit(MutationType.StopLoading, undefined);
   },
-  async [ActionTypes.SetAppData]({ commit, getters }) {
+  async [ActionTypes.SetAppData]({ commit, dispatch, getters }) {
     commit(MutationType.StartLoading, undefined);
+    // Get local app data and define state.surveyModel
+    dispatch(ActionTypes.GetLocalAppData);
+    // If successfully loaded surveyModel, set all properties
     if (getters.isStateError === false) {
-      commit(MutationType.SetCurrentPageNo, 0);
+      let thisSurveyModel: SurveyModel = getters.returnSurveyModel;
+      commit(MutationType.SetSurveyModel, thisSurveyModel);
+      commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
+      commit(MutationType.SetCurrentPageNo, thisSurveyModel.currentPageNo);
       commit(MutationType.SetCurrentPageName, "");
-      let sectionsNames: string[] = getters.returnSectionsNames;
-      commit(MutationType.SetSectionsNames, sectionsNames);
+      commit(MutationType.SetRecommendations, recommendations);
+      let sectionsNames: string[] = getters.returnSectionsNames as string[];
+      if (sectionsNames.length === 0) {
+        sectionsNames = getters.returnSectionsNamesGenerated;
+        commit(MutationType.SetSectionsNames, sectionsNames);
+      }
+      let sections: Section[] = getters.returnSections as Section[];
+      if (sections.length === 0) {
+        dispatch(ActionTypes.SetSections, thisSurveyModel);
+      }
       let toolData: any = getters.returnToolData;
       commit(MutationType.SetToolData, toolData);
-      commit(MutationType.SetRecommendations, recommendations);
       commit(MutationType.SetToolVersion, appConfigSettings.version);
-      commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
-      commit(MutationType.Initialize, undefined);
+      commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
+      commit(MutationType.Initialized, undefined);
     }
     commit(MutationType.StopLoading, undefined);
   },
@@ -186,29 +204,29 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     { commit, dispatch, getters },
     value: SurveyModel
   ) {
-    if (getters.returnSurveyModel === undefined) {
-      commit(MutationType.SetSurveyModel, value);
-    }
-    if (getters.returnSectionPrefix === "") {
-      commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
-    }
+    // if (getters.returnSurveyModel === undefined) {
+    //   commit(MutationType.SetSurveyModel, value);
+    // }
+    // if (getters.returnSectionPrefix === "") {
+    //   commit(MutationType.SetSectionsPrefix, appConfigSettings.sectionsPrefix);
+    // }
     commit(MutationType.SetCurrentPageNo, value.currentPageNo);
     if (getters.returnRecommendations === undefined) {
       commit(MutationType.SetRecommendations, appConfig);
     }
-    let sectionsNames: string[] = getters.returnSectionsNames as string[];
-    if (sectionsNames.length === 0) {
-      sectionsNames = getters.returnSectionsNamesGenerated;
-      commit(MutationType.SetSectionsNames, sectionsNames);
-    }
-    let sections: Section[] = getters.returnSections as Section[];
-    if (sections.length === 0) {
-      dispatch(ActionTypes.SetSections, value);
-    }
+    // let sectionsNames: string[] = getters.returnSectionsNames as string[];
+    // if (sectionsNames.length === 0) {
+    //   sectionsNames = getters.returnSectionsNamesGenerated;
+    //   commit(MutationType.SetSectionsNames, sectionsNames);
+    // }
+    // let sections: Section[] = getters.returnSections as Section[];
+    // if (sections.length === 0) {
+    //   dispatch(ActionTypes.SetSections, value);
+    // }
     let currentPage: PageModel = value.getPageByName(value.currentPage);
     dispatch(ActionTypes.UpdateSectionScore, currentPage);
     commit(MutationType.SetToolData, value.data);
-    commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
+    // commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
     commit(
       MutationType.SetAnswerData,
       value.getPlainData({ includeEmpty: false })
