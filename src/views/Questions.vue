@@ -61,13 +61,11 @@ export default class Questions extends Vue {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    // this.$store.commit("updateSurveyData", this.Survey);
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.$router.push("/");
   }
 
   goToHomePage() {
-    // this.$store.commit("updateSurveyData", this.Survey);
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.$router.push("/");
   }
@@ -105,7 +103,6 @@ export default class Questions extends Vue {
   }
 
   goToSectionResults() {
-    // this.$store.commit("updateSurveyData", this.Survey);
     this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.saveSurveyData();
     this.$router.push("/sections");
@@ -117,7 +114,6 @@ export default class Questions extends Vue {
   }
   created() {
     this.Survey.onComplete.add(result => {
-      // this.$store.commit("calculateResult", result);
       this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
       this.$router.push("/results");
     });
