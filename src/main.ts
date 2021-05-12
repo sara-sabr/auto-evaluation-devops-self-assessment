@@ -171,6 +171,7 @@ function generateLanguageToggle() {
 window.onload = function() {
   reloadTemplate();
   generateLanguageToggle();
+  window.history.replaceState({}, document.title, "/#/");
 };
 
 new Vue({
