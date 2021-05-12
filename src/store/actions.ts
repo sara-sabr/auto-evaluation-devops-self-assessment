@@ -12,20 +12,52 @@ const recommendations = appConfig;
 
 export enum ActionTypes {
   /**
-   * Fetches app data from provided API URL
+   * Fetches app data from provided API URL and sets ```state.surveyModel``` with response body.
+   * If successfull, sets ```state.error``` to ```false```.
+   * If not successfull, sets ```state.error``` to ```true```.
    * @param value ```string``` containing API URL
    */
   FetchAppData = "FETCH_APP_DATA",
   /**
-   * Fetches app data from local file and sets state.surveyModel.
-   * If
+   * Fetches app data from local file and sets ```state.surveyModel``` with content.
+   * If successfull, sets ```state.error``` to ```false```.
+   * If not successfull, sets ```state.error``` to ```true```.
+   * @param value ```undefined```
    */
   GetLocalAppData = "GET_LOCAL_APP_DATA",
+  /**
+   * Sets app data with ```state.surveyModel```.
+   * If successfull, sets ```state.initialized``` to ```true```.
+   * If not successfull, sets ```state.initialized``` to ```false```.
+   * @param value ```undefined```
+   */
   SetAppData = "SET_APP_DATA",
+  /**
+   * Saves current session app data with content of value.
+   * Updates both ```state.answerData``` and ```state.toolData```
+   * @param value an ```SurveyModel``` object
+   */
   SaveAppData = "SAVE_APP_DATA",
+  /**
+   * Sets sections with content of value.
+   * @param value an ```SurveyModel``` object
+   */
   SetSections = "SET_SECTIONS",
+  /**
+   * Sets ```state.currentPageName``` and ```state.currentPageNo``` with content of value.
+   * @param value an ```SurveyModel``` object
+   */
   SetCurrentSection = "SET_CURRENT_SECTION",
+  /**
+   * Updates a matching section in ```state.sections```with content of value.
+   * @param value.answerData ```any[]```
+   * @param value.toolData ```any```
+   */
   UpdateSectionAnswers = "UPDATE_SECTION_ANSWERS",
+  /**
+   * Updates a matching section score in ```state.sections```with content of value.
+   * @param value an ```PageModel``` object
+   */
   UpdateSectionScore = "UPDATE_SECTIONS_SCORES",
   // ---------------
   //Actions below are to help transition to new store structure
@@ -137,7 +169,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     }
     commit(MutationType.StopLoading, undefined);
   },
-  async [ActionTypes.SaveAppData]({ commit, dispatch }, value: SurveyModel) {
+  async [ActionTypes.SaveAppData]({ commit }, value: SurveyModel) {
     commit(MutationType.StartLoading, undefined);
     commit(MutationType.SetAnswerData, value.getPlainData());
     commit(MutationType.SetToolData, value.data);
