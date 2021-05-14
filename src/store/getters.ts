@@ -5,47 +5,78 @@ import { PageModel, SurveyModel } from "survey-vue";
 
 export type Getters = {
   /**Checks whether the state status is errored or not
+   * @param state The application state.
    * @returns Returns false if no error, true if error.
    */
   isStateError(state: RootState): boolean;
   /**
    * Checks whether the app data successfully loaded
+   * @param state The application state.
    * @returns Returns true if app data successfully loaded, false otherwise
    * */
   isInitialized(state: RootState): boolean;
   /**
    * Checks whether the store has any user data saved.
+   * @param state The application state.
    * @returns Returns true if data is saved, false if not
    */
   inProgress(state: RootState): boolean;
   /**
-   * Returns all app sections by name
+   * Returns all app sections names only
+   * @param state The application state.
    * @returns An array of strings containing the sections names, an empty array if there no sections are available.
    * */
   returnSectionsNames(state: RootState): string[];
   /**
-   * @param state The store state
+   * Returns a section if it's name is found, undefined if not.
+   * @param state The application state.
    * @param sectionName A string containining the section name to evaluate
    * @returns A Section object if the sectionName is found, undefined if not found.
    */
   returnSectionByName(
     state: RootState
   ): (sectionName: string) => Section | undefined;
-  /**Returns all recommendations
-   * @param state The store state
+  /**
+   * Returns ```state.recommendations```.
+   * @param state The application state.
+   * @returns A ```Recommendations``` object if it was initialized, undefined otherwise.
    */
   returnRecommendations(state: RootState): Recommendations | undefined;
+  /**
+   * TODO: Move to helpers mixins
+   * @param state The application state.
+   */
   returnSectionsByPrefix(
     state: RootState
   ): (surveyData: SurveyModel, prefix: string) => PageModel[];
+  /**
+   * Returns the current section from the store.
+   * @param state The application state.
+   * @returns A ```Section``` object if it was initialized, undefined otherwise.
+   */
   returnCurrentSection(state: RootState): Section | undefined;
+  /**
+   * Returns ```state.toolData``` value from the store
+   * @param state The application state.
+   * returns ```any```
+   */
   returnToolData(state: RootState): any;
+  /**
+   * Returns ```state.surveyModel``` from the store
+   * @param state The application state.
+   * @returns a ```SurveyModel``` object if initialized, undefined if not.
+   */
   returnSurveyModel(state: RootState): SurveyModel | undefined;
+  /**
+   * Returns ```state.currentPageNumber``` from the store
+   * @param state The application state.
+   * @returns A number
+   */
   returnCurrentPageNumber(state: RootState): number;
   // ---------------
   // Getters below are to help transition to new store structure
   // ---------------
-  // This getter is never used
+  // This getter shouldn't be used anymore (see returnSectionsNames instead)
   returnSectionsNamesGenerated(state: RootState): string[];
   determineAllSections(state: RootState, payload: string): string[];
   resultsDataSections(state: RootState): any[];
