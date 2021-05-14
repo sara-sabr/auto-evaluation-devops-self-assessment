@@ -28,9 +28,9 @@ export const store: StoreOptions<RootState> = {
   plugins:
     process.env.NODE_ENV === "development"
       ? [
-          createLogger({
-            collapsed: false
-          }),
+          // createLogger({
+          //   collapsed: false
+          // }),
           vuexLocal.plugin
         ]
       : [vuexLocal.plugin],
