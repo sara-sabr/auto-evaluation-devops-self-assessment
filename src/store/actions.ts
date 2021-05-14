@@ -240,8 +240,14 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     if (getters.returnRecommendations === undefined) {
       commit(MutationType.SetRecommendations, appConfig);
     }
-    let currentPage: PageModel = value.getPageByName(value.currentPage);
-    dispatch(ActionTypes.UpdateSectionScore, currentPage);
+    // let currentPage: PageModel = value.getPageByName(value.currentPage);
+    // dispatch(ActionTypes.UpdateSectionScore, currentPage);
+
+    //Updating all sections instead as per current behavior
+    let allPages: PageModel[] = value.pages;
+    allPages.forEach(page => {
+      dispatch(ActionTypes.UpdateSectionScore, page);
+    });
     commit(MutationType.SetToolData, value.data);
     commit(
       MutationType.SetAnswerData,
