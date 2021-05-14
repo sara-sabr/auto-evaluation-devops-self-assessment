@@ -14,15 +14,25 @@ Vue.use(BootstrapVue);
 
 StylesManager.applyTheme("bootstrapmaterial");
 
-function reloadTemplate() {
-  // babel will handle transpilation to ES5
+function getLanguage() {
   const language = document
     .getElementsByTagName("html")[0]
     .getAttribute("lang");
   let switchLanguage = "fr";
-  if (language === "fr") {
+  if (language === "fr" || language === "fr-CA") {
     switchLanguage = "en";
+  } else {
+    switchLanguage = "fr";
   }
+  return switchLanguage;
+}
+
+function reloadTemplate() {
+  // babel will handle transpilation to ES5
+  // const language = document
+  //   .getElementsByTagName("html")[0]
+  //   .getAttribute("lang");
+  let switchLanguage = getLanguage();
 
   const defTop = document.getElementById("def-top");
 
@@ -122,15 +132,12 @@ function reloadTemplate() {
 // such as the page does not need to reload  if a user switches the language
 function generateLanguageToggle() {
   const htmlElement = document.getElementsByTagName("html")[0];
-  const language = htmlElement.getAttribute("lang");
-  let switchLanguage = "en";
-  if (language === "fr") {
-    switchLanguage = "fr";
-  }
+  // const language = htmlElement.getAttribute("lang");
+  let switchLanguage = getLanguage();
 
   // create language toggle
   let languageButton = document.createElement("button");
-  languageButton.innerText = switchLanguage === "en" ? "Francais" : "English";
+  languageButton.innerText = switchLanguage === "en" ? "English" : "Francais";
   languageButton.className =
     "btn btn-default fixed-top language-button position-absolute page-actions";
   languageButton.style["left"] = "unset";
@@ -171,6 +178,7 @@ function generateLanguageToggle() {
 window.onload = function() {
   reloadTemplate();
   generateLanguageToggle();
+  window.history.replaceState({}, document.title, "/#/");
 };
 
 new Vue({
