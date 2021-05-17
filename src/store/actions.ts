@@ -127,8 +127,8 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
         } else {
           commit(MutationType.AppLoadingError, undefined);
         }
-      })
-      .catch(error => console.error(error));
+      });
+    // .catch(error => console.error(error));
     // commit(MutationType.StopLoading, undefined);
   },
   async [ActionTypes.GetLocalAppData]({ commit, getters }) {
