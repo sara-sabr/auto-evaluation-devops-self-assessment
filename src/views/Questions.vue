@@ -31,43 +31,39 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Model } from "survey-vue";
-import showdown from "showdown";
-
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
-import ActionButtonBar from "@/components/ActionButtonBar.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
-import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
+import { ActionTypes } from "@/store/actions";
 
 @Component({
   components: {
     AssessmentTool,
-    ActionButtonBar,
     BaseNavigation
   }
 })
 export default class Questions extends Vue {
   @Prop() public currentPageNo!: number;
   Survey: Model = new Model(surveyJSON);
-
-  startAgain() {
-    this.Survey.clear(true, true);
-    window.localStorage.clear();
-    this.$store.commit("resetSurvey");
-    this.$router.push("/");
-  }
+  //
+  // startAgain() {
+  //   this.Survey.clear(true, true);
+  //   window.localStorage.clear();
+  //   this.$store.commit("resetSurvey");
+  //   this.$router.push("/");
+  // }
 
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.$router.push("/");
   }
 
   goToHomePage() {
-    this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.$router.push("/");
   }
 
@@ -104,7 +100,7 @@ export default class Questions extends Vue {
   }
 
   goToSectionResults() {
-    this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
     this.saveSurveyData();
     this.$router.push("/sections");
   }
@@ -115,7 +111,7 @@ export default class Questions extends Vue {
   }
   created() {
     this.Survey.onComplete.add(result => {
-      this.$store.commit("calculateResult", result);
+      this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
       this.$router.push("/results");
     });
 

@@ -1,4 +1,4 @@
-import { IPanel, Question, SurveyModel } from "survey-vue";
+import { Question, SurveyModel } from "survey-vue";
 
 export interface RootState {
   surveyModel?: SurveyModel;
@@ -6,8 +6,6 @@ export interface RootState {
   toolData: any;
   sections: Section[];
   sectionsNames: string[];
-  // sectionsAllEnabled: boolean;
-  // sectionsEnabled: string[];
   currentPageNo: number;
   currentPageName?: string;
   recommendations?: Recommendations;
@@ -27,11 +25,6 @@ export interface Section {
   userScore: number;
   maxScore: number;
   questions: Question[];
-}
-
-export interface ResultsData {
-  sectionsEnabled: any;
-  data: any;
 }
 
 export type LanguageString = {
@@ -80,3 +73,20 @@ export interface Title {
   en: string[];
   fr: string[];
 }
+
+export const state: RootState = {
+  surveyModel: undefined,
+  answerData: [],
+  toolData: undefined,
+  sections: [],
+  sectionsNames: [],
+  currentPageNo: 0,
+  currentPageName: undefined,
+  recommendations: undefined,
+  toolVersion: "",
+  displayWelcomeNotice: true,
+  sectionsPrefix: "",
+  error: false,
+  loading: false,
+  initialized: false
+};

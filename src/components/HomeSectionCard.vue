@@ -34,6 +34,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { PageModel, SurveyModel } from "survey-vue";
 import { Section } from "@/types";
+import { ActionTypes } from "@/store/actions";
 
 @Component({
   data: function() {
@@ -109,8 +110,10 @@ export default class HomeSectionCard extends Vue {
 
   goToSection(sectionName: string) {
     this.survey.currentPage = sectionName;
-    this.$store.commit("updateSurveyData", this.survey);
-    this.$store.commit("updateCurrentPageName", sectionName);
+    // this.$store.commit("updateSurveyData", this.survey);
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.survey);
+    // this.$store.commit("updateCurrentPageName", sectionName);
+    this.$store.dispatch(ActionTypes.UpdateCurrentPageName, sectionName);
     this.$router.push("/questions");
   }
 }

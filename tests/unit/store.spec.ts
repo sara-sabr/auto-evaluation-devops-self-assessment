@@ -1,4 +1,4 @@
-import store from "@/store";
+import store from "@/store/index";
 import { SurveyModel } from "survey-vue";
 import surveyJSON from "@/survey-enfr.json";
 

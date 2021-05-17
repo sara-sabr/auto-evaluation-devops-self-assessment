@@ -51,21 +51,22 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 import { Model } from "survey-vue";
 import showdown from "showdown";
-import ActionButtonBar from "@/components/ActionButtonBar.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import ResultsCard from "@/components/ResultsCard.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
 import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
 import { Section } from "@/types";
+import { ActionTypes } from "@/store/actions";
 
 @Component({
   components: {
     ResultsCard
   },
   computed: {
+    // TODO: This computed property is never used
     sectionNames: function() {
-      return this.$store.getters.returnSectionsNames;
+      return this.$store.getters.returnSectionsNamesGenerated;
     },
     results() {
       return this.$store.getters.resultsDataSections;
@@ -167,18 +168,19 @@ export default class Results extends Vue {
     window.removeEventListener("beforeprint", beforePrint);
     window.removeEventListener("afterprint", afterPrint);
   }
-
-  startAgain() {
-    this.Survey.clear(true, true);
-    window.localStorage.clear();
-    this.$store.commit("resetSurvey");
-    this.$router.push({ path: "/" });
-  }
+  // Feature disabled, will be removed from store actions
+  // startAgain() {
+  //   this.Survey.clear(true, true);
+  //   window.localStorage.clear();
+  //   this.$store.commit("resetSurvey");
+  //   this.$router.push({ path: "/" });
+  // }
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    this.$store.commit("calculateResult", this.Survey);
+    // this.$store.commit("calculateResult", this.Survey);
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
 
     this.myResults = this.$store.getters.resultDataSections;
   }
@@ -191,11 +193,13 @@ export default class Results extends Vue {
 
   created() {
     this.Survey.onComplete.add(result => {
-      this.$store.commit("updateSurveyData", result);
+      // this.$store.commit("updateSurveyData", result);
+      this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
     });
 
     this.Survey.onValueChanged.add(result => {
-      this.$store.commit("calculateResult", result);
+      // this.$store.commit("calculateResult", result);
+      this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
     });
 
     const converter = new showdown.Converter();

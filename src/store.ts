@@ -68,20 +68,20 @@ const initializeSections = (state: RootState, surveyData: SurveyModel) => {
   });
 };
 
-/**
- * Helper function which determining enabled sections based on surveyData.
- * @param state An object containing the state of the survey.
- * @param surveyData An object containing the survey data.
- */
-const determineSectionsEnabled = (
-  state: RootState,
-  surveyData: SurveyModel
-) => {
-  if (isEmpty(state.sectionsNames)) {
-    determineAllSections(state, surveyData);
-  }
-  state.sectionsEnabled = state.sectionsNames;
-};
+// /**
+//  * Helper function which determining enabled sections based on surveyData.
+//  * @param state An object containing the state of the survey.
+//  * @param surveyData An object containing the survey data.
+//  */
+// const determineSectionsEnabled = (
+//   state: RootState,
+//   surveyData: SurveyModel
+// ) => {
+//   if (isEmpty(state.sectionsNames)) {
+//     determineAllSections(state, surveyData);
+//   }
+//   state.sectionsEnabled = state.sectionsNames;
+// };
 
 /**
  * Function returning the localized strings of a Survey.js Panel object.
@@ -243,8 +243,8 @@ const store: StoreOptions<RootState> = {
   state: {
     sections: [],
     sectionsNames: [],
-    sectionsAllEnabled: false,
-    sectionsEnabled: [],
+    // sectionsAllEnabled: false,
+    // sectionsEnabled: [],
     answerData: [],
     surveyModel: undefined,
     toolData: undefined,
@@ -252,23 +252,28 @@ const store: StoreOptions<RootState> = {
     currentPageName: undefined,
     recommendations: undefined,
     toolVersion: sectionsRecommendations.settings.version,
-    displayWelcomeNotice: true
+    displayWelcomeNotice: true,
+    sectionsPrefix: "",
+    error: false,
+    loading: false,
+    initialized: false
   },
   mutations: {
+    // Disabled resetSurvey mutation
     // mutation to reset the state when a user resets the survey
-    resetSurvey(state: RootState) {
-      state.sections = [];
-      state.answerData = [];
-      state.sectionsNames = [];
-      state.sectionsAllEnabled = true;
-      state.sectionsEnabled = [];
-      state.surveyModel = undefined;
-      state.currentPageNo = 0;
-      state.currentPageName = undefined;
-      state.toolData = {};
-      state.recommendations = undefined;
-      state.displayWelcomeNotice = true;
-    },
+    // resetSurvey(state: RootState) {
+    //   state.sections = [];
+    //   state.answerData = [];
+    //   state.sectionsNames = [];
+    //   // state.sectionsAllEnabled = true;
+    //   // state.sectionsEnabled = [];
+    //   state.surveyModel = undefined;
+    //   state.currentPageNo = 0;
+    //   state.currentPageName = undefined;
+    //   state.toolData = {};
+    //   state.recommendations = undefined;
+    //   state.displayWelcomeNotice = true;
+    // },
 
     // update state with results from survey
     // every time a value has changed or survey completed
@@ -306,7 +311,7 @@ const store: StoreOptions<RootState> = {
     inProgress: state => {
       return !isEmpty(state.toolData);
     },
-    returnSectionsNames: state => {
+    returnSectionsNamesGenerated: state => {
       let sectionsNames: string[] = [];
       if (state.surveyModel === undefined) return {};
       state.surveyModel.pages.forEach(page => {

@@ -14,25 +14,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from "vue-property-decorator";
-import { Model, PageModel, PanelModel } from "survey-vue";
+import { Component, Vue, Watch } from "vue-property-decorator";
+import { Model, PageModel } from "survey-vue";
 import showdown from "showdown";
-
 import AssessmentTool from "@/components/AssessmentTool.vue"; // @ is an alias to /src
-import ActionButtonBar from "@/components/ActionButtonBar.vue";
 import HomeSectionsContainer from "@/components/HomeSectionsContainer.vue";
 import BaseNavigation from "@/components/BaseNavigation.vue";
 import SurveyFile from "@/interfaces/SurveyFile";
 import i18n from "@/plugins/i18n";
 import surveyJSON from "@/survey-enfr.json";
-import { SectionRecommendation } from "@/types";
+import { SectionRecommendation } from "@/store/state";
 import resultsData from "@/survey-results.json";
 import { returnAllSectionsByPrefix } from "@/store";
+import { ActionTypes } from "@/store/actions";
 
 @Component({
   components: {
     AssessmentTool,
-    ActionButtonBar,
     BaseNavigation,
     HomeSectionsContainer
   },
@@ -47,17 +45,19 @@ export default class Home extends Vue {
   sections: PageModel[] = returnAllSectionsByPrefix(this.Survey, "section_");
   sectionRecommendation: SectionRecommendation[] =
     resultsData.sectionRecommendations;
-  startAgain() {
-    this.Survey.clear(true, true);
-    window.localStorage.clear();
-    this.$store.commit("resetSurvey");
-  }
+
+  // Feature disabled, will be removed from store actions
+  // startAgain() {
+  //   this.Survey.clear(true, true);
+  //   window.localStorage.clear();
+  //   this.$store.commit("resetSurvey");
+  // }
 
   fileLoaded($event: SurveyFile) {
     this.Survey.data = $event.data;
     this.Survey.currentPageNo = $event.currentPage;
     this.Survey.start();
-    this.$store.commit("updateSurveyData", this.Survey);
+    this.$store.dispatch(ActionTypes.UpdateSurveyData, this.Survey);
   }
 
   @Watch("$i18n.locale")
@@ -72,17 +72,13 @@ export default class Home extends Vue {
     };
 
     this.Survey.onComplete.add(result => {
-      this.$store.commit("calculateResult", result);
+      this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
       this.$router.push("/results");
     });
 
-    /*this.Survey.onComplete.add(result => {
-      this.$router.push("Results");
-    });*/
-
-    this.Survey.onValueChanged.add(result => {
-      this.$store.commit("updateSurveyData", result);
-    });
+    // this.Survey.onValueChanged.add(result => {
+    //   this.$store.dispatch(ActionTypes.UpdateSurveyData, result);
+    // });
 
     const converter = new showdown.Converter();
 
