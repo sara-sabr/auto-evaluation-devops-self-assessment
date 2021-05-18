@@ -15,8 +15,8 @@
           "type": "rating",
           "name": "question96",
           "title": {
-            "default": "My team understands clearly the current/target conditions, up to 5 (five) years in the future, and produces outcomes that match up with the purpose of the organization.",
-            "fr": "Mon équipe conçoit clairement les conditions actuelles et ciblées, jusqu’à 5 (cinq) ans dans l’avenir, et produit des résultats en phase avec l’objectif de l’organisation."
+            "default": "My team understands clearly the target conditions for the next 5 (five) years in the future, and produces outcomes that match up with the purpose of the organization.",
+            "fr": "Mon équipe conçoit clairement les conditions ciblées pour les prochains 5 (cinq) ans dans l’avenir, et produit des résultats en phase avec l’objectif de l’organisation."
           },
           "isRequired": false,
           "rateMax": 7
@@ -106,8 +106,8 @@
           "type": "rating",
           "name": "question85",
           "title": {
-            "default": "Once we quit learning we endanger our future.",
-            "fr": "Dès que nous cessons d’apprendre, nous mettons notre avenir en péril."
+            "default": "Once we quit learning we endanger our capability to diliver efficient services to the clients in the future.",
+            "fr": "Dès que nous cessons d’apprendre, nous mettons en danger notre capacité à fournir des services efficaces aux clients à l'avenir.."
           },
           "isRequired": false,
           "rateMax": 7
@@ -259,7 +259,7 @@
           "name": "question49",
           "title": {
             "default": "We are able to make changes to user needs and specifications during a project.",
-            "fr": "Nous sommes en mesure d’apporter des changements aux besoins et aux cahiers des charges des utilisateurs durant un projet."
+            "fr": "Nous sommes en mesure d’apporter des changements aux besoins des utilisateurs et aux spécifications durant un projet."
           },
           "isRequired": false,
           "rateMax": 7
@@ -318,8 +318,8 @@
           "type": "rating",
           "name": "question55",
           "title": {
-            "default": "We execute peer review which includes reviews, comments, and approvals captured as part of the development process.",
-            "fr": "Nous effectuons des examens par les pairs qui touchent les examens, les commentaires et les approbations saisis dans le cadre du processus d’élaboration."
+            "default": "We execute peer reviews which include comments, and approvals captured as part of the development process.",
+            "fr": "Nous effectuons des examens par les pairs qui touchent les commentaires et les approbations saisis dans le cadre du processus d’élaboration."
           },
           "isRequired": false,
           "rateMax": 7
@@ -1156,8 +1156,8 @@
           "type": "rating",
           "name": "question27",
           "title": {
-            "default": "Automated tests are seamlessly integrated into our software delivery tech bricks.",
-            "fr": "Les tests automatisés s’intègrent harmonieusement à nos briques technologiques de livraison de logiciels."
+            "default": "Automated tests are seamlessly integrated into our software delivery tools.",
+            "fr": "Les tests automatisés s’intègrent harmonieusement à nos outils de livraison de logiciels."
           },
           "isRequired": false,
           "rateMax": 7
