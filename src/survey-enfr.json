@@ -106,7 +106,7 @@
           "type": "rating",
           "name": "s10q003",
           "title": {
-            "default": "Once we quit learning we endanger our capability to diliver efficient services to the clients in the future.",
+            "default": "Once we quit learning we endanger our capability to deliver efficient services to the clients in the future.",
             "fr": "Dès que nous cessons d’apprendre, nous mettons en danger notre capacité à fournir des services efficaces aux clients à l'avenir.."
           },
           "isRequired": false,
