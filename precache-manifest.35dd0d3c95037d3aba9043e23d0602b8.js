@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff0b4d782d931665652a",
+    "revision": "6a33fa2cf30223fed5f4",
     "url": "/auto-evaluation-devops-self-assessment/css/app.247857f8.css"
   },
   {
@@ -140,12 +140,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/auto-evaluation-devops-self-assessment/helper/vfs_fonts.js"
   },
   {
-    "revision": "c5d22303a3259b8ccbcdeede2abdb764",
+    "revision": "bcba9a18600db10ec46208fec38b4db6",
     "url": "/auto-evaluation-devops-self-assessment/index.html"
   },
   {
-    "revision": "ff0b4d782d931665652a",
-    "url": "/auto-evaluation-devops-self-assessment/js/app.1f96bf52.js"
+    "revision": "6a33fa2cf30223fed5f4",
+    "url": "/auto-evaluation-devops-self-assessment/js/app.7a76badd.js"
   },
   {
     "revision": "36e2038cb2ca05f12d16",
