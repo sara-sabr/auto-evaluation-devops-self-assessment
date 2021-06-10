@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-modal id="welcome-modal">
+    <b-modal id="welcome-modal" size="xl">
       <template #modal-header>
         <div v-html="markdownToHtml($t('notice.welcomeNoticeTitle'))">
           >
