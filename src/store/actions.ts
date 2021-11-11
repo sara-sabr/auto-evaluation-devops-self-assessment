@@ -220,8 +220,18 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
     if (section !== undefined) {
       value.questions.forEach(question => {
         if (question.value !== undefined) {
-          let score: number = +question.value;
-          sectionScore += score;
+          if (question.getType() === "rating") {
+            let score: number = +question.value;
+            sectionScore += score;
+          } else if (question.getType() === "radiogroup") {
+            let score = 0;
+            if (("" + question.value).toLowerCase() === "yes") {
+              score = 5;
+            } else if (("" + question.value).toLowerCase() === "no") {
+              score = 1;
+            }
+            sectionScore += score;
+          }
         }
       });
       section.userScore = sectionScore;
