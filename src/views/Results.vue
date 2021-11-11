@@ -97,8 +97,7 @@ import { ActionTypes } from "@/store/actions";
   },
   methods: {
     getMaxScore(section: Section) {
-      let maxScore: number = section.questions.length - 1 * 5;
-      return maxScore;
+      return section.questions.length * 5;
     }
   }
 })
