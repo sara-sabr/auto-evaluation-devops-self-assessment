@@ -185,7 +185,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
           completed: false,
           questionsNames: [],
           userScore: 0,
-          maxScore: (value.getPageByName(sectionName).questions.length - 1) * 5,
+          maxScore: value.getPageByName(sectionName).questions.length * 5,
           questions: []
         };
         value.getPageByName(sectionName).questions.forEach(question => {
