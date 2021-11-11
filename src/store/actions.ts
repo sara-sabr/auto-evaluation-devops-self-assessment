@@ -164,7 +164,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let toolData: any = getters.returnToolData;
       commit(MutationType.SetToolData, toolData);
       commit(MutationType.SetToolVersion, appConfigSettings.version);
-      commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
+      //commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
       commit(MutationType.Initialized, undefined);
     }
     commit(MutationType.StopLoading, undefined);
@@ -186,7 +186,7 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
           completed: false,
           questionsNames: [],
           userScore: 0,
-          maxScore: (value.getPageByName(sectionName).questions.length - 1) * 7,
+          maxScore: (value.getPageByName(sectionName).questions.length - 1) * 5,
           questions: []
         };
         value.getPageByName(sectionName).questions.forEach(question => {
