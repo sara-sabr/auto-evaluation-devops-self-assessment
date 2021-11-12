@@ -47,7 +47,7 @@
             type="button"
             class="btn btn-default"
             style="width: inherit"
-            v-on:click="downloadSurveyFile()"
+            v-on:click="downloadSurveyAnswer()"
             :key="$route.path"
           >
             {{ $t("export") }}
@@ -124,7 +124,7 @@ export default class Results extends Vue {
       data: this.$store.state.toolData
     });
   }
-  downloadSurveyFile(): void {
+  downloadSurveyAnswer(): void {
     const dataStr = "data:text/json;charset=utf-8," + this.buildSurveyFile();
     var downloadAnchorNode = document.createElement("a");
     downloadAnchorNode.setAttribute("href", dataStr);
