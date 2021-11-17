@@ -164,7 +164,6 @@ export const actions: ActionTree<RootState, RootState> & Actions = {
       let toolData: any = getters.returnToolData;
       commit(MutationType.SetToolData, toolData);
       commit(MutationType.SetToolVersion, appConfigSettings.version);
-      commit(MutationType.SetDisplayNoticeStatus, state.displayWelcomeNotice);
       commit(MutationType.Initialized, undefined);
     }
     commit(MutationType.StopLoading, undefined);
